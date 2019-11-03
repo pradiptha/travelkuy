@@ -7,7 +7,7 @@
   <meta name="author" content="Creative Tim">
   <title>TravelKuy - Liburan Biar Santuy</title>
   <!-- Favicon -->
-  <link href="assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="assets/img/brand/logo-01.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
@@ -18,30 +18,33 @@
   <link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
 
 </head>
- 
-<body>
-	<?php include 'navbar.php'; ?>
-	<div class="container">
+<body style="background-color: #E1F5FF">
+	<?php include 'navbar.php' ?>
+	<div class="container ">
 		<div class="row">
 	  		<div class="col-sm-12">
 	  			<br/>				
 				<label>Destinasi Favorite</label>
 				<div class="row">
-				  	<div class="col-sm-3">
-				  		<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
+				  	<div class="col-sm-3 destinasi-fav lokasi">
+				  		<h1 class="text-center font-weight-bold text-white">ACEH</h1>
+				  		<img src="assets/img/icons/aceh.jpg" class="img-thumbnail rounded alt="...">
 				  	</div>
-				  	<div class="col-sm-3">
-				  		<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
+				  	<div class="col-sm-3 destinasi-fav lokasi">
+				  		<h1 class="text-center font-weight-bold text-white">NTB</h1>
+				  		<img src="assets/img/icons/ntb.jpg" class="img-thumbnail rounded" alt="...">
 				  	</div>
-				  	<div class="col-sm-3">
-				  		<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
+				  	<div class="col-sm-3 destinasi-fav lokasi">
+				  		<h1 class="text-center font-weight-bold text-white">JOGJA</h1>
+				  		<img src="assets/img/icons/jogja.jpg" class="img-thumbnail rounded" alt="...">
 				  	</div>
-				  	<div class="col-sm-3">
+				  	<div class="col-sm-3 destinasi-fav lokasi">
+				  		<h1 class="text-center font-weight-bold text-white">BALI</h1>
 				  		<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
 				  	</div>
 				</div>
 	  		</div>
-	  		<div class="col-sm-8 mx-auto">
+	  		<div class="col-sm-12 mx-auto">
 	  			<br/><br/>
 		  		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
@@ -49,15 +52,15 @@
 					    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 					    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 					</ol>
-					<div class="carousel-inner">
+					<div class="carousel-inner slide-image">
 						<div class="carousel-item active">
 						    <img src="assets/img/icons/ki.jpg" class="d-block w-100" alt="...">
 						</div>
-					    <div class="carousel-item">
-					    	<img src="assets/img/icons/ki.jpg" class="d-block w-100" alt="...">
+					    <div class="carousel-item slide-image">
+					    	<img src="assets/img/icons/white-city.png" class="d-block w-100" alt="...">
 					    </div>
-					    <div class="carousel-item">
-					    	<img src="assets/img/icons/ki.jpg" class="d-block w-100" alt="...">
+					    <div class="carousel-item slide-image">
+					    	<img src="assets/img/icons/bromo.jpg" class="d-block w-100" alt="...">
 					    </div>
 					</div>
 				  	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -72,16 +75,20 @@
 	  		</div>
 	  		<div class="col-sm-12">
 	  			<br/><br/>
-		  		<label>Paket Liburan</label>
+		  		<label>Paket Liburan Favorite</label>
 		  		<div class="row">
-				    <div class="col-sm-4">
-				    	<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
+				    <div class="col-sm-4 liburan-fav lokasi">
+				  		<h6 class="font-weight-bold text-white m-2">RAJA AMPAT DREAMLAND</h6>
+				    	<img src="assets/img/icons/papua.jpg" class="img-thumbnail rounded" alt="...">
 				    </div>
-				    <div class="col-sm-4">
-				    	<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
+				    <div class="col-sm-4 liburan-fav lokasi">
+				  		<h6 class="font-weight-bold text-white m-2">WISATA BROMO</h6>
+				    	<img src="assets/img/icons/bromo2.png" class="img-thumbnail rounded" alt="...">
 				    </div>
-				    <div class="col-sm-4">
-				    	<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
+				    <div class="col-sm-4 liburan-fav lokasi">
+				  		<h6 class="font-weight-bold text-white m-2">WISATA ALAM BALI</h6>
+				    	<img src="assets/img/icons/bali2.jpg" class="img-thumbnail rounded" alt="...">
+				    	<br/><br/>
 				    </div>
 				</div>
 			</div>
