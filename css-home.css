@@ -14,6 +14,9 @@ img {
 .lokasi h6 {
 	position: absolute;
 	z-index: 2;
+	font-size: 1.2rem;
+	color: black;
+	width: 316.65px;
 }
 
 .destinasi-fav img {
@@ -29,4 +32,29 @@ img {
 .slide-image img{
 	height: 570px;
 	object-fit: cover;
+}
+
+.price {
+	position: absolute;
+	z-index: 2;
+	height: 35px;
+	width: 50%;
+	bottom: 29px;
+	left: 20px;
+}
+
+.lama {
+	position: absolute;
+	z-index: 2;
+	height: 25px;
+	width: 25%;
+	bottom: 29px;
+	right: 20px;
+	font-size: 2px;
+}
+
+.lama p {
+	line-height: 1;
+	font-size: 0.7rem;
+	color: white;
 }

@@ -77,17 +77,35 @@
 	  			<br/><br/>
 		  		<label>Paket Liburan Favorite</label>
 		  		<div class="row">
-				    <div class="col-sm-4 liburan-fav lokasi">
-				  		<h6 class="font-weight-bold text-white m-2">RAJA AMPAT DREAMLAND</h6>
-				    	<img src="assets/img/icons/papua.jpg" class="img-thumbnail rounded" alt="...">
+				    <div class="col-sm-4 liburan-fav lokasi rounded-bottom">
+				  		<div class="rounded-right bg-info price">
+				  			<h5 class="text-center font-weight-bold">IDR 7500000</h5>
+				  		</div>
+				  		<div class="rounded-left bg-danger lama">
+				  			<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
+				  		</div>
+				    	<img src="assets/img/icons/papua.jpg" class="img-thumbnail rounded-top" alt="...">
+				    	<h6 class="font-weight-bold bg-white text-center">RAJA AMPAT DREAMLAND</h6>
 				    </div>
-				    <div class="col-sm-4 liburan-fav lokasi">
-				  		<h6 class="font-weight-bold text-white m-2">WISATA BROMO</h6>
-				    	<img src="assets/img/icons/bromo2.png" class="img-thumbnail rounded" alt="...">
+				    <div class="col-sm-4 liburan-fav lokasi rounded-bottom">
+				  		<div class="rounded-right bg-info price">
+				  			<h5 class="text-center font-weight-bold">IDR 2500000</h5>
+				  		</div>
+				  		<div class="rounded-left bg-danger lama">
+				  			<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
+				  		</div>
+				    	<img src="assets/img/icons/bromo2.png" class="img-thumbnail rounded-top" alt="...">
+				    	<h6 class="font-weight-bold bg-white text-center">WISATA BROMO</h6>
 				    </div>
-				    <div class="col-sm-4 liburan-fav lokasi">
-				  		<h6 class="font-weight-bold text-white m-2">WISATA ALAM BALI</h6>
-				    	<img src="assets/img/icons/bali2.jpg" class="img-thumbnail rounded" alt="...">
+				    <div class="col-sm-4 liburan-fav lokasi rounded-bottom">
+				  		<div class="rounded-right bg-info price">
+				  			<h5 class="text-center font-weight-bold">IDR 3500000</h5>
+				  		</div>
+				  		<div class="rounded-left bg-danger lama">
+				  			<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
+				  		</div>
+				    	<img src="assets/img/icons/bali2.jpg" class="img-thumbnail rounded-top" alt="...">
+				    	<h6 class="font-weight-bold bg-white text-center">WISATA ALAM BALI</h6>
 				    	<br/><br/>
 				    </div>
 				</div>
