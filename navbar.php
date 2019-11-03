@@ -19,7 +19,7 @@
 
 <body>
     <!-- Navbar default -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/icons/logo1.png" height="50" alt="" alt="">
@@ -62,7 +62,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
                     <a class="dropdown-item" href="#">My profile</a>
-                    <a class="dropdown-item" href="#"><i class="ni ni-settings-gear-65"></i>Edit profil</a>
+                    <a class="dropdown-item" href="profile.php"><i class="ni ni-settings-gear-65"></i>Edit profil</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#"><i class="ni ni-button-power"></i>Logout</a>
                 </div>
@@ -71,17 +71,6 @@
             </div>
         </div>
     </nav>
-  <!-- Core -->
-  <script src="./assets/vendor/jquery/jquery.min.js"></script>
-  <script src="./assets/vendor/popper/popper.min.js"></script>
-  <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="./assets/vendor/headroom/headroom.min.js"></script>
-  <!-- Optional JS -->
-  <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
-  <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
-  <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- Argon JS -->
-  <script src="./assets/js/argon.js?v=1.1.0"></script>
 </body>
 
 </html>

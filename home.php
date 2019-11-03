@@ -14,10 +14,10 @@
   <link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css-home.css">
+  <link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
+
 </head>
- 
 <body style="background-color: #E1F5FF">
 	<?php include 'navbar.php' ?>
 	<div class="container ">
@@ -114,12 +114,16 @@
 	</div>
   </div>
   <!-- Core -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/popper/popper.min.js"></script>
-<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-<!-- Theme JS -->
-<script src="sassets/js/argon.min.js"></script>
+  <script src="./assets/vendor/jquery/jquery.min.js"></script>
+  <script src="./assets/vendor/popper/popper.min.js"></script>
+  <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="./assets/vendor/headroom/headroom.min.js"></script>
+  <!-- Optional JS -->
+  <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+  <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+  <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  <!-- Argon JS -->
+  <script src="./assets/js/argon.js?v=1.1.0"></script>
 
 
 </body>
