@@ -19,7 +19,7 @@
 </head>
  
 <body style="background-color: #E1F5FF">
-<?php include '../navbar/navbar2.php' ?>
+  <?php include '../navbar/navbar.php' ?>
   <div class="container">
     <div class="row">
       <main class="col-md-12 profile-page">
@@ -31,7 +31,7 @@
                   <div class="col-md-auto">
                     <div class="card-profile-image">
                       <a href="#">
-                        <img src="../assets/img/theme/profil1.jpg" class="rounded-circle" alt="image">
+                        <img src="../assets/img/theme/profil1.jpg" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
                       </a>
                     </div>
                   </div>
@@ -51,12 +51,37 @@
     <div class="row">
       <main class="col-md-12 profile-page">
         <div class="card m-3 shadow">
-          <h3>BBBBBB</h3>
+          <div class="text-center m-4">
+            <h4>Nama Lengkap</h4>
+            <h5 class="font-weight-light">Adi Saputro Wibowo</h5>
+            <div class="dropdown-divider"></div>
+            <h4>Nomor telepon</h4>
+            <h5 class="font-weight-light">081234567890</h5>
+            <div class="dropdown-divider"></div>
+            <h4>Email</h4>
+            <h5 class="font-weight-light">Adhisaputra11@gmail.com</h5>
+            <div class="dropdown-divider"></div>
+            <h4>Alamat</h4>
+            <h5 class="font-weight-light">Jl. Gunung SLamet XII No.15 Denpasar Barat</h5>
+            <div class="dropdown-divider"></div>
+            <h4>Jenis Kelamin</h4>
+            <h5 class="font-weight-light">Laki-laki</h5>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="btn btn-warning btn-lg rounded-pill mt-2">edit profil</button>
+          </div>
         </div>
       </main>
     </div>
   </div>
-  
+
+  <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+      <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+      <img src="../assets/img/theme/profil1.jpg" alt="image">
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <div class="row row-grid align-items-center mb-5">
