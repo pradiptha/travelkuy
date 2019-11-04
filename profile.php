@@ -18,8 +18,8 @@
   <link rel="stylesheet" type="text/css" href="css-home.css">
 </head>
  
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info">
+<body style="background-color: #E1F5FF">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info pt-1 pb-1">
       <div class="container">
           <a class="navbar-brand" href="home.php">
               <img src="assets/img/icons/logo1.png" height="50" alt="" alt="">
@@ -56,8 +56,10 @@
                   <span class="nav-link-inner--text d-lg-none">Settings</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                  <a class="dropdown-item" href="#">My profile</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ni ni-settings-gear-65"></i>Edit profil</a>
+                  <a class="dropdown-item" href="#">Profil</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ni ni-single-02"></i>profil saya</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ni ni-calendar-grid-58"></i>histori</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ni ni-key-25"></i>ubah password</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#"><i class="ni ni-button-power"></i>Logout</a>
               </div>
@@ -68,7 +70,7 @@
   </nav>
 
   <main class="profile-page">
-    <section class="section">
+    <section class="section pb-0">
       <div class="container">
         <div class="card card-profile shadow mt-4">
           <div class="px-4">
@@ -89,6 +91,28 @@
       </div>
     </section>
   </main>
+
+  <main class="profile-page">
+    <section class="section">
+      <div class="container pb-1 pt-1">
+        <div class="card card-profile shadow mt-1>
+          <div class="px-4">
+            <div class="row justify-content-center">
+              <div class="col-md-auto">
+                <div class="card-profile-image">
+                </div>
+              </div>
+            </div>
+            <div class="text-center mb-4">
+              <h3>Adi Saputro Wibowo</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
   <footer class="footer">
     <div class="container">
       <div class="row row-grid align-items-center mb-5">

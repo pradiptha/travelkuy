@@ -19,7 +19,7 @@
 
 <body>
     <!-- Navbar default -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info pt-1 pb-1">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/icons/logo1.png" height="50" alt="" alt="">
@@ -61,11 +61,13 @@
                     <span class="nav-link-inner--text d-lg-none">Settings</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                    <a class="dropdown-item" href="#">My profile</a>
-                    <a class="dropdown-item" href="profile.php"><i class="ni ni-settings-gear-65"></i>Edit profil</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i class="ni ni-button-power"></i>Logout</a>
-                </div>
+                  <a class="dropdown-item" href="#">Profil</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ni ni-single-02"></i>profil saya</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ni ni-calendar-grid-58"></i>histori</a>
+                  <a class="dropdown-item" href="profile.php"><i class="ni ni-key-25"></i>ubah password</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"><i class="ni ni-button-power"></i>Logout</a>
+              </div>
                 </li>
             </ul>
             </div>
