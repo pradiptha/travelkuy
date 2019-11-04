@@ -7,19 +7,19 @@
   <meta name="author" content="Creative Tim">
   <title>TravelKuy - Liburan Biar Santuy</title>
   <!-- Favicon -->
-  <link href="assets/img/brand/logo-01.png" rel="icon" type="image/png">
+  <link href="../assets/img/brand/fav.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
-  <link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link rel="stylesheet" type="text/css" href="css-home.css">
-  <link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
+  <link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
 
 </head>
 <body style="background-color: #E1F5FF">
-	<?php include 'navbar.php' ?>
+	<?php include '../navbar/navbar.php' ?>
 	<div class="container ">
 		<div class="row">
 	  		<div class="col-sm-12">
@@ -28,19 +28,19 @@
 				<div class="row">
 				  	<div class="col-sm-3 destinasi-fav lokasi">
 				  		<h1 class="text-center font-weight-bold text-white">ACEH</h1>
-				  		<img src="assets/img/icons/aceh.jpg" class="img-thumbnail rounded alt="...">
+				  		<img src="../assets/img/icons/aceh.jpg" class="img-thumbnail rounded alt="...">
 				  	</div>
 				  	<div class="col-sm-3 destinasi-fav lokasi">
 				  		<h1 class="text-center font-weight-bold text-white">NTB</h1>
-				  		<img src="assets/img/icons/ntb.jpg" class="img-thumbnail rounded" alt="...">
+				  		<img src="../assets/img/icons/ntb.jpg" class="img-thumbnail rounded" alt="...">
 				  	</div>
 				  	<div class="col-sm-3 destinasi-fav lokasi">
 				  		<h1 class="text-center font-weight-bold text-white">JOGJA</h1>
-				  		<img src="assets/img/icons/jogja.jpg" class="img-thumbnail rounded" alt="...">
+				  		<img src="../assets/img/icons/jogja.jpg" class="img-thumbnail rounded" alt="...">
 				  	</div>
 				  	<div class="col-sm-3 destinasi-fav lokasi">
 				  		<h1 class="text-center font-weight-bold text-white">BALI</h1>
-				  		<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
+				  		<img src="../assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
 				  	</div>
 				</div>
 	  		</div>
@@ -54,13 +54,13 @@
 					</ol>
 					<div class="carousel-inner slide-image">
 						<div class="carousel-item active">
-						    <img src="assets/img/icons/ki.jpg" class="d-block w-100" alt="...">
+						    <img src="../assets/img/icons/ki.jpg" class="d-block w-100" alt="...">
 						</div>
 					    <div class="carousel-item slide-image">
-					    	<img src="assets/img/icons/white-city.png" class="d-block w-100" alt="...">
+					    	<img src="../assets/img/icons/white-city.png" class="d-block w-100" alt="...">
 					    </div>
 					    <div class="carousel-item slide-image">
-					    	<img src="assets/img/icons/bromo.jpg" class="d-block w-100" alt="...">
+					    	<img src="../assets/img/icons/bromo.jpg" class="d-block w-100" alt="...">
 					    </div>
 					</div>
 				  	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -84,7 +84,7 @@
 				  		<div class="rounded-left bg-danger lama">
 				  			<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
 				  		</div>
-				    	<img src="assets/img/icons/papua.jpg" class="img-thumbnail rounded-top" alt="...">
+				    	<img src="../assets/img/icons/papua.jpg" class="img-thumbnail rounded-top" alt="...">
 				    	<h6 class="font-weight-bold bg-white text-center">RAJA AMPAT DREAMLAND</h6>
 				    </div>
 				    <div class="col-sm-4 liburan-fav lokasi rounded-bottom">
@@ -94,7 +94,7 @@
 				  		<div class="rounded-left bg-danger lama">
 				  			<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
 				  		</div>
-				    	<img src="assets/img/icons/bromo2.png" class="img-thumbnail rounded-top" alt="...">
+				    	<img src="../assets/img/icons/bromo2.png" class="img-thumbnail rounded-top" alt="...">
 				    	<h6 class="font-weight-bold bg-white text-center">WISATA BROMO</h6>
 				    </div>
 				    <div class="col-sm-4 liburan-fav lokasi rounded-bottom">
@@ -104,7 +104,7 @@
 				  		<div class="rounded-left bg-danger lama">
 				  			<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
 				  		</div>
-				    	<img src="assets/img/icons/bali2.jpg" class="img-thumbnail rounded-top" alt="...">
+				    	<img src="../assets/img/icons/bali2.jpg" class="img-thumbnail rounded-top" alt="...">
 				    	<h6 class="font-weight-bold bg-white text-center">WISATA ALAM BALI</h6>
 				    	<br/><br/>
 				    </div>
@@ -114,16 +114,16 @@
 	</div>
   </div>
   <!-- Core -->
-  <script src="./assets/vendor/jquery/jquery.min.js"></script>
-  <script src="./assets/vendor/popper/popper.min.js"></script>
-  <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="./assets/vendor/headroom/headroom.min.js"></script>
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/popper/popper.min.js"></script>
+  <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="../assets/vendor/headroom/headroom.min.js"></script>
   <!-- Optional JS -->
-  <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
-  <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
-  <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  <script src="../assets/vendor/onscreen/onscreen.min.js"></script>
+  <script src="../assets/vendor/nouislider/js/nouislider.min.js"></script>
+  <script src="../assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
   <!-- Argon JS -->
-  <script src="./assets/js/argon.js?v=1.1.0"></script>
+  <script src="../assets/js/argon.js?v=1.1.0"></script>
 
 
 </body>

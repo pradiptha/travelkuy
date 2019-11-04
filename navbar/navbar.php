@@ -7,12 +7,12 @@
   <meta name="author" content="Creative Tim">
   <title>Argon Design System - Free Design System for Bootstrap 4</title>
   <!-- Favicon -->
-  <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="../assets/img/brand/fav.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
-  <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="./assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="./assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
@@ -21,8 +21,8 @@
     <!-- Navbar default -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info pt-1 pb-1">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/icons/logo1.png" height="50" alt="" alt="">
+            <a class="navbar-brand" href="../home/home.php">    
+                <img src="../assets/img/icons/logo1.png" height="50" alt="" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,9 +62,9 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
                   <a class="dropdown-item" href="#">Profil</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ni ni-single-02"></i>profil saya</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ni ni-calendar-grid-58"></i>histori</a>
-                  <a class="dropdown-item" href="profile.php"><i class="ni ni-key-25"></i>ubah password</a>
+                  <a class="dropdown-item" href="../profile/profile.php"><i class="ni ni-single-02"></i>profil saya</a>
+                  <a class="dropdown-item" href="../profile/profile.php"><i class="ni ni-calendar-grid-58"></i>histori</a>
+                  <a class="dropdown-item" href="../profile/profile.php"><i class="ni ni-key-25"></i>ubah password</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#"><i class="ni ni-button-power"></i>Logout</a>
               </div>

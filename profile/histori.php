@@ -7,14 +7,14 @@
   <meta name="author" content="Creative Tim">
   <title>TravelKuy - Liburan Biar Santuy</title>
   <!-- Favicon -->
-  <link href="assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="../assets/img/brand/fav.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
-  <link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
+  <link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css-home.css">
 </head>
  
@@ -22,7 +22,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info pt-1 pb-1">
       <div class="container">
           <a class="navbar-brand" href="home.php">
-              <img src="assets/img/icons/logo1.png" height="50" alt="" alt="">
+              <img src="./assets/img/icons/logo1.png" height="50" alt="" alt="">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
