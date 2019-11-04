@@ -53,20 +53,61 @@
         <div class="card m-3 shadow">
           <div class="text-center m-4">
             <h4>Nama Lengkap</h4>
-            <h5 class="font-weight-light">Adi Saputro Wibowo</h5>
-            <div class="dropdown-divider"></div>
+            <form>
+                <div class="row  justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-pill text-center" id="nama" placeholder="name@example.com" value="Adi Saputro Wibowo" >
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
             <h4>Nomor telepon</h4>
-            <h5 class="font-weight-light">081234567890</h5>
-            <div class="dropdown-divider"></div>
+            <form>
+                <div class="row  justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-pill text-center" id="notelp" placeholder="name@example.com" value="081234567890" >
+                        </div>
+                    </div>
+                </div>
+            </form>
+
             <h4>Email</h4>
-            <h5 class="font-weight-light">Adhisaputra11@gmail.com</h5>
-            <div class="dropdown-divider"></div>
+            <form>
+                <div class="row  justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-pill text-center" id="email" placeholder="name@example.com" value="Adhisaputra11@gmail.com" >
+                        </div>
+                    </div>
+                </div>
+            </form>
+
             <h4>Alamat</h4>
-            <h5 class="font-weight-light">Jl. Gunung SLamet XII No.15 Denpasar Barat</h5>
-            <div class="dropdown-divider"></div>
+            <form>
+                <div class="row  justify-content-center">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-pill text-center" id="alamat" placeholder="name@example.com" value="Jl. Gunung SLamet XII No.15 Denpasar Barat" >
+                        </div>
+                    </div>
+                </div>
+            </form>
+
             <h4>Jenis Kelamin</h4>
-            <h5 class="font-weight-light">Laki-laki</h5>
-            <div class="dropdown-divider"></div>
+            <div class="form-check">
+                <div class="d-inline mr-5">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">Laki-laki</label>
+                </div>
+                <div class="d-inline mr-3">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">Perempuan</label>
+                </div>
+            </div>
+
             <button type="button" class="btn btn-warning btn-lg rounded-pill mt-2">edit profil</button>
           </div>
         </div>

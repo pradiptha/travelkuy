@@ -56,10 +56,10 @@
                   <span class="nav-link-inner--text d-lg-none">Settings</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                  <a class="dropdown-item" href="#"><img src="../assets/img/theme/profil1.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
+                  <a class="dropdown-item" href="../profile/profile.php"><img src="../assets/img/theme/profil1.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="../profile/profile.php"><i class="ni ni-single-02"></i>Profil Saya</a>
-                  <a class="dropdown-item" href="../profile/profile.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
+                  <a class="dropdown-item" href="../profile/histori.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
+                  <a class="dropdown-item" href="../profile/editprofil.php"><i class="ni ni-ui-04"></i>Edit Profil</a>
                   <a class="dropdown-item" href="../profile/profile.php"><i class="ni ni-key-25"></i>Ubah Password</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#"><i class="ni ni-button-power"></i>Logout</a>
