@@ -13,6 +13,7 @@
   <!-- Icons -->
   <link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
   <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
   <!-- Argon CSS -->
   <link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css-home.css">
@@ -59,8 +60,9 @@
                   <a class="dropdown-item" href="../profile/profile.php"><img src="../assets/img/theme/profil1.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="../profile/histori.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
-                  <a class="dropdown-item" href="../profile/editprofil.php"><i class="ni ni-ui-04"></i>Edit Profil</a>
-                  <a class="dropdown-item" href="../profile/profile.php"><i class="ni ni-key-25"></i>Ubah Password</a>
+                  <a class="dropdown-item" href="../profile/editprofil.php"><i class="ni ni-badge"></i>Edit Profil</a>
+                  <a class="dropdown-item" href="../profile/editemail.php"><i class="ni ni-ui-04"></i>Ubah Email</a>
+                  <a class="dropdown-item" href="../profile/editpassword.php"><i class="ni ni-key-25"></i>Ubah Password</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#"><i class="ni ni-button-power"></i>Logout</a>
               </div>
