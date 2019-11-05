@@ -17,7 +17,7 @@
   <link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css-home.css">
 </head>
- 
+
 <body style="background-color: #E1F5FF">
   <?php include '../navbar/navbar.php' ?>
   <div class="container">
@@ -52,22 +52,18 @@
       <main class="col-md-12 profile-page">
         <div class="card m-3 shadow">
           <div class="text-center m-4">
+            <h3 class="font-weight-bold">PROFIL</h3>
+            <div class="dropdown-divider"></div>
             <h4>Nama Lengkap</h4>
             <h5 class="font-weight-light">Adi Saputro Wibowo</h5>
-            <div class="dropdown-divider"></div>
             <h4>Nomor telepon</h4>
             <h5 class="font-weight-light">081234567890</h5>
-            <div class="dropdown-divider"></div>
             <h4>Email</h4>
             <h5 class="font-weight-light">Adhisaputra11@gmail.com</h5>
-            <div class="dropdown-divider"></div>
             <h4>Alamat</h4>
             <h5 class="font-weight-light">Jl. Gunung SLamet XII No.15 Denpasar Barat</h5>
-            <div class="dropdown-divider"></div>
             <h4>Jenis Kelamin</h4>
             <h5 class="font-weight-light">Laki-laki</h5>
-            <div class="dropdown-divider"></div>
-            <button type="button" class="btn btn-warning btn-lg rounded-pill mt-2">edit profil</button>
           </div>
         </div>
       </main>
@@ -82,55 +78,7 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row row-grid align-items-center mb-5">
-        <div class="col-lg-6">
-          <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-          <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
-        </div>
-        <div class="col-lg-6 text-lg-center btn-wrapper">
-          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Follow us">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Like us">
-            <i class="fa fa-facebook-square"></i>
-          </a>
-          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" data-toggle="tooltip" data-original-title="Follow us">
-            <i class="fa fa-dribbble"></i>
-          </a>
-          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">
-            <i class="fa fa-github"></i>
-          </a>
-        </div>
-      </div>
-      <hr>
-      <div class="row align-items-center justify-content-md-between">
-        <div class="col-md-6">
-          <div class="copyright">
-            &copy; 2019 <a href="https://www.creative-tim.com" target="_blank">TravelKuy</a>.
-          </div>
-        </div>
-        <div class="col-md-6">
-          <ul class="nav nav-footer justify-content-end">
-            <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank">Blog</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Core -->
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/popper/popper.min.js"></script>
-<script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-<!-- Theme JS -->
-<script src="../sassets/js/argon.min.js"></script>
+  <?php include '../navbar/footer.php' ?>
 
 </body>
 </html>

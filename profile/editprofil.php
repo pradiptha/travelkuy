@@ -52,6 +52,8 @@
       <main class="col-md-12 profile-page">
         <div class="card m-3 shadow">
           <div class="text-center m-4">
+            <h3 class="font-weight-bold">Edit Profile</h3>
+            <div class="dropdown-divider"></div>
             <h4>Nama Lengkap</h4>
             <form>
                 <div class="row  justify-content-center">
@@ -69,17 +71,6 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <input type="text" class="form-control rounded-pill text-center" id="notelp" placeholder="name@example.com" value="081234567890" >
-                        </div>
-                    </div>
-                </div>
-            </form>
-
-            <h4>Email</h4>
-            <form>
-                <div class="row  justify-content-center">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control rounded-pill text-center" id="email" placeholder="name@example.com" value="Adhisaputra11@gmail.com" >
                         </div>
                     </div>
                 </div>
@@ -108,7 +99,7 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn-warning btn-lg rounded-pill mt-2">edit profil</button>
+            <button type="button" class="btn btn-warning btn-lg rounded-pill mt-2" data-toggle="modal" data-target="#exampleModal">edit profil</button>
           </div>
         </div>
       </main>
@@ -123,55 +114,28 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row row-grid align-items-center mb-5">
-        <div class="col-lg-6">
-          <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-          <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Peringatan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Apakah anda yakin akan mengubah data profile?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Batalkan</button>
+                <button type="button" class="btn btn-success">Ya</button>
+            </div>
+            </div>
         </div>
-        <div class="col-lg-6 text-lg-center btn-wrapper">
-          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Follow us">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Like us">
-            <i class="fa fa-facebook-square"></i>
-          </a>
-          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" data-toggle="tooltip" data-original-title="Follow us">
-            <i class="fa fa-dribbble"></i>
-          </a>
-          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">
-            <i class="fa fa-github"></i>
-          </a>
-        </div>
-      </div>
-      <hr>
-      <div class="row align-items-center justify-content-md-between">
-        <div class="col-md-6">
-          <div class="copyright">
-            &copy; 2019 <a href="https://www.creative-tim.com" target="_blank">TravelKuy</a>.
-          </div>
-        </div>
-        <div class="col-md-6">
-          <ul class="nav nav-footer justify-content-end">
-            <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank">Blog</a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </footer>
-  <!-- Core -->
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/popper/popper.min.js"></script>
-<script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
 
-<!-- Theme JS -->
-<script src="../sassets/js/argon.min.js"></script>
+    <?php include '../navbar/footer.php' ?>
 
 </body>
 </html>
