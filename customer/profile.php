@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,7 +47,7 @@
       </main>
     </div>
   </div>
-  
+
   <div class="container">
     <div class="row">
       <main class="col-md-12 profile-page">
@@ -73,7 +74,7 @@
   <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
       <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-      <img style="	max-width: 500px; max-height: 500px;" src="../assets/img/theme/profil1.jpg" alt="image">
+        <img style="	max-width: 500px; max-height: 500px;" src="../assets/img/theme/profil1.jpg" alt="image">
       </div>
     </div>
   </div>
@@ -81,4 +82,5 @@
   <?php include '../nav/footer.php' ?>
 
 </body>
+
 </html>

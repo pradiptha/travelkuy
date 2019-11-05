@@ -8,23 +8,23 @@
     <meta name="author" content="Creative Tim">
     <title>TravelKuy - Liburan Biar Santuy</title>
     <!-- Favicon -->
-    <link href="./assets/img/brand/fav.png" rel="icon" type="image/png">
+    <link href="/travelkuy/assets/img/brand/fav.png" rel="icon" type="image/png">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- Icons -->
-    <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-    <link href="./assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/travelkuy/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+    <link href="/travelkuy/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Argon CSS -->
-    <link type="text/css" href="./assets/css/argon.css?v=1.1.0" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./customer/css-home.css">
+    <link type="text/css" href="/travelkuy/assets/css/argon.css?v=1.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/travelkuy/customer/css-home.css">
 </head>
 
 <body style="background-color: #E1F5FF">
     <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info pt-1 pb-1">
         <div class="container">
-            <a class="navbar-brand" href="./customer/home.php">
-                <img src="./assets/img/icons/logo1.png" height="50" alt="" alt="">
+            <a class="navbar-brand" href="/travelkuy/">
+                <img src="/travelkuy/assets/img/icons/logo1.png" height="50" alt="" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,8 +33,8 @@
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
-                            <a href="./index.html">
-                                <img alt="image" src="./assets/img/brand/blue.png">
+                            <a href="/travelkuy/index.html">
+                                <img alt="image" src="/travelkuy/assets/img/brand/blue.png">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -58,14 +58,14 @@
                             <span class="nav-link-inner--text d-lg-none">Settings</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                            <a class="dropdown-item" href="./customer/profile.php"><img src="./assets/img/theme/profil1.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
+                            <a class="dropdown-item" href="/travelkuy/customer/profile.php"><img src="/travelkuy/assets/img/theme/profil1.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./customer/histori.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
-                            <a class="dropdown-item" href="./customer/editprofil.php"><i class="ni ni-badge"></i>Edit Profil</a>
-                            <a class="dropdown-item" href="./customer/editemail.php"><i class="ni ni-ui-04"></i>Ubah Email</a>
-                            <a class="dropdown-item" href="./customer/editpassword.php"><i class="ni ni-key-25"></i>Ubah Password</a>
+                            <a class="dropdown-item" href="/travelkuy/customer/histori.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
+                            <a class="dropdown-item" href="/travelkuy/customer/editprofil.php"><i class="ni ni-badge"></i>Edit Profil</a>
+                            <a class="dropdown-item" href="/travelkuy/customer/editemail.php"><i class="ni ni-ui-04"></i>Ubah Email</a>
+                            <a class="dropdown-item" href="/travelkuy/customer/editpassword.php"><i class="ni ni-key-25"></i>Ubah Password</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./nav/login.php"><i class="ni ni-button-power"></i>Logout</a>
+                            <a class="dropdown-item" href="/travelkuy/nav/login.php"><i class="ni ni-button-power"></i>Logout</a>
                         </div>
                     </li>
                 </ul>

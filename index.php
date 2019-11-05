@@ -31,16 +31,28 @@
 						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
 					</ol>
-					<div class="carousel-inner slide-image">
+					<div class="carousel-inner slide-image h-auto">
 						<div class="carousel-item active">
-							<img src="./assets/img/icons/ki.jpg" class="d-block w-100" alt="...">
+							<img src="/travelkuy/assets/img/destinasi/danau-toba.jpg" class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item slide-image">
-							<img src="./assets/img/icons/white-city.png" class="d-block w-100" alt="...">
+							<img src="/travelkuy/assets/img/destinasi/bali2.jpg" class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item slide-image">
-							<img src="./assets/img/icons/bromo.jpg" class="d-block w-100" alt="...">
+							<img src="/travelkuy/assets/img/destinasi/bromo2.png" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item slide-image">
+							<img src="/travelkuy/assets/img/destinasi/aceh.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item slide-image">
+							<img src="/travelkuy/assets/img/destinasi/wisata-indonesia.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item slide-image">
+							<img src="/travelkuy/assets/img/destinasi/kepulauan-anambas.jpg" class="d-block w-100" alt="...">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -59,19 +71,19 @@
 				<div class="row">
 					<div class="col-sm-3 destinasi-fav lokasi">
 						<h1 class="text-center font-weight-bold text-white">ACEH</h1>
-						<img src="./assets/img/icons/aceh.jpg" class="img-thumbnail rounded alt=" ...">
+						<img src="./assets/img/destinasi/aceh.jpg" class="img-thumbnail rounded alt=" ...">
 					</div>
 					<div class="col-sm-3 destinasi-fav lokasi">
 						<h1 class="text-center font-weight-bold text-white">NTB</h1>
-						<img src="./assets/img/icons/ntb.jpg" class="img-thumbnail rounded" alt="...">
+						<img src="./assets/img/destinasi/ntb.jpg" class="img-thumbnail rounded" alt="...">
 					</div>
 					<div class="col-sm-3 destinasi-fav lokasi">
 						<h1 class="text-center font-weight-bold text-white">JOGJA</h1>
-						<img src="./assets/img/icons/jogja.jpg" class="img-thumbnail rounded" alt="...">
+						<img src="./assets/img/destinasi/jogja.jpg" class="img-thumbnail rounded" alt="...">
 					</div>
 					<div class="col-sm-3 destinasi-fav lokasi">
 						<h1 class="text-center font-weight-bold text-white">BALI</h1>
-						<img src="./assets/img/icons/bali.jpg" class="img-thumbnail rounded" alt="...">
+						<img src="./assets/img/destinasi/bali.jpg" class="img-thumbnail rounded" alt="...">
 					</div>
 				</div>
 			</div>
@@ -86,7 +98,7 @@
 						<div class="rounded-left bg-danger lama">
 							<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
 						</div>
-						<img src="./assets/img/icons/papua.jpg" class="img-thumbnail rounded-top" alt="...">
+						<img src="./assets/img/destinasi/papua.jpg" class="img-thumbnail rounded-top" alt="...">
 						<h6 class="font-weight-bold bg-white text-center">RAJA AMPAT DREAMLAND</h6>
 					</div>
 					<div class="col-sm-4 liburan-fav lokasi rounded-bottom">
@@ -96,7 +108,7 @@
 						<div class="rounded-left bg-danger lama">
 							<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
 						</div>
-						<img src="./assets/img/icons/bromo2.png" class="img-thumbnail rounded-top" alt="...">
+						<img src="./assets/img/destinasi/bromo2.png" class="img-thumbnail rounded-top" alt="...">
 						<h6 class="font-weight-bold bg-white text-center">WISATA BROMO</h6>
 					</div>
 					<a href="paket.php" class="col-sm-4 liburan-fav lokasi rounded-bottom">
@@ -106,7 +118,7 @@
 						<div class="rounded-left bg-danger lama">
 							<p class="text-center font-weight-bold">3HARI<br>2Malam</p>
 						</div>
-						<img src="./assets/img/icons/bali2.jpg" class="img-thumbnail rounded-top" alt="...">
+						<img src="./assets/img/destinasi/bali2.jpg" class="img-thumbnail rounded-top" alt="...">
 						<h6 class="font-weight-bold bg-white text-center">WISATA ALAM BALI</h6>
 						<br /><br />
 					</a>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,14 +8,14 @@
   <meta name="author" content="Creative Tim">
   <title>TravelKuy - Liburan Biar Santuy</title>
   <!-- Favicon -->
-  <link href="../assets/img/brand/fav.png" rel="icon" type="image/png">
+  <link href="/travelkuy/assets/img/brand/fav.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
-  <link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/travelkuy/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="/travelkuy/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
+  <link type="text/css" href="/travelkuy/assets/css/argon.css?v=1.1.0" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css-home.css">
 </head>
 
@@ -62,13 +63,14 @@
     </div>
   </footer>
 
-<!-- Core -->
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/popper/popper.min.js"></script>
-<script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <!-- Core -->
+  <script src="/travelkuy/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/travelkuy/assets/vendor/popper/popper.min.js"></script>
+  <script src="/travelkuy/assets/vendor/bootstrap/bootstrap.min.js"></script>
 
-<!-- Theme JS -->
-<script src="../sassets/js/argon.min.js"></script>
+  <!-- Theme JS -->
+  <script src="/travelkuy/assets/js/argon.min.js"></script>
 
 </body>
+
 </html>
