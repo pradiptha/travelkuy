@@ -42,7 +42,9 @@ img {
 	bottom: 29px;
 	left: 20px;
 }
-
+.rounded-right.bg-info.price > h5{
+	line-height: 33px;
+}
 .lama {
 	position: absolute;
 	z-index: 2;
