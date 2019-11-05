@@ -20,20 +20,22 @@
 <body style="background-color: #E1F5FF">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4 p-5 mx-auto bg-white rounded shadow" style="margin-top: 120px;">
+			<div class="col-sm-5 pt-5 pl-5 pr-5 pb-2 mx-auto bg-white rounded shadow" style="margin-top: 80px;">
 				<h3 class="text-center"><strong>LOGIN</strong></h3><br>
-				<div class="input-group mb-4">
-				  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Email">
-				</div>
-				<div class="input-group mb-5">
-				  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Password">
-				</div>
-				<div class="mb-4 d-flex justify-content-center">
-					<button class="btn btn-primary rounded-pill" type="submit">SUBMIT</button>
-				</div>
-				<div class="text-center">
-					<br><p><a href="">Buat Akun</a> | <a href="">Lupa Password</a></p>
-				</div>
+				<form>
+					<div class="input-group mb-4">
+					  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Email">
+					</div>
+					<div class="input-group mb-5">
+					  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Password">
+					</div>
+					<div class="mb-4 d-flex justify-content-center">
+						<button class="btn btn-primary rounded-pill" type="submit">SUBMIT</button>
+					</div>
+					<div class="text-center">
+						<br><p><a href="registrasi.php">Buat Akun</a> | <a href="">Lupa Password</a></p>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
