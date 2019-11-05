@@ -29,7 +29,7 @@
 					<div class="input-group mb-5">
 					  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Password">
 					</div>
-					<div class="mb-4 d-flex justify-content-center">
+					<div class="d-flex justify-content-center">
 						<button class="btn btn-primary rounded-pill" type="submit">SUBMIT</button>
 					</div>
 					<div class="text-center">

@@ -16,14 +16,11 @@
   	<!-- Argon CSS -->
   	<link rel="stylesheet" type="text/css" href="">
   	<link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
-  	<!-- DatePicker -->
-  	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/> -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css"/>
 </head>
 <body style="background-color: #E1F5FF">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-5 pt-5 pl-5 pr-5 pb-2 mx-auto bg-white rounded shadow" style="margin-top: 80px;">
+			<div class="col-sm-5 pt-5 pl-5 pr-5 pb-1 mx-auto bg-white rounded shadow" style="margin-top: 80px;">
 				<h3 class="text-center"><strong>DAFTAR AKUN</strong></h3><br>		
 				<div class="input-group mb-4">
 				  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Nama Lengkap">
@@ -36,29 +33,16 @@
 				  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Wanita">
 				  <label class="form-check-label text-primary" for="inlineRadio2">Wanita</label>
 				</div>
-				<form action="action">
-		            <div class="form-group">
-		                <input type="text" name="tanggal" class="tanggal form-control rounded-pill mb-4 btn-outline-primary" placeholder="Tanggal Lahir"/>
-		            </div>
-		        </form>
-		        <script src="assets/vendor/jquery/jquery.min.js"></script>
-				<script src="assets/vendor/bootstrap/bootstrap.js"></script>
-				<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-				<script type="text/javascript">
-				    $(document).ready(function () {
-				        $('.tanggal').datepicker({
-				            format: "dd-mm-yyyy",
-				            autoclose:true
-				        });
-				    });
-				</script>
 				<div class="input-group mb-4">
 				  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Email">
 				</div>
-				<div class="input-group mb-5">
+				<div class="input-group mb-4">
 				  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="No. Hp">
 				</div>
-				<div class="mb-4 d-flex justify-content-center">
+				<div class="form-group mb-5">
+				    <textarea class="form-control btn-outline-primary" id="exampleFormControlTextarea1" rows="3" placeholder="Alamat"></textarea>
+				</div>
+				<div class="d-flex justify-content-center">
 					<button class="btn btn-primary rounded-pill" type="submit">SUBMIT</button>
 				</div>
 				<div class="text-center">
