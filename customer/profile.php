@@ -73,7 +73,7 @@
   <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
       <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-      <img style="	max-width: 500px; max-height: 500px;" src="../assets/img/theme/profil1.jpg" alt="image">
+      <img style="	max-width: 500px; max-height: 500px;" src="../assets/img/theme/kucing.jpg" alt="image">
       </div>
     </div>
   </div>
