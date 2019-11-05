@@ -7,22 +7,22 @@
 	<meta name="author" content="Creative Tim">
 	<title>TravelKuy - Liburan Biar Santuy</title>
 	<!-- Favicon -->
-	<link href="assets/img/brand/logo-01.png" rel="icon" type="image/png">
+	<link href="../assets/img/brand/logo-01.png" rel="icon" type="image/png">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 	<!-- Icons -->
-	<link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-	<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+	<link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<!-- Argon CSS -->
 	<link rel="stylesheet" type="text/css" href="css-paket.css">
 	<link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
 <body style="background-color: #E1F5FF;">
-	<?php include 'navbar.php' ?>
+	<?php include '../navbar/navbar.php' ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 destinasi-uraian">
-				<img src="assets/img/icons/bali.jpg" class="img-thumbnail rounded">
+				<img src="../assets/img/icons/bali.jpg" class="img-thumbnail rounded">
 			</div>
 			<div class="col-sm-8 destinasi-uraian">
 				<div class="destinasi">
@@ -32,6 +32,7 @@
 					<p>Paket wisata alam yang memanjakan Anda mengelilingi bali, melihat bali, dari sudut pandang keindahan alamnya</p>
 				</div>
 				<div class="destinasi">
+					<h5>3 Hari 2 Malam</h5>
 					<h1 class="biaya-destinasi">Rp 2.500.000</h1>
 				</div>
 				<div class="tombol">
@@ -52,7 +53,7 @@
 			</div>
 			<div class="col-xs-6 col-md-8 deskripsi-destinasi">
 				<div class="btn_desk">
-					<button class="btn btn-2 btn-primary" type="button">Deskripsi</button>
+					<button class="btn btn-2 btn-primary" disabled type="button">Deskripsi</button>
 				</div>
 				<div class="penjabaran">
 					<p>Paket wisata alam Bali terbagi menjadi beberapa destinasi dan tempat peristirahatan. Adapun fasilitas yang didapat, yaitu</p>
@@ -66,5 +67,6 @@
 			</div>
 		</div>
 	</div>
+	<?php include '../navbar/footer.php'?>
 </body>
 </html>
