@@ -31,11 +31,15 @@
 				<h3>WISATA ALAM BALI</h3>
 				<p>Masukan jumlah paket yang ingin dipesan</p>
 				<h6 class="durasi-destinasi">2 hari 3 malam</h6>
-				<button type="button" value="-" class="btn minus btn-primary btn-sm bg-success float-left" data-field="quantity">-</button>
-				<span class="border border-secondary float-left box2">
-					<input type="number" value="1" name="quantity">
-				</span>
-				<button type="button" value="+" class="btn plus btn-primary btn-sm bg-success float-left" data-field="quantity">+</button>
+				<form method="post" action="">
+						<div class="hitung">
+							<button type="button" value="-" class="btn minus btn-primary btn-sm bg-success float-left" data-field="quantity">-</button>
+							<span class="border border-secondary float-left box2">
+								<input class="quantity-field" type="number" step="1" max="<?= $simpan['quantity'] ?>" value="1" name="quantity">
+							</span>
+							<button type="button" value="+" class="btn plus btn-secondary btn-sm bg-success float-left" data-field="quantity">+</button>
+						</div>
+				</form>
 			</div>
 		</div>
 		<div class="row">
@@ -90,8 +94,8 @@
 			</table>
 		</div>
 		<div class="row row-3">
-			<button class="btn btn-batal">Batalkan</button>
-			<button class="btn btn-lanjut">Lanjutkan</button>
+			<button class="btn btn-danger">Batalkan</button>
+			<button class="btn btn-success">Lanjutkan</button>
 		</div>
 	</div>
 	<?php include '../nav/footer.php' ?> 
