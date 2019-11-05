@@ -88,15 +88,15 @@
             </form>
 
             <h4>Jenis Kelamin</h4>
-            <div class="form-check">
-                <div class="d-inline mr-5">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">Laki-laki</label>
-                </div>
-                <div class="d-inline mr-3">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">Perempuan</label>
-                </div>
+            <div class="row justify-content-center">
+              <div class="form-check form-check-inline pl-5 mb-4">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Pria">
+                <label class="form-check-label text-primary" for="inlineRadio1">Pria</label>
+              </div>
+              <div class="form-check form-check-inline float-right pr-5 mb-4">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Wanita">
+                <label class="form-check-label text-primary" for="inlineRadio2">Wanita</label>
+              </div>
             </div>
 
             <button type="button" class="btn btn-warning btn-lg rounded-pill mt-2" data-toggle="modal" data-target="#exampleModal">edit profil</button>
