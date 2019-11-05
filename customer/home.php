@@ -19,7 +19,7 @@
 
 </head>
 <body style="background-color: #E1F5FF">
-	<?php include '../navbar/navbar.php' ?>
+	<?php include '../nav/navbar.php' ?>
 	<div class="container ">
 		<div class="row">
 	  		<div class="col-sm-12">
@@ -97,7 +97,7 @@
 				    	<img src="../assets/img/icons/bromo2.png" class="img-thumbnail rounded-top" alt="...">
 				    	<h6 class="font-weight-bold bg-white text-center">WISATA BROMO</h6>
 				    </div>
-				    <div class="col-sm-4 liburan-fav lokasi rounded-bottom">
+					<a href="paket.php" class="col-sm-4 liburan-fav lokasi rounded-bottom">
 				  		<div class="rounded-right bg-info price">
 				  			<h5 class="text-center font-weight-bold">IDR 3500000</h5>
 				  		</div>
@@ -107,24 +107,15 @@
 				    	<img src="../assets/img/icons/bali2.jpg" class="img-thumbnail rounded-top" alt="...">
 				    	<h6 class="font-weight-bold bg-white text-center">WISATA ALAM BALI</h6>
 				    	<br/><br/>
-				    </div>
+				    </a>
+				    
 				</div>
 			</div>
 		</div>
 	</div>
   </div>
-  <!-- Core -->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/popper/popper.min.js"></script>
-  <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="../assets/vendor/headroom/headroom.min.js"></script>
-  <!-- Optional JS -->
-  <script src="../assets/vendor/onscreen/onscreen.min.js"></script>
-  <script src="../assets/vendor/nouislider/js/nouislider.min.js"></script>
-  <script src="../assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- Argon JS -->
-  <script src="../assets/js/argon.js?v=1.1.0"></script>
 
+<?php include '../nav/footer.php' ?>
 
 </body>
 </html>

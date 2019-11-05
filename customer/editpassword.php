@@ -19,32 +19,32 @@
 </head>
  
 <body style="background-color: #E1F5FF">
-  <?php include '../navbar/navbar.php' ?>
-  
+  <?php include '../nav/navbar.php' ?>
+
   <div class="container">
     <div class="row">
       <main class="col-md-12 profile-page">
         <div class="card m-3 shadow">
           <div class="text-center m-4">
-            <h3 class="font-weight-bold">Ubah Email</h3>
+            <h3 class="font-weight-bold">Ubah Password</h3>
             <div class="dropdown-divider"></div>
-            <h4>New Email</h4>
+            <h4>New Password</h4>
             <form>
                 <div class="row  justify-content-center">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control rounded-pill text-center" id="nama" placeholder="masukkan email baru" >
+                            <input type="password" class="form-control rounded-pill text-center" id="nama" placeholder="masukkan password baru" >
                         </div>
                     </div>
                 </div>
             </form>
             
-            <h4>Password</h4>
+            <h4>Re-type Password</h4>
             <form>
                 <div class="row  justify-content-center">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="password" class="form-control rounded-pill text-center" id="notelp" placeholder="masukkan password anda saat ini" >
+                            <input type="password" class="form-control rounded-pill text-center" id="notelp" placeholder="masukkan ulang password" >
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Apakah anda yakin akan mengubah Email?
+                Apakah anda yakin akan mengubah password?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Batalkan</button>
@@ -79,7 +79,7 @@
     </div>
 
 
-    <?php include '../navbar/footer.php' ?>
+    <?php include '../nav/footer.php' ?>
 
 </body>
 </html>

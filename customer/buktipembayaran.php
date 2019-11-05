@@ -24,7 +24,7 @@
 </head>
 
 <body style="background-color: #E1F5FF">
-	<?php include '../navbar/navbar.php' ?>
+	<?php include '../nav/navbar.php' ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 bg-white mt-3 p-3 mb-2 rounded">
