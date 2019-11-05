@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +18,7 @@
   <link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css-home.css">
 </head>
- 
+
 <body style="background-color: #E1F5FF">
   <?php include '../nav/navbar.php' ?>
   <div class="container">
@@ -31,7 +32,7 @@
                   <div class="col-md-auto">
                     <div class="card-profile-image">
                       <a href="#">
-                        <img src="../assets/img/theme/profil1.jpg" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
+                        <img src="/travelKuy/assets/img/theme/kucing.jpg" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
                       </a>
                     </div>
                   </div>
@@ -46,7 +47,7 @@
       </main>
     </div>
   </div>
-  
+
   <div class="container">
     <div class="row">
       <main class="col-md-12 profile-page">
@@ -63,7 +64,7 @@
   <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
       <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-      <img src="../assets/img/theme/kucing.jpg" alt="image">
+        <img src="../assets/img/theme/kucing.jpg" alt="image">
       </div>
     </div>
   </div>
@@ -71,4 +72,5 @@
   <?php include '../nav/footer.php' ?>
 
 </body>
+
 </html>

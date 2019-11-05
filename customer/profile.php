@@ -32,7 +32,7 @@
                   <div class="col-md-auto">
                     <div class="card-profile-image">
                       <a href="#">
-                        <img src="../assets/img/theme/profil1.jpg" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
+                        <img src="/travelKuy/assets/img/theme/kucing.jpg" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
                       </a>
                     </div>
                   </div>
@@ -74,11 +74,7 @@
   <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
       <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-<<<<<<< HEAD
-        <img style="	max-width: 500px; max-height: 500px;" src="../assets/img/theme/profil1.jpg" alt="image">
-=======
-      <img style="	max-width: 500px; max-height: 500px;" src="../assets/img/theme/kucing.jpg" alt="image">
->>>>>>> 5d016725e29be1c0e6fd60478e7eefef17693531
+        <img style="	max-width: 500px; max-height: 500px;" src="../assets/img/theme/kucing.jpg" alt="image">
       </div>
     </div>
   </div>

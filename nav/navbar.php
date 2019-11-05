@@ -58,7 +58,7 @@
                             <span class="nav-link-inner--text d-lg-none">Settings</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                            <a class="dropdown-item" href="./customer/profile.php"><img src="./assets/img/theme/kucing.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
+                            <a class="dropdown-item" href="/travelkuy/customer/profile.php"><img src="/travelKuy/assets/img/theme/kucing.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/travelkuy/customer/histori.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
                             <a class="dropdown-item" href="/travelkuy/customer/editprofil.php"><i class="ni ni-badge"></i>Edit Profil</a>
