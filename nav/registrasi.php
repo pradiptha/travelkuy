@@ -7,15 +7,15 @@
   	<meta name="author" content="Creative Tim">
   	<title>TravelKuy - Liburan Biar Santuy</title>
   	<!-- Favicon -->
-  	<link href="assets/img/brand/fav.png" rel="icon" type="image/png">
+  	<link href="../assets/img/brand/fav.png" rel="icon" type="image/png">
   	<!-- Fonts -->
   	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   	<!-- Icons -->
-  	<link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  	<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  	<link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  	<link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   	<!-- Argon CSS -->
   	<link rel="stylesheet" type="text/css" href="">
-  	<link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
+  	<link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
 <body style="background-color: #E1F5FF">
 	<div class="container">
@@ -42,9 +42,9 @@
 				<div class="form-group mb-5">
 				    <textarea class="form-control btn-outline-primary" id="exampleFormControlTextarea1" rows="3" placeholder="Alamat"></textarea>
 				</div>
-				<div class="d-flex justify-content-center">
+				<a href="login.php" class="d-flex justify-content-center">
 					<button class="btn btn-primary rounded-pill" type="submit">SUBMIT</button>
-				</div>
+				</a>
 				<div class="text-center">
 					<br><p>Sudah punya akun? <a href="login.php">Login</a></p>
 				</div>

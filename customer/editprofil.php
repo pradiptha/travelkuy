@@ -19,7 +19,7 @@
 </head>
  
 <body style="background-color: #E1F5FF">
-  <?php include '../navbar/navbar.php' ?>
+  <?php include '../nav/navbar.php' ?>
   <div class="container">
     <div class="row">
       <main class="col-md-12 profile-page">
@@ -135,7 +135,7 @@
         </div>
     </div>
 
-    <?php include '../navbar/footer.php' ?>
+    <?php include '../nav/footer.php' ?>
 
 </body>
 </html>

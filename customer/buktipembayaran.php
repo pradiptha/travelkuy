@@ -18,7 +18,7 @@
   	<link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
 <body style="background-color: #E1F5FF">
-	<?php include '../navbar/navbar.php' ?>
+	<?php include '../nav/navbar.php' ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 bg-white mt-3 p-3">
@@ -42,5 +42,6 @@
 			</div>
 		</div>
 	</div>
+	<?php include '../nav/footer.php' ?>
 </body>
 </html>

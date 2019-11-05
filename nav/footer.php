@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <footer class="footer">
+  <footer class="footer mt-4">
     <div class="container">
       <div class="row row-grid align-items-center mb-5">
         <div class="col-lg-6">
@@ -45,7 +45,7 @@
       <div class="row align-items-center justify-content-md-between">
         <div class="col-md-6">
           <div class="copyright">
-            &copy; 2019 <a href="https://www.creative-tim.com" target="_blank">TravelKuy</a>.
+            &copy; 2019 <a href="#" target="_blank">TravelKuy</a>
           </div>
         </div>
         <div class="col-md-6">

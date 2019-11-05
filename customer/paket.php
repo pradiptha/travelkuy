@@ -18,7 +18,7 @@
 	<link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
 <body style="background-color: #E1F5FF;">
-	<?php include '../navbar/navbar.php' ?>
+	<?php include '../nav/navbar.php' ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 destinasi-uraian">
@@ -35,9 +35,10 @@
 					<h5>3 Hari 2 Malam</h5>
 					<h1 class="biaya-destinasi">Rp 2.500.000</h1>
 				</div>
-				<div class="tombol">
-				<button class="btn btn-1 btn-primary" type="button">Pesan Sekarang</button>
-				</div>
+				<a href="detailpaket.php">
+					<button class="btn btn-1 btn-primary m-4 rounded-pill" type="button">Pesan Sekarang</button>
+				</a>
+				
 			</div>
 		</div>
 		<br>
@@ -67,6 +68,6 @@
 			</div>
 		</div>
 	</div>
-	<?php include '../navbar/footer.php'?>
+	<?php include '../nav/footer.php'?>
 </body>
 </html>

@@ -22,7 +22,7 @@
 <body style="background-color: #E1F5FF">
   <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-info pt-1 pb-1">
       <div class="container">
-          <a class="navbar-brand" href="../home/home.php">
+          <a class="navbar-brand" href="../customer/home.php">
               <img src="../assets/img/icons/logo1.png" height="50" alt="" alt="">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,14 +57,14 @@
                   <span class="nav-link-inner--text d-lg-none">Settings</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                  <a class="dropdown-item" href="../profile/profile.php"><img src="../assets/img/theme/profil1.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
+                  <a class="dropdown-item" href="../customer/profile.php"><img src="../assets/img/theme/profil1.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;">PROFIL</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="../profile/histori.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
-                  <a class="dropdown-item" href="../profile/editprofil.php"><i class="ni ni-badge"></i>Edit Profil</a>
-                  <a class="dropdown-item" href="../profile/editemail.php"><i class="ni ni-ui-04"></i>Ubah Email</a>
-                  <a class="dropdown-item" href="../profile/editpassword.php"><i class="ni ni-key-25"></i>Ubah Password</a>
+                  <a class="dropdown-item" href="../customer/histori.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
+                  <a class="dropdown-item" href="../customer/editprofil.php"><i class="ni ni-badge"></i>Edit Profil</a>
+                  <a class="dropdown-item" href="../customer/editemail.php"><i class="ni ni-ui-04"></i>Ubah Email</a>
+                  <a class="dropdown-item" href="../customer/editpassword.php"><i class="ni ni-key-25"></i>Ubah Password</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"><i class="ni ni-button-power"></i>Logout</a>
+                  <a class="dropdown-item" href="../nav/login.php"><i class="ni ni-button-power"></i>Logout</a>
               </div>
               </li>
           </ul>

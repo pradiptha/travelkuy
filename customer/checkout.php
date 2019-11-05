@@ -18,7 +18,7 @@
   <link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
 <body style="background-color: #E1F5FF">
-	<?php include '../navbar/navbar.php' ?>
+	<?php include '../nav/navbar.php' ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 bg-white mt-3 p-3">
@@ -58,17 +58,8 @@
 			</div>
 		</div>
 	</div>
-	 <!-- Core -->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/popper/popper.min.js"></script>
-  <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="../assets/vendor/headroom/headroom.min.js"></script>
-  <!-- Optional JS -->
-  <script src="../assets/vendor/onscreen/onscreen.min.js"></script>
-  <script src="../assets/vendor/nouislider/js/nouislider.min.js"></script>
-  <script src="../assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- Argon JS -->
-  <script src="../assets/js/argon.js?v=1.1.0"></script>
+
+<?php include '../nav/footer.php' ?>
 
 </body>
 </html>

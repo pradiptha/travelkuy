@@ -7,15 +7,15 @@
   	<meta name="author" content="Creative Tim">
   	<title>TravelKuy - Liburan Biar Santuy</title>
   	<!-- Favicon -->
-  	<link href="assets/img/brand/fav.png" rel="icon" type="image/png">
+  	<link href="../assets/img/brand/fav.png" rel="icon" type="image/png">
   	<!-- Fonts -->
   	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   	<!-- Icons -->
-  	<link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  	<link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  	<link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  	<link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   	<!-- Argon CSS -->
   	<link rel="stylesheet" type="text/css" href="">
-  	<link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
+  	<link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
 <body style="background-color: #E1F5FF">
 	<div class="container">
@@ -29,9 +29,9 @@
 					<div class="input-group mb-5">
 					  	<input type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Password">
 					</div>
-					<div class="d-flex justify-content-center">
-						<button class="btn btn-primary rounded-pill" type="submit">SUBMIT</button>
-					</div>
+					<a href="../customer/home.php"  class="d-flex justify-content-center">
+					<button type="button" class="btn btn-primary rounded-pill">SUBMIT</button>
+					</a>
 					<div class="text-center">
 						<br><p><a href="registrasi.php">Buat Akun</a> | <a href="">Lupa Password</a></p>
 					</div>
