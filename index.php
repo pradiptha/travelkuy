@@ -111,7 +111,7 @@
 						<img src="./assets/img/destinasi/bromo2.png" class="img-thumbnail rounded-top" alt="...">
 						<h6 class="font-weight-bold bg-white text-center">WISATA BROMO</h6>
 					</div>
-					<a href="paket.php" class="col-sm-4 liburan-fav lokasi rounded-bottom">
+					<a href="/travelkuy/customer/paket.php" class="col-sm-4 liburan-fav lokasi rounded-bottom">
 						<div class="rounded-right bg-info price">
 							<h5 class="text-center font-weight-bold">IDR 3500000</h5>
 						</div>

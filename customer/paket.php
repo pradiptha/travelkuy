@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,12 +18,13 @@
 	<link rel="stylesheet" type="text/css" href="css-paket.css">
 	<link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
+
 <body style="background-color: #E1F5FF;">
 	<?php include '../nav/navbar.php' ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 destinasi-uraian">
-				<img src="../assets/img/icons/bali.jpg" class="img-thumbnail rounded">
+				<img src="/travelkuy/assets/img/destinasi/bali.jpg" class="img-thumbnail rounded">
 			</div>
 			<div class="col-sm-8 destinasi-uraian">
 				<div class="destinasi">
@@ -38,7 +40,7 @@
 				<a href="detailpaket.php">
 					<button class="btn btn-1 btn-primary m-4 rounded-pill" type="button">Pesan Sekarang</button>
 				</a>
-				
+
 			</div>
 		</div>
 		<br>
@@ -46,10 +48,10 @@
 			<div class="col-xs-6 col-md-4">
 				<div class="tl">
 					<h3>TIMELINE</h3>
-					<hr class="hr1">	
+					<hr class="hr1">
 				</div>
 				<div class="garis">
-					
+
 				</div>
 			</div>
 			<div class="col-xs-6 col-md-8 deskripsi-destinasi">
@@ -68,6 +70,7 @@
 			</div>
 		</div>
 	</div>
-	<?php include '../nav/footer.php'?>
+	<?php include '../nav/footer.php' ?>
 </body>
+
 </html>
