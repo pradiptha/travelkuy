@@ -1,3 +1,23 @@
+<?php
+
+include "../php/config.php";
+
+if (isset($_SESSION['id'])) {
+  $id = $_SESSION['id'];
+  $sql = "SELECT * FROM user INNER JOIN customer USING(id_user) WHERE id_user='$id'";
+  $data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+  $nama_lengkap = $data['nama_customer'];
+  $no_telp = $data['telp_customer'];
+  $email = $data['email'];
+  $alamat = $data['alamat'];
+  $jenis_kelamin = $data['jk_customer'];
+  // $i = 1;
+} else {
+  header("location: ../index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +58,7 @@
                   </div>
                 </div>
                 <div class="text-center mb-4" style="margin-top : 150px;">
-                  <h3>Adi Saputro Wibowo</h3>
+                  <h3><?= $_SESSION['username'] ?></h3>
                 </div>
               </div>
             </div>
@@ -56,15 +76,15 @@
             <h3 class="font-weight-bold">PROFIL</h3>
             <div class="dropdown-divider"></div>
             <h4>Nama Lengkap</h4>
-            <h5 class="font-weight-light">Adi Saputro Wibowo</h5>
+            <h5 class="font-weight-light"><?= $nama_lengkap ?></h5>
             <h4>Nomor telepon</h4>
-            <h5 class="font-weight-light">081234567890</h5>
+            <h5 class="font-weight-light"><?= $no_telp ?></h5>
             <h4>Email</h4>
-            <h5 class="font-weight-light">Adhisaputra11@gmail.com</h5>
+            <h5 class="font-weight-light"><?= $email ?></h5>
             <h4>Alamat</h4>
-            <h5 class="font-weight-light">Jl. Gunung SLamet XII No.15 Denpasar Barat</h5>
+            <h5 class="font-weight-light"><?= $alamat ?></h5>
             <h4>Jenis Kelamin</h4>
-            <h5 class="font-weight-light">Laki-laki</h5>
+            <h5 class="font-weight-light"><?= $jenis_kelamin ?></h5>
           </div>
         </div>
       </main>

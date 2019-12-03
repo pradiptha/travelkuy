@@ -1,3 +1,9 @@
+<?php
+
+include "php/config.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +23,6 @@
 	<!-- Argon CSS -->
 	<link rel="stylesheet" type="text/css" href="css-home.css">
 	<link type="text/css" href="./assets/css/argon.css?v=1.1.0" rel="stylesheet">
-
 </head>
 
 <body style="background-color: #E1F5FF">
