@@ -1,5 +1,4 @@
 <?php
-
 include "php/config.php";
 
 ?>
@@ -187,7 +186,3 @@ include "php/config.php";
 	</div>
 
 	<?php include './nav/footer.php' ?>
-
-</body>
-
-</html>
