@@ -126,7 +126,7 @@ if (isset($_POST['submit'])) {
 							<div class="text-center text-muted mb-4">
 								<small>Or sign up with credentials</small>
 							</div>
-							<form class="needs-validation" novalidate method="post">
+							<form form class="form-signin" method="post" id="register-form">
 								<div class="form-group">
 									<div class="input-group input-group-alternative mb-3">
 										<div class="input-group-prepend">
