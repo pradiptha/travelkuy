@@ -39,57 +39,72 @@ if (isset($_SESSION['id'])) {
   <link rel="stylesheet" type="text/css" href="css-home.css">
 </head>
 
-<body style="background-color: #E1F5FF">
+<body>
   <?php include '../nav/navbar.php' ?>
-  <div class="container">
-    <div class="row">
-      <main class="col-md-12 profile-page">
-        <section class="section pb-0">
-          <div class="container">
-            <div class="card card-profile shadow mt-4">
-              <div class="px-4">
-                <div class="row justify-content-center">
-                  <div class="col-md-auto">
-                    <div class="card-profile-image">
-                      <a href="#">
-                        <img src="/travelKuy/assets/img/theme/kucing.jpg" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
-                      </a>
+  <section class="section section-lg section-shaped pb-250">
+    <div class="shape shape-style-1 bg-gradient-info shape-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="container">
+      <div class="row">
+        <main class="col-md-12 profile-page">
+          <section class="section pb-0">
+            <div class="container">
+              <div class="card card-profile shadow mt-4">
+                <div class="px-4">
+                  <div class="row justify-content-center">
+                    <div class="col-md-auto">
+                      <div class="card-profile-image">
+                        <a href="#">
+                          <img src="/travelKuy/assets/img/theme/kucing.jpg" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="text-center mb-4" style="margin-top : 150px;">
-                  <h3><?= $_SESSION['username'] ?></h3>
+                  <div class="text-center mb-4" style="margin-top : 150px;">
+                    <h3><?= $_SESSION['username'] ?></h3>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="row">
-      <main class="col-md-12 profile-page">
-        <div class="card m-3 shadow">
-          <div class="text-center m-4">
-            <h3 class="font-weight-bold">PROFIL</h3>
-            <div class="dropdown-divider"></div>
-            <h4>Nama Lengkap</h4>
-            <h5 class="font-weight-light"><?= $nama_lengkap ?></h5>
-            <h4>Nomor telepon</h4>
-            <h5 class="font-weight-light"><?= $no_telp ?></h5>
-            <h4>Email</h4>
-            <h5 class="font-weight-light"><?= $email ?></h5>
-            <h4>Alamat</h4>
-            <h5 class="font-weight-light"><?= $alamat ?></h5>
-            <h4>Jenis Kelamin</h4>
-            <h5 class="font-weight-light"><?= $jenis_kelamin ?></h5>
+    <div class="container">
+      <div class="row">
+        <main class="col-md-12 profile-page">
+          <div class="card m-3 shadow">
+            <div class="text-center m-4">
+              <h3 class="font-weight-bold">PROFIL</h3>
+              <div class="dropdown-divider"></div>
+              <h4>Nama Lengkap</h4>
+              <h5 class="font-weight-light"><?= $nama_lengkap ?></h5>
+              <h4>Nomor telepon</h4>
+              <h5 class="font-weight-light"><?php echo ($no_telp != '' ? $no_telp : 'Empty'); ?></h5>
+              <h4>Email</h4>
+              <h5 class="font-weight-light"><?= $email ?></h5>
+              <h4>Alamat</h4>
+              <h5 class="font-weight-light"><?php echo ($alamat != '' ? $alamat : 'Empty'); ?></h5>
+              <h4>Jenis Kelamin</h4>
+              <h5 class="font-weight-light"><?php echo ($jenis_kelamin != '' ? $jenis_kelamin : 'Empty'); ?></h5>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
-  </div>
+  </section>
+
+
 
   <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">

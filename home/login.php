@@ -110,84 +110,135 @@ if (isset($_POST['submit'])) {
 							</div>
 						</div>
 						<div class="card-body px-lg-5 py-lg-3">
-                <div class="text-center text-muted mb-4">
-                  <small>Or sign in with credentials</small>
-                </div>
-                <form class="needs-validation" novalidate method="post">
-                  <div class="form-group mb-3">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                      </div>
-					  <input name="email" class="form-control" placeholder="Email" type="email" required>
-					  <div class="invalid-feedback">
-										Please provide a valid email.
+							<div class="text-center text-muted mb-4">
+								<small>Or sign in with credentials</small>
+							</div>
+							<form class="form-signin" method="post" id="login-form">
+								<div id="error">
+								</div>
+								<div class="form-group">
+									<div class="input-group input-group-alternative mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="ni ni-hat-3"></i></span>
 										</div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group input-group-alternative">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                      </div>
-					  <input name="password" class="form-control" placeholder="Password" type="password" required>
-					  <div class="invalid-feedback">
-										Please provide a valid password.
+										<input type="text" class="form-control" placeholder="Username" name="user_name" id="user_name">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="input-group input-group-alternative">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
 										</div>
-                    </div>
-                  </div>
-                  <div class="custom-control custom-control-alternative custom-checkbox my-4">
-                    <input class="custom-control-input" id="customCheckLogin" type="checkbox">
-                    <label class="custom-control-label" for="customCheckLogin">
-                      <span>Remember me</span>
-                    </label>
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary my-2">Sign in</button>
-                  </div>
-                </form>
-              </div>
+										<input type="password" class="form-control" placeholder="Password" name="password" id="password">
+									</div>
+								</div>
+								<hr />
+
+								<div class="form-group text-center">
+									<button type="submit" name="btn-save" id="btn-submit" class="btn btn-primary">Sign In</button>
+								</div>
+							</form>
+						</div>
 					</div>
 					<div class="row mt-3">
-					<div class="col-6">
-                <a href="#" class="text-light"><small>Forgot password?</small></a>
-              </div>
-              <div class="col-6 text-right">
-                <a href="register.php" class="text-light"><small>Create new account</small></a>
-              </div>
-            </div>
-				</div>			
+						<div class="col-6">
+							<a href="#" class="text-light"><small>Forgot password?</small></a>
+						</div>
+						<div class="col-6 text-right">
+							<a href="register.php" class="text-light"><small>Create new account</small></a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Core -->
-	<script src="/travelkuy/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="/travelkuy/assets/vendor/popper/popper.min.js"></script>
-  <script src="/travelkuy/assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-  <!-- Theme JS -->
-  <script src="/travelkuy/assets/js/argon.min.js"></script>
-
+	<script src="js/jquery.min.js"></script>
+	<script src="/travelkuy/assets/vendor/popper/popper.min.js"></script>
+	<script src="/travelkuy/assets/vendor/bootstrap/bootstrap.min.js"></script>
+	<!-- Theme JS -->
+	<!-- <script src="/travelkuy/assets/js/argon.min.js"></script> -->
+	<script type="text/javascript" src="/travelkuy/assets/js/jquery.validate.min.js"></script>
 	<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script>
+		$('document').ready(function() {
+			/* validation */
+			$("#login-form").validate({
+				// errorPlacement: function(error, element) {
+				// 	error.appendTo(element.parent("input"));
+				// },
+				rules: {
+					user_name: {
+						required: true,
+						minlength: 3
+					},
+					user_password: {
+						required: true,
+						minlength: 8,
+						maxlength: 15
+					},
+				},
+				messages: {
+					user_name: "Enter a Valid Username",
+					user_password: {
+						required: "Provide a Password",
+						minlength: "Password Needs To Be Minimum of 8 Characters"
+					},
+				},
+				submitHandler: submitForm
+			});
+			/* validation */
+
+			/* form submit */
+			function submitForm() {
+				var data = $("#login-form").serialize();
+
+				$.ajax({
+
+					type: 'POST',
+					url: '/travelkuy/php/login.php?act=login',
+					data: data,
+					beforeSend: function() {
+						$("#error").fadeOut();
+						$("#btn-submit").html('sending ...');
+					},
+					success: function(data) {
+						if (data == "error1") {
+
+							$("#error").fadeIn(1000, function() {
+								$("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; Sorry username doesn\'t match !</div>');
+								$("#btn-submit").html('Sign In');
+							});
+							setTimeout('$("#error").fadeOut(1000)', 5000);
+						} else if (data == "error2") {
+							$("#error").fadeIn(1000, function() {
+								$("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; Sorry password doesn\'t match !</div>');
+								$("#btn-submit").html('Sign In');
+							});
+							setTimeout('$("#error").fadeOut(1000)', 5000);
+						} else {
+							$("#error").fadeIn(1000, function() {
+								$("#error").html('<div class="alert alert-success"> Login Success !</div>');
+								$("#btn-submit").html('Sign In');
+								$("#btn-submit").html('Redirecting...');
+							});
+							setTimeout('$("#error").fadeOut(1000)', 5000);
+							if (data == 0) {
+								setTimeout('window.location.href = "/travelkuy/"', 2000);
+							} else if (data == 1) {
+								setTimeout('window.location.href = "/travelkuy/"', 2000);
+							} else if (data == 2) {
+								setTimeout('window.location.href = "/travelkuy/"', 2000);
+							}
+						}
+					}
+				});
+				return false;
+			}
+			/* form submit */
+
+		});
+	</script>
 </body>
 
 </html>
