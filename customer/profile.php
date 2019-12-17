@@ -2,6 +2,12 @@
 
 include "../php/config.php";
 
+if (isset($_GET['view'])) {
+  $view = $_GET['view'];
+} else {
+  $view = 'profile';
+}
+
 if (isset($_SESSION['id'])) {
   $id = $_SESSION['id'];
   $sql = "SELECT * FROM user INNER JOIN customer USING(id_user) WHERE id_user='$id'";
@@ -11,7 +17,6 @@ if (isset($_SESSION['id'])) {
   $email = $data['email'];
   $alamat = $data['alamat'];
   $jenis_kelamin = $data['jk_customer'];
-  // $i = 1;
 } else {
   header("location: ../index.php");
 }
@@ -70,7 +75,9 @@ if (isset($_SESSION['id'])) {
                     </div>
                   </div>
                   <div class="text-center mb-4" style="margin-top : 150px;">
-                    <h3><?= $_SESSION['username'] ?></h3>
+                    <a href="profile.php">
+                      <h3><?= $_SESSION['username'] ?></h3>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -82,24 +89,7 @@ if (isset($_SESSION['id'])) {
 
     <div class="container">
       <div class="row">
-        <main class="col-md-12 profile-page">
-          <div class="card m-3 shadow">
-            <div class="text-center m-4">
-              <h3 class="font-weight-bold">PROFIL</h3>
-              <div class="dropdown-divider"></div>
-              <h4>Nama Lengkap</h4>
-              <h5 class="font-weight-light"><?= $nama_lengkap ?></h5>
-              <h4>Nomor telepon</h4>
-              <h5 class="font-weight-light"><?php echo ($no_telp != '' ? $no_telp : 'Empty'); ?></h5>
-              <h4>Email</h4>
-              <h5 class="font-weight-light"><?= $email ?></h5>
-              <h4>Alamat</h4>
-              <h5 class="font-weight-light"><?php echo ($alamat != '' ? $alamat : 'Empty'); ?></h5>
-              <h4>Jenis Kelamin</h4>
-              <h5 class="font-weight-light"><?php echo ($jenis_kelamin != '' ? $jenis_kelamin : 'Empty'); ?></h5>
-            </div>
-          </div>
-        </main>
+        <?php include 'content.php' ?>
       </div>
     </div>
   </section>

@@ -41,10 +41,9 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
                                     <a class="dropdown-item" href="/travelkuy/customer/profile.php"><img src="/travelKuy/assets/img/theme/kucing.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;"><?= $_SESSION['username'] ?></a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/travelkuy/customer/histori.php"><i class="ni ni-calendar-grid-58"></i>Histori</a>
-                                    <a class="dropdown-item" href="/travelkuy/customer/editprofil.php"><i class="ni ni-badge"></i>Edit Profil</a>
-                                    <a class="dropdown-item" href="/travelkuy/customer/editemail.php"><i class="ni ni-ui-04"></i>Ubah Email</a>
-                                    <a class="dropdown-item" href="/travelkuy/customer/editpassword.php"><i class="ni ni-key-25"></i>Ubah Password</a>
+                                    <a class="dropdown-item" href="/travelkuy/customer/profile.php?view=history"><i class="ni ni-calendar-grid-58"></i>Histori</a>
+                                    <a class="dropdown-item" href="/travelkuy/customer/profile.php?view=edit_email"><i class="ni ni-ui-04"></i>Edit Email</a>
+                                    <a class="dropdown-item" href="/travelkuy/customer/profile.php?view=edit_password"><i class="ni ni-key-25"></i>Edit Password</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/travelkuy/php/login.php?act=logout"><i class="ni ni-button-power"></i>Logout</a>
                                 </div>

@@ -286,7 +286,7 @@
 								$("#btn-submit").html('Signing Up');
 							});
 							setTimeout('$("#error").fadeOut(1000)', 5000);
-							setTimeout('$(".form-signin").fadeOut(500, function(){ $(".signin-form").load("login.php"); }); ', 3000);
+							setTimeout('window.location.href = "login.php"', 2000);
 						} else {
 							$("#error").fadeIn(1000, function() {
 
