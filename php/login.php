@@ -15,16 +15,20 @@ if (isset($_GET['act'])) {
 
         $password = $data['password'];
         $tingkatan = $data["tingkatan"];
+        $id = $data['id_user'];
 
         if ($data) {
             if (password_verify($user_password, $password)) {
                 $_SESSION['username'] = $_POST['user_name'];
-                $_SESSION['id'] = $data['id_user'];
+                $_SESSION['id'] = $id;
                 if ($tingkatan == 0) {
                     $_SESSION['tingkatan'] = $tingkatan;
                     echo '0';
                 } else if ($tingkatan == 1) {
+                    $sql = "SELECT * FROM partner_hotel where id_user='$id'";
+                    $data_ph = mysqli_fetch_assoc(mysqli_query($conn, $sql));
                     $_SESSION['tingkatan'] = $tingkatan;
+                    $_SESSION['id_ph'] = $data_ph['id_ph'];
                     echo '1';
                 } else if ($tingkatan == 2) {
                     $_SESSION['tingkatan'] = $tingkatan;
@@ -53,7 +57,7 @@ if (isset($_GET['act'])) {
             if ($role == 0) {
                 $sql1 = "INSERT INTO customer(id_user,nama_customer,foto_profil) VALUES ('$last_id','$user_name','nophoto.png')";
             } elseif ($role == 1) {
-                $sql1 = "INSERT INTO `admin`(`id_user`, `nama_admin`, `status`) VALUES ('$last_id','$user_name','0')";
+                $sql1 = "INSERT INTO `partner_hotel`(`id_user`, `nama_ph`, `status`) VALUES ('$last_id','$user_name','0')";
                 
             }
             if (!mysqli_query($conn, $sql1)) {
