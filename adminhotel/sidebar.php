@@ -39,10 +39,10 @@
 						<img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 					</div>
 					<div class="info">
-						<a href="dashboard.php" class="d-block">Alexander Pierce</a>
+						<a href="hotelall.php" class="d-block">Alexander Pierce</a>
 					</div>
 					<div class="nav-item info">
-						<a href="profil.php">
+						<a href="" type="button" data-toggle="modal" data-target="#editprofil">
 							<i class="far fa-edit"></i>
 						</a>
 					</div>
@@ -67,7 +67,7 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a href="dashboard2.php" class="nav-link">
+									<a href="#" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Jimbaran Bay</p>
 									</a>
@@ -85,6 +85,52 @@
 			</div>
 			<!-- /.sidebar -->
 		</aside>
+
+		<!-- modal edit profil-->
+		<div class="modal fade" id="editprofil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Edit Profil</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="card-body">
+								<div class="tab-content">
+									<form class="form-horizontal">
+								<div class="form-group row">
+									<label for="inputName" class="col-sm-2 col-form-label">Nama</label>
+									<div class="col-sm-10">
+										<input type="email" class="form-control" id="inputName" placeholder="Nama">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="inputExperience" class="col-sm-2 col-form-label">Telp</label>
+									<div class="col-sm-10">
+										<input class="form-control" id="inputExperience" placeholder="Telp">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="inputName2" class="col-sm-2 col-form-label">Foto KTP</label>
+									<div class="col-sm-10">
+										<input type="file" class="form-control" id="inputGroupFile01">
+									</div>
+								</div>
+							</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

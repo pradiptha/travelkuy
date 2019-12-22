@@ -111,7 +111,6 @@
 						</div>
 						<!-- ./col -->
 					</div>
-					
 				</div>
 			</section>
 		</div>
@@ -130,47 +129,39 @@
 								<div class="tab-content">
 									<form class="form-horizontal">
 										<div class="form-group row">
-											<label for="inputName" class="col-sm-2 col-form-label">Name</label>
+											<label for="inputName" class="col-sm-2 col-form-label">Nama</label>
 											<div class="col-sm-10">
-												<input type="email" class="form-control" id="inputName" placeholder="Name">
+												<input type="email" class="form-control" id="inputName" placeholder="Nama">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+											<label for="inputExperience" class="col-sm-2 col-form-label">Biaya</label>
 											<div class="col-sm-10">
-												<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+												<input class="form-control" id="inputExperience" placeholder="Biaya">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label for="inputName2" class="col-sm-2 col-form-label">Name</label>
+											<label for="inputExperience" class="col-sm-2 col-form-label">Jumlah Kamar</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputName2" placeholder="Name">
+												<input class="form-control" id="inputExperience" placeholder="Jumlah kamar">
 											</div>
 										</div>
 										<div class="form-group row">
-											<label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
+											<label for="inputName2" class="col-sm-2 col-form-label">Lokasi</label>
 											<div class="col-sm-10">
-												<textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+												<textarea type="text" class="form-control" id="inputName2" placeholder="Lokasi"></textarea>
 											</div>
 										</div>
 										<div class="form-group row">
-											<label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
+											<label for="inputEmail" class="col-sm-2 col-form-label">Deskripsi</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+												<textarea type="email" class="form-control" id="inputEmail" placeholder="Deskripsi"></textarea>
 											</div>
 										</div>
 										<div class="form-group row">
-											<div class="offset-sm-2 col-sm-10">
-												<div class="checkbox">
-													<label>
-														<input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-													</label>
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<div class="offset-sm-2 col-sm-10">
-												<button type="submit" class="btn btn-danger">Submit</button>
+											<label for="inputName2" class="col-sm-2 col-form-label">Foto</label>
+											<div class="col-sm-10">
+												<input type="file" class="form-control" id="inputGroupFile01">
 											</div>
 										</div>
 									</form>
