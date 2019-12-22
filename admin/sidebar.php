@@ -51,13 +51,19 @@
 		          <!-- Add icons to the links using the .nav-icon class
 		          	with font-awesome or any other icon font library -->
 		          	<li class="nav-item has-treeview menu-open">
-		          		<a href="../admin/admin.php" class="nav-link active">
+		          		<a href="index.php" class="nav-link">
 		          			<i class="nav-icon fas fa-tachometer-alt"></i>
 		          			<p>
 		          				Dashboard
 		          			</p>
 		          		</a>
 		          	</li>
+						<li class="nav-item">
+							<a href="partner_hotel.php" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>DataTables</p>
+							</a>
+						</li>
 		          </ul>
 		      </nav>
 		      <!-- /.sidebar-menu -->
@@ -65,12 +71,12 @@
 		  <!-- /.sidebar -->
 		</aside>
 		<!-- jQuery -->
-		<script src="../plugins/jquery/jquery.min.js"></script>
+		<script src="plugins/jquery/jquery.min.js"></script>
 		<!-- Bootstrap 4 -->
-		<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 		<!-- AdminLTE App -->
-		<script src="../dist/js/adminlte.min.js"></script>
+		<script src="dist/js/adminlte.min.js"></script>
 		<!-- AdminLTE for demo purposes -->
-		<script src="../dist/js/demo.js"></script>
+		<script src="dist/js/demo.js"></script>
 </body>
 </html>

@@ -19,6 +19,11 @@ if (isset($_POST['submit'])) {
 			$_SESSION['type'] = $tingkatan;
 			header("location: ../index.php");
 		}
+		else ($tingkatan == "2")
+		{
+			$_SESSION['type'] = $tingkatan;
+			header("location: ../admin/index.php");
+		}
 		// else if ($tingkatan === "seller") {
 		// 	// echo "seller";
 		// 	$_SESSION['type'] = $tingkatan;
