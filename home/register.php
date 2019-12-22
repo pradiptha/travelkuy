@@ -1,3 +1,17 @@
+<?php
+
+if (isset($_GET['role'])) {
+	$role = $_GET['role'];
+	$check = '&role=' . $role;
+} else {
+	$role = '';
+	$check = '';
+}
+
+
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -263,7 +277,7 @@
 				$.ajax({
 
 					type: 'POST',
-					url: '/travelkuy/php/login.php?act=register',
+					url: '/travelkuy/php/login.php?act=register<?= $check ?>',
 					data: data,
 					beforeSend: function() {
 						$("#error").fadeOut();
@@ -297,6 +311,7 @@
 							});
 							setTimeout('$("#error").fadeOut(1000)', 5000);
 						}
+						// $("#error").html('<div class="alert alert-danger"><span class="glyphicon glyphicon-info-sign"></span> &nbsp; <?= $check ?></div>');
 					}
 				});
 				return false;

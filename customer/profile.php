@@ -17,6 +17,7 @@ if (isset($_SESSION['id'])) {
   $email = $data['email'];
   $alamat = $data['alamat'];
   $jenis_kelamin = $data['jk_customer'];
+  $foto_profil = $data['foto_profil'];
 } else {
   header("location: ../index.php");
 }
@@ -69,7 +70,7 @@ if (isset($_SESSION['id'])) {
                     <div class="col-md-auto">
                       <div class="card-profile-image">
                         <a href="#">
-                          <img src="/travelKuy/assets/img/theme/kucing.jpg" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
+                          <img src="/<?= $baseurl ?>/assets/img/profile_user/<?= $foto_profil ?>" class="rounded-circle" alt="image" data-toggle="modal" data-target="#modal-notification">
                         </a>
                       </div>
                     </div>
@@ -99,7 +100,7 @@ if (isset($_SESSION['id'])) {
   <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
     <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
       <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-        <img style="	max-width: 500px; max-height: 500px;" src="../assets/img/theme/kucing.jpg" alt="image">
+        <img style="	max-width: 500px; max-height: 500px;" src="/<?= $baseurl ?>/assets/img/profile_user/<?= $foto_profil ?>" alt="image">
       </div>
     </div>
   </div>

@@ -1,9 +1,17 @@
-<footer class="footer">
+<footer class="footer bg-dark">
   <div class="container">
     <div class="row row-grid align-items-center mb-5">
-      <div class="col-lg-6">
-        <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
-        <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
+      <div class="col-lg-6 text-white">
+        <a class="navbar-brand mb-2" href="/travelkuy/">
+          <img src="/travelkuy/assets/img/icons/logo1.png" style="height: 50px;" alt="" alt="">
+        </a>
+        <div class=" font-weight-bold mb-2">Others</div>
+        <ul class="list-group list-unstyled">
+          <li class=""><a href=" /<?= $baseurl ?>/home/register.php?role=1 ">Register as Admin Hotel</a></li>
+          <li class=""><a href="/<?= $baseurl ?>/home/login.php">Login as Admin Hotel</a></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
       <div class="col-lg-6 text-lg-center btn-wrapper">
         <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Follow us">

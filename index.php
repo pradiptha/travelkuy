@@ -1,6 +1,13 @@
 <?php
 include "php/config.php";
 
+if (isset($_SESSION['id'])) {
+	$id = $_SESSION['id'];
+	$sql = "SELECT * FROM user INNER JOIN customer USING(id_user) WHERE id_user='$id'";
+	$data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+	$foto_profil = $data['foto_profil'];
+}
+
 ?>
 
 <!DOCTYPE html>

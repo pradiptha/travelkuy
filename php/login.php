@@ -41,13 +41,24 @@ if (isset($_GET['act'])) {
         $user_email = mysqli_real_escape_string($conn, $_POST['user_email']);
         $user_password = mysqli_real_escape_string($conn, $_POST['password']);
         $password = password_hash($user_password, PASSWORD_DEFAULT);
-
-        $sql = "INSERT INTO user(username,password,email,tingkatan) VALUES ('$user_name','$password','$user_email','0') ";
+        if (isset($_GET['role'])) {
+            // $role = $_GET['role'];
+            $role = 1;
+        } else {
+            $role = 0;
+        }
+        $sql = "INSERT INTO user(username,password,email,tingkatan) VALUES ('$user_name','$password','$user_email','$role') ";
         if (mysqli_query($conn, $sql)) {
             $last_id = mysqli_insert_id($conn);
-            $sql1 = "INSERT INTO customer(id_user,nama_customer,foto_profil) VALUES ('$last_id','$user_name','nophoto.png')";
+            if ($role == 0) {
+                $sql1 = "INSERT INTO customer(id_user,nama_customer,foto_profil) VALUES ('$last_id','$user_name','nophoto.png')";
+            } elseif ($role == 1) {
+                $sql1 = "INSERT INTO `admin`(`id_user`, `nama_admin`, `status`) VALUES ('$last_id','$user_name','0')";
+                
+            }
             if (!mysqli_query($conn, $sql1)) {
-                echo ("1");
+                // echo ("1");
+                echo ("Error description: " . mysqli_error($conn));
             } else {
                 echo "registered";
             }

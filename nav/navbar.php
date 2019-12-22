@@ -39,7 +39,7 @@
                                     <span class="nav-link-inner--text d-lg-none">Settings</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-                                    <a class="dropdown-item" href="/travelkuy/customer/profile.php"><img src="/travelKuy/assets/img/theme/kucing.jpg" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;"><?= $_SESSION['username'] ?></a>
+                                    <a class="dropdown-item" href="/travelkuy/customer/profile.php"><img src="/<?= $baseurl ?>/assets/img/profile_user/<?= $foto_profil ?>" class="rounded-circle mr-2" alt="image" style="width : 30px; height :30px;"><?= $_SESSION['username'] ?></a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/travelkuy/customer/profile.php?view=history"><i class="ni ni-calendar-grid-58"></i>Histori</a>
                                     <a class="dropdown-item" href="/travelkuy/customer/profile.php?view=edit_email"><i class="ni ni-ui-04"></i>Edit Email</a>

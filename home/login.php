@@ -28,7 +28,8 @@ if (isset($_POST['submit'])) {
 		// 	$_SESSION['type'] = $tingkatan;
 		// 	header("location: ../admin/daftar-kategori.php");
 		// }
-	} else { }
+	} else {
+	}
 }
 ?>
 
@@ -96,11 +97,11 @@ if (isset($_POST['submit'])) {
 							<div class="text-muted text-center mb-3"><small>Sign in with</small></div>
 							<div class="text-center">
 								<!-- <a href="#" class="btn btn-neutral btn-icon mr-4">
-                    <span class="btn-inner--icon">
-                      <img src="../assets/img/icons/common/github.svg" alt="image">
-                    </span>
-                    <span class="btn-inner--text">Github</span>
-                  </a> -->
+									<span class="btn-inner--icon">
+									<img src="../assets/img/icons/common/github.svg" alt="image">
+									</span>
+									<span class="btn-inner--text">Github</span>
+								</a> -->
 								<a href="#" class="btn btn-neutral btn-icon">
 									<span class="btn-inner--icon">
 										<img src="../assets/img/icons/common/google.svg" alt="image">
@@ -226,7 +227,7 @@ if (isset($_POST['submit'])) {
 							if (data == 0) {
 								setTimeout('window.location.href = "/travelkuy/"', 2000);
 							} else if (data == 1) {
-								setTimeout('window.location.href = "/travelkuy/"', 2000);
+								setTimeout('window.location.href = "/travelkuy/adminhotel/"', 2000);
 							} else if (data == 2) {
 								setTimeout('window.location.href = "/travelkuy/"', 2000);
 							}
