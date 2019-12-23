@@ -19,15 +19,6 @@ if (isset($_POST['submit'])) {
 			$_SESSION['type'] = $tingkatan;
 			header("location: ../index.php");
 		}
-		// else if ($tingkatan === "seller") {
-		// 	// echo "seller";
-		// 	$_SESSION['type'] = $tingkatan;
-		// 	header("location: ../seller/index.php");
-		// } else if ($tingkatan === "admin") {
-		// 	// echo "seller";
-		// 	$_SESSION['type'] = $tingkatan;
-		// 	header("location: ../admin/daftar-kategori.php");
-		// }
 	} else {
 	}
 }
@@ -229,7 +220,7 @@ if (isset($_POST['submit'])) {
 							} else if (data == 1) {
 								setTimeout('window.location.href = "/travelkuy/adminhotel/"', 2000);
 							} else if (data == 2) {
-								setTimeout('window.location.href = "/travelkuy/"', 2000);
+								setTimeout('window.location.href = "/travelkuy/admin"', 2000);
 							}
 						}
 					}

@@ -37,12 +37,12 @@ if (isset($_GET['act'])) {
             $sql1 = "INSERT INTO foto_hotel(id_hotel, foto_hotel) VALUES ('$id_hotel', '$gambar')";
             $_SESSION['error'] = 0;
             $_SESSION['error_data'] = "Hotel Berhasil Ditambah";
-            // header("location: /travelkuy/adminhotel/");
+            header("location: /travelkuy/adminhotel/");
         } else {
             // echo ("Error description: " . mysqli_error($conn));
             $_SESSION['error'] = 1;
             $_SESSION['error_data'] = "Hotel Gagal Ditambah";
-            // header("location: /travelkuy/adminhotel/");
+            header("location: /travelkuy/adminhotel/");
         }
         
     } elseif ($act == 'hapus_hotel') {
