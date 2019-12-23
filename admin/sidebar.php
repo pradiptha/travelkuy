@@ -60,7 +60,7 @@
 				            </a>
 				            <ul class="nav nav-treeview">
 				              <li class="nav-item">
-				                <a href="../admin/admin.php" class="nav-link">
+				                <a href="../admin/index.php" class="nav-link">
 				                  <i class="far fa-circle nav-icon"></i>
 				                  <p>Dashboard</p>
 				                </a>
