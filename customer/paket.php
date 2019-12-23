@@ -68,16 +68,16 @@
 					</ul>
 				</div>
 				<div class="card shadow">
-					<div class="card-body">
+					<div class="card-body clearfix">
 						<div class="tab-content" id="myTabContent">
 							<div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
 								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 								
 							</div>
 							<div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-								<img src="../assets/img/destinasi/aceh.jpg" class="rounded" alt="...">
-								<img src="../assets/img/destinasi/aceh.jpg" class="rounded" alt="...">
-								<img src="../assets/img/destinasi/aceh.jpg" class="rounded" alt="...">
+								<div class="m-4">
+									<img src="../assets/img/destinasi/aceh.jpg" class="rounded float-left" alt="...">
+								</div>
 							</div>
 						</div>
 					</div>
