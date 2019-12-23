@@ -178,7 +178,7 @@ include '../php/config.php';
                   <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
               </select>
             </div>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" onclick="tambah()">Tambah</button>
           </div>
         </div>
         <div class="modal-footer justify-content-between">
@@ -206,6 +206,15 @@ include '../php/config.php';
 <script src="dist/js/demo.js"></script>
 <!-- page script -->
 <script>
+  // function tambah ()
+  // {
+  //   let add = document.getElementById("t_tempat");
+  //   let select = document.createElement('select');
+  //   select.setAttribute('class','form-control');
+  //   select.setAttribute('id','wisata[]');
+  //   add.appendChild(select);
+
+  // }
   $(function () {
     $("#example1").DataTable();
     $('#example2').DataTable({
@@ -240,7 +249,7 @@ include '../php/config.php';
 
             // jika dapat mengambil data,, tampilkan di combo box kota
             else {
-                $("#wisata").html(msg);
+                $("#wisata[]").html(msg);
             }
 
             // hilangkan image load
