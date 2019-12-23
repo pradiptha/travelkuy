@@ -79,9 +79,13 @@
 									<div class="list-group">
 										<a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
 									</div>
-								</div>			          	
-								<button type="button" class="btn btn-danger btn-lg mt-4">CANCEL</button>
-								<button type="button" class="btn btn-primary btn-lg mt-4">UPLOAD</button>
+								</div>
+								<a href="../index.php">
+									<button type="button" class="btn btn-danger btn-lg mt-4">CANCEL</button>
+								</a>			          	
+								<a href="../index.php">
+									<button type="button" class="btn btn-primary btn-lg mt-4">UPLOAD</button>
+								</a>
 							</div>
 						</div>
 					</div>

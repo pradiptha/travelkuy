@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $sql = "SELECT * FROM HOTEL WHERE id_ph = '$id_ph'";
 $hotel_ph = queryMultiple($sql);
@@ -30,8 +30,8 @@ $hotel_ph = queryMultiple($sql);
 					</a>
 				</li>
 
-				<li class="nav-item has-treeview">
-					<a href="#" class="nav-link  <?= ($view == "Hotels" ? 'active' : ''); ?>">
+				<li class="nav-item has-treeview <?= ($view == "hotel" ? 'menu-open' : ''); ?>">
+					<a href="#" class="nav-link  <?= ($view == "hotel" ? 'active' : ''); ?>">
 						<i class="nav-icon fas fa-hotel"></i>
 						<p>
 							Hotels
@@ -39,13 +39,13 @@ $hotel_ph = queryMultiple($sql);
 						</p>
 					</a>
 					<ul class="nav nav-treeview">
-						<?php foreach ($hotel_ph as $hotel) :?>
-						<li class="nav-item">
-							<a href="/<?= $baseurl ?>/adminhotel/index.php?view=hotel&id=<?= $hotel['id_hotel'] ?>" class="nav-link">
-								<i class="far fa-circle nav-icon"></i>
-								<p><?= $hotel['nama_hotel'] ?></p>
-							</a>
-						</li>
+						<?php foreach ($hotel_ph as $hotel) : ?>
+							<li class="nav-item">
+								<a href="/<?= $baseurl ?>/adminhotel/index.php?view=hotel&id=<?= $hotel['id_hotel'] ?>" class="nav-link <?= ($hotel['id_hotel'] == $_GET['id'] ? 'active' : ''); ?>">
+									<i class="far fa-circle nav-icon"></i>
+									<p><?= $hotel['nama_hotel'] ?></p>
+								</a>
+							</li>
 						<?php endforeach ?>
 					</ul>
 				</li>
