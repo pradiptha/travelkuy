@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Default Package</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+	<title>Destination</title>
+	meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<!-- Tell the browser to be responsive to screen width -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<!-- Font Awesome -->
+  	<link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  	<!-- Ionicons -->
+  	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  	<!-- DataTables -->
+  	<link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  	<!-- Theme style -->
+  	<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  	<!-- Google Font: Source Sans Pro -->
+  	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
-  <div class="wrapper">
+	<div class="wrapper">
     <!-- Navbar -->
     <?php include 'navbar.php' ?>
     <!-- /.navbar -->
@@ -34,7 +33,7 @@
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-left">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Data Default Package</li>
+                <li class="breadcrumb-item active">Data Destination</li>
               </ol>
             </div>
             <div class="col-sm-6 ">
@@ -67,8 +66,16 @@
                       <td> 4.000.000</td>
                       <td>
                         <div>
-                          <a href="#"><i class="far fa-edit"></i></a>
-                          <a href="#"><i class="far fa-trash-alt"></i></a>
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
                         </div>
                       </td>
                     </tr>
@@ -89,7 +96,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Default Package</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Custom Package</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -105,7 +112,7 @@
                 </div>
               </div>
               <div class="input-group mb-4">
-                <textarea name="comment" form="usrform" placeholder="description" style=" width:425px; padding: 10px;"></textarea>
+                <textarea name="comment" form="usrform" placeholder="Description" style=" width:425px; padding: 10px;"></textarea>
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <span class="fas fa-envelope"></span>
@@ -116,7 +123,7 @@
                 <input type="text" class="form-control" placeholder="Price">
                 <div class="input-group-append">
                   <div class="input-group-text">
-                    <span class="fas fa-lock"></span>
+                    <span class="fas fa-dollar-sign"></span>
                   </div>
                 </div>
               </div>
@@ -134,12 +141,5 @@
       <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-  </div>
-  <script>
-    var autoExpand = function (field) {
-    // Reset field height
-      field.style.height = 'inherit';
-    };
-  </script>
 </body>
 </html>
