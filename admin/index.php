@@ -85,7 +85,7 @@
 								<div class="icon">
 									<i class="fas fa-box"></i>
 								</div>
-								<a href="../admin/default_custom.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+								<a href="../admin/default_package.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 						<!-- ./col -->
@@ -99,7 +99,21 @@
 								<div class="icon">
 									<i class="fas fa-cubes"></i>
 								</div>
-								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+								<a href="../admin/custom_package.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+						<!-- ./col -->
+						<div class="col-lg-4 col-8">
+							<!-- small box -->
+							<div class="small-box bg-danger">
+								<div class="inner">
+									<h3>44</h3>
+									<p>Destination</p>
+								</div>
+								<div class="icon">
+								<i class="fas fa-map-marked-alt"></i>
+								</div>
+								<a href="../admin/destination.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 			        </div>

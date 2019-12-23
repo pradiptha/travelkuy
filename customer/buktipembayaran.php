@@ -25,56 +25,70 @@
 
 <body style="background-color: #E1F5FF">
 	<?php include '../nav/navbar.php' ?>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 bg-white mt-3 p-3 mb-2 rounded">
-				<div class="panel panel-default">
-					<div class="panel-heading pl-3"><strong><h3>UPLOAD BUKTI PEMBAYARAN</h3></strong></div>
-					<table class="table table-responsive table-borderless">
-						<tr>
-							<td scope="col">Kode Pesanan</td>
-							<td scope="col">:</td>
-							<td scope="col">13081999</td>
-						</tr>
-					</table>
-					<div class="panel-body pl-3 pr-3">
-			          	<!-- Standar Form -->
-			          	<h5>Select files from your computer</h5>
-			          	<form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
-			            	<div class="form-inline">
-			              		<div class="form-group mt-2 mb-2">
-			                		<input type="file" name="files[]" id="js-upload-files" multiple>
-			              		</div>
-			            	</div>
-			          	</form>
+	<section class="section section-lg section-shaped pb-250">
+		<div class="shape shape-style-1 bg-gradient-info shape-default">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+   	 	</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 bg-white mt-3 p-3 mb-2 rounded">
+						<div class="panel panel-default">
+							<div class="panel-heading pl-3"><strong><h3>UPLOAD BUKTI PEMBAYARAN</h3></strong></div>
+							<table class="table table-responsive table-borderless">
+								<tr>
+									<td scope="col">Kode Pesanan</td>
+									<td scope="col">:</td>
+									<td scope="col">13081999</td>
+								</tr>
+							</table>
+							<div class="panel-body pl-3 pr-3">
+								<!-- Standar Form -->
+								<h5>Select files from your computer</h5>
+								<form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+									<div class="form-inline">
+										<div class="form-group mt-2 mb-2">
+											<input type="file" name="files[]" id="js-upload-files" multiple>
+										</div>
+									</div>
+								</form>
 
-			          	<!-- Drop Zone -->
-			          	<h5>Or drag and drop files below</h5>
-			          	<div class="upload-drop-zone" id="drop-zone">
-			            	Just drag and drop files here
-			          	</div>
+								<!-- Drop Zone -->
+								<h5>Or drag and drop files below</h5>
+								<div class="upload-drop-zone" id="drop-zone">
+									Just drag and drop files here
+								</div>
 
-			          	<!-- Progress Bar -->
-			          	<div class="progress">
-			            	<div class="progress-bar text-center" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-			              		<span class="sr-only">60% Complete</span>
-			            	</div>
-			          	</div>
+								<!-- Progress Bar -->
+								<div class="progress">
+									<div class="progress-bar text-center" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+										<span class="sr-only">60% Complete</span>
+									</div>
+								</div>
 
-			          	<!-- Upload Finished -->
-			          	<div class="js-upload-finished">
-			            	<h5>Processed files</h5>
-			            	<div class="list-group">
-			              		<a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
-			            	</div>
-			          	</div>			          	
-						<button type="button" class="btn btn-danger btn-lg mt-4">CANCEL</button>
-						<button type="button" class="btn btn-primary btn-lg mt-4">UPLOAD</button>
-			        </div>
-		    	</div>
+								<!-- Upload Finished -->
+								<div class="js-upload-finished">
+									<h5>Processed files</h5>
+									<div class="list-group">
+										<a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
+									</div>
+								</div>			          	
+								<button type="button" class="btn btn-danger btn-lg mt-4">CANCEL</button>
+								<button type="button" class="btn btn-primary btn-lg mt-4">UPLOAD</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
+	</section>
+	
 </body>
 <script type="text/javascript">
 	+ function($) {
