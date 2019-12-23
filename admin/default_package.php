@@ -2,18 +2,8 @@
 <?php
 include '../php/config.php';
 
-   if(isset($_GET['id'])) {
-      $id_ph = $_GET['id'];
-      $status = $_GET['status'];
-      if($status==1)
-      {
-         mysqli_query($conn,"UPDATE partner_hotel SET status = 0 WHERE id_ph = $id_ph");            
-      }
-      else{
-         mysqli_query($conn,"UPDATE partner_hotel SET status = 1 WHERE id_ph = $id_ph");
-      }
-   }
-   if(isset($_POST['']))
+   $sql_provinsi = "SELECT * FROM provinces";
+  $data_provinsi = queryMultiple($sql_provinsi);
 
 ?>
 <!DOCTYPE html>
@@ -112,7 +102,7 @@ include '../php/config.php';
                   <th>Nama Destinasi</th>
                   <th>Alamat Destinasi</th>
                   <th>Biaya</th>
-                  <th> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary">Tambah Data</button> </th>
+                  <th> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">Tambah Data</button> </th>
                 </tr>
                 </tfoot>
               </table>
@@ -142,27 +132,61 @@ include '../php/config.php';
   </aside>
   <!-- /.control-sidebar -->
 </div>
-<div class="modal fade" id="modal-primary">
-  <div class="modal-dialog">
-    <div class="modal-content bg-primary">
+<div class="modal fade" id="modal-default">
+   <div class="modal-dialog">
+      <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Tambah Destinasi Wisata</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title">Tambah Paket Master</h4>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+         </button>
       </div>
       <form action="" method="POST">
         <div class="modal-body">
-          <p>One fine body&hellip;</p>
+          <div class="form-group">
+            <label>Nama Paket</label>
+            <input type="text" id="nama_paket" class="form-control" placeholder="Nama Paket">
+          </div>
+          <div class="form-group">
+            <label>Deskripsi</label>
+            <textarea class="form-control" rows="3" placeholder="Deskripsi Paket"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Foto Paket</label>
+            <div class="input-group">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="exampleInputFile">
+                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+              </div>
+              <div class="input-group-append">
+                <span class="input-group-text" id="">Upload</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pilih Provinsi</label>
+            <select class="form-control" id="provinsi" name="provinsi">
+              <?php foreach ($data_provinsi as $provinsi) : ?>
+                  <option value="<?= $provinsi['id'] ?>"><?= $provinsi['name'] ?></option>
+              <?php endforeach ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tambah Tempat Wisata</label>
+            <select class="form-control" name="wisata" id="wisata" required>
+                <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
+            </select>
+          </div>
         </div>
         <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-          <button type="submit" value="tambah" class="btn btn-outline-light">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="Submit" class="btn btn-primary">Tambah data</button>
         </div>
       </form>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
 </div>
 <!-- ./wrapper -->
 
@@ -190,6 +214,37 @@ include '../php/config.php';
       "autoWidth": false,
     });
   });
+  $("#provinsi").change(function() {
+
+    // variabel dari nilai combo box provinsi
+    var id_provinsi = $("#provinsi").val();
+
+    // tampilkan image load
+    $("#imgLoad").show("");
+
+    // mengirim dan mengambil data
+    $.ajax({
+        type: "POST",
+        dataType: "html",
+        url: "cari_destinasi.php",
+        data: "prov=" + id_provinsi,
+        success: function(msg) {
+
+            // jika tidak ada data
+            if (msg == '') {
+                alert('Tidak ada tempat wisata');
+            }
+
+            // jika dapat mengambil data,, tampilkan di combo box kota
+            else {
+                $("#wisata").html(msg);
+            }
+
+            // hilangkan image load
+            $("#imgLoad").hide();
+        }
+    });
+    });
 </script>
 </body>
 </html>

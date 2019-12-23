@@ -37,7 +37,7 @@
               </ol>
             </div>
             <div class="col-sm-6 ">
-              <button type="button" class="btn btn-primary float-sm-right btn-sm" data-toggle="modal" data-target="#exampleModal">Tambah</button>
+              <button type="button" class="btn btn-primary float-sm-right btn-sm" data-toggle="modal" data-target="#modaltambah">Tambah</button>
             </div>
           </div>
         </div><!-- /.container-fluid -->
@@ -51,19 +51,41 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>URL Foto</th>
-                    <th>Link</th>
-                    <th>Action</th>
+                    <th style="width: 40%">URL Foto</th>
+                    <th style="width: 40%">Link</th>
+                    <th style="width: 5%" class="text-center">Status</th>
+                    <th style="width: 15%">Action</th>
                   </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>D01</td>
                       <td>vdger.php</td>
+                      <td class="project-state">
+                        <div class="dropdown">
+                          <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Status
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="btn btn-success dropdown-item" type="button">Active</button>
+                            <button class="btn btn-danger dropdown-item" type="button">Inactive</button>
+                          </div>
+                        </div>
+                      </td>
                       <td>
                         <div>
-                          <a href="#"><i class="far fa-edit"></i></a>
-                          <a href="#"><i class="far fa-trash-alt"></i></a>
+                          <div>
+                            <a class="btn btn-info btn-sm" href="#">
+                                <i class="fas fa-pencil-alt">
+                                </i>
+                                Edit
+                            </a>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modaldelete">
+                              <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </button>
+                          </div>
                         </div>
                       </td>
                     </tr>
@@ -80,7 +102,8 @@
       </section>
       <!-- /.content -->
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- modal tambah -->
+    <div class="modal fade" id="modaltambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -116,6 +139,26 @@
         </div>
       </div>
     </div>
+    <!-- modal tambah -->
+    <!-- modal delete -->
+    <div class="modal fade" id="modaldelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">       
+            <h4 class="modal-title">Are you sure?</h4>  
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          </div>
+          <div class="modal-body">
+            <p>Do you really want to delete these picture?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal delete -->
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->

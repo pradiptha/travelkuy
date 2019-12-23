@@ -19,6 +19,7 @@
 	<link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
 	<script src="../assets/js/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="../assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 </head>
 
 <body>
@@ -36,8 +37,7 @@
 			<span></span>
    	 	</div>
 			<div class="container">
-				<br>
-				<div class="row">
+				<div class="row rounded-lg p-2">
 					<div class="col-sm-4 uraian">
 						<img src="/travelkuy/assets/img/destinasi/bali.jpg" class="img-thumbnail rounded">
 					</div>
@@ -56,33 +56,17 @@
 						</form>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row rounded-lg mt-3 p-2">
 					<div class="col-sm-12 date">
 						<div class="tgl">
 							Pilih tanggal dan waktu destinasi
 						</div>
-						<div class="date">
-							<div class="input-daterange datepicker row align-items-center">
-								<div class="col">
-									<div class="form-group">
-										<div class="input-group input-group-alternative">
-											<div class="input-group-prepend">
-												<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-											</div>
-											<input class="form-control" placeholder="Start date" type="text" value="06/18/2019">
-										</div>
-									</div>
+						<div class="form-group">
+							<div class="input-group input-group-alternative">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
 								</div>
-								<div class="col">
-									<div class="form-group">
-										<div class="input-group input-group-alternative">
-											<div class="input-group-prepend">
-												<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-											</div>
-											<input class="form-control" placeholder="End date" type="text" value="06/22/2019">
-										</div>
-									</div>
-								</div>
+								<input class="form-control .datepicker" placeholder="Select date" type="text" value="06/20/2019">
 							</div>
 						</div>
 					</div>
@@ -91,7 +75,7 @@
 						<input type="time" name="usr_time">
 					</div>
 				</div>
-				<div class="row row-2">
+				<div class="row row-2 rounded-lg mt-3 p-2">
 					<table class="edit-destinasi">
 						<tr>
 							<td><button class="btn"><i class="fa fa-trash"></i></button></td>
@@ -108,12 +92,15 @@
 					</table>
 				</div>
 				<div class="row row-3">
-					<button class="btn btn-danger">Batalkan</button>
-					<button class="btn btn-success">Lanjutkan</button>
+					<a href="paket.php">
+							<button class="btn btn-danger rounded-lg mr-3" type="button">Batalkan</button>
+					</a>
+					<a href="checkout.php">
+							<button class="btn btn-success rounded-lg" type="button">Lanjutkan</button>
+					</a>
 				</div>
 			</div>
 	</section>
-	
 	<?php include '../nav/footer.php' ?>
 </body>
 

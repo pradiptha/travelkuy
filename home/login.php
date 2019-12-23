@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 			$_SESSION['type'] = $tingkatan;
 			header("location: ../index.php");
 		}
-		else ($tingkatan == "2")
+		elseif ($tingkatan == "2")
 		{
 			$_SESSION['type'] = $tingkatan;
 			header("location: ../admin/index.php");

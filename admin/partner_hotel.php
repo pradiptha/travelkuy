@@ -2,8 +2,8 @@
 <?php
 include '../php/config.php';
 
-   if(isset($_GET['id'])) {
-      $id_ph = $_GET['id'];
+   if(isset($_GET['id_ph'])) {
+      $id_ph = $_GET['id_ph'];
       $status = $_GET['status'];
       if($status==1)
       {
@@ -102,7 +102,7 @@ include '../php/config.php';
                      if($row['status']==1)
                      {?>
                     <td>
-                        <a href="partner_hotel.php?<?php echo"id=".$row['id_ph']."&status=".$row['status']; ?>">
+                        <a href="partner_hotel.php?<?php echo"id_ph=".$row['id_ph']."&status=".$row['status']; ?>">
                            <button type="button" class="btn  btn-primary">Active</button>
                         </a>
                      </td>
@@ -111,7 +111,7 @@ include '../php/config.php';
                      {
                      ?>
                      <td>
-                     <a href="partner_hotel.php?<?php echo"id=".$row['id_ph']."&status=".$row['status']; ?>">
+                     <a href="partner_hotel.php?<?php echo"id_ph=".$row['id_ph']."&status=".$row['status']; ?>">
                            <button type="button" class="btn  btn-danger">Tidak Active</button>
                         </a>
                      </td>
@@ -158,28 +158,28 @@ include '../php/config.php';
   <!-- /.control-sidebar -->
 </div>
 <div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Berkas Dilampirkan</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-               <p>Foto KTP</p>
-               <p><?=$row['nama_ph'];?></p>
-               <img class="img-fluid pad" src="dist/img/photo2.png" alt="">
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
+   <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+         <h4 class="modal-title">Berkas Dilampirkan</h4>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+         </button>
       </div>
+      <div class="modal-body">
+         <p>Foto KTP</p>
+         <p><?=$row['nama_ph'];?></p>
+         <img class="img-fluid pad" src="dist/img/photo2.png" alt="">
+      </div>
+      <div class="modal-footer justify-content-between">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
