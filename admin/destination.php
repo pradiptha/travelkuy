@@ -51,11 +51,12 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>ID Paket</th>
-                    <th>Nama Paket</th>
-                    <th>Deskripsi</th>
-                    <th>Total Biaya</th>
-                    <th>Action</th>
+                    <th width="2%">ID</th>
+                    <th width="15%">Nama Destinasi</th>
+                    <th width="40%">Deskripsi</th>
+                    <th width="18%">Lokasi</th>
+                    <th width="10%">Gambar</th>
+                    <th width="15%">Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -64,6 +65,7 @@
                       <td>Destinasi Bali</td>
                       <td>Terletak di Pulau Bali dengan jml destinasi 9 lokasi</td>
                       <td> 4.000.000</td>
+                      <td>fnoiawengoing</td>
                       <td>
                         <div>
                           <a class="btn btn-info btn-sm" href="#">
@@ -71,11 +73,11 @@
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modaldelete">
                               <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
+                                </i>
+                                Delete
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -96,7 +98,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Custom Package</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Destination Package</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -104,7 +106,7 @@
           <div class="modal-body">
             <form action="index.html" method="post">
               <div class="input-group mb-4">
-                <input type="text" class="form-control" placeholder="Package name">
+                <input type="text" class="form-control" placeholder="Destination name">
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <span class="fas fa-user"></span>
@@ -120,12 +122,26 @@
                 </div>
               </div>
               <div class="input-group mb-4">
-                <input type="text" class="form-control" placeholder="Price">
-                <div class="input-group-append">
+              	<input type="text" class="form-control" placeholder="Address">
+              	<div class="input-group-append">
                   <div class="input-group-text">
-                    <span class="fas fa-dollar-sign"></span>
+                    <span class="fas fa-map-pin"></span>
                   </div>
                 </div>
+              </div>
+              <div class="input-group mb-4">
+                <div class="input-group">
+                  <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="exampleInputFile">
+                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-4">
+              	<select class="form-control">
+                    <option>Provinsi</option>
+                    <option>option 2</option>
+                </select>
               </div>
             </form>
           </div>
@@ -136,6 +152,26 @@
         </div>
       </div>
     </div>
+    <!-- modal tambah -->
+    <!-- modal delete-->
+    <div class="modal fade" id="modaldelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">       
+            <h4 class="modal-title">Are you sure?</h4>  
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          </div>
+          <div class="modal-body">
+            <p>Do you really want to delete these package?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal delete -->
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
