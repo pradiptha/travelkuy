@@ -13,6 +13,7 @@ include '../php/config.php';
          mysqli_query($conn,"UPDATE partner_hotel SET status = 1 WHERE id_ph = $id_ph");
       }
    }
+   if(isset($_POST['']))
 
 ?>
 <!DOCTYPE html>
@@ -79,55 +80,39 @@ include '../php/config.php';
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Nama Partner</th>
-                  <th>Berkas</th>
-                  <th>Status</th>
+                  <th>Nama Destinasi</th>
+                  <th>Alamat Destinasi</th>
+                  <th>Biaya</th>
+                  <th>Edit</th>
                 </tr>
                 </thead>
                 <tbody> 
                <?php
-                  $sql = "select * from partner_hotel";
+                  $sql = "select * from destinasi";
                   $result = queryMultiple($sql);
-                  // $partner_hotel = mysqli_query($conn,"select * from partner_hotel");
                   foreach($result as $row)
                   {
                      echo "<tr>
-                     <td>".$row['nama_ph']."</td>"?>
-                     <td>
-                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default">
-                        Lihat Berkas
-                     </button>
-                     </td>
-                     <?php
-                     if($row['status']==1)
-                     {?>
-                    <td>
-                        <a href="partner_hotel.php?<?php echo"id=".$row['id_ph']."&status=".$row['status']; ?>">
-                           <button type="button" class="btn  btn-primary">Active</button>
-                        </a>
-                     </td>
-                     <?php }
-                     else
-                     {
+                     <td>".$row['nama_destinasi']."</td>
+                     <td>".$row['alamat_destinasi']."</td>
+                     <td>".$row['biaya_destinasi']."</td>"
                      ?>
                      <td>
-                     <a href="partner_hotel.php?<?php echo"id=".$row['id_ph']."&status=".$row['status']; ?>">
-                           <button type="button" class="btn  btn-danger">Tidak Active</button>
-                        </a>
+                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">
+                        Edit Data
+                     </button>
                      </td>
-                     </tr>
-                     <?php
-                     }
-                        
+                <?php        
                   }
                   
                ?>
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Nama Partner</th>
-                  <th>Berkas</th>
-                  <th>Status</th>
+                  <th>Nama Destinasi</th>
+                  <th>Alamat Destinasi</th>
+                  <th>Biaya</th>
+                  <th> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary">Tambah Data</button> </th>
                 </tr>
                 </tfoot>
               </table>
@@ -157,29 +142,28 @@ include '../php/config.php';
   </aside>
   <!-- /.control-sidebar -->
 </div>
-<div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Berkas Dilampirkan</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-               <p>Foto KTP</p>
-               <p><?=$row['nama_ph'];?></p>
-               <img class="img-fluid pad" src="dist/img/photo2.png" alt="">
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
+<div class="modal fade" id="modal-primary">
+  <div class="modal-dialog">
+    <div class="modal-content bg-primary">
+      <div class="modal-header">
+        <h4 class="modal-title">Tambah Destinasi Wisata</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
       </div>
+      <form action="" method="POST">
+        <div class="modal-body">
+          <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+          <button type="submit" value="tambah" class="btn btn-outline-light">Save changes</button>
+        </div>
+      </form>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
@@ -209,4 +193,3 @@ include '../php/config.php';
 </script>
 </body>
 </html>
-
