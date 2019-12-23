@@ -34,7 +34,7 @@
 			<span></span>
    	 	</div>
 			<div class="container">
-				<div class="row">
+				<div class="row rounded-lg">
 					<div class="col-sm-4 destinasi-uraian">
 						<img src="/travelkuy/assets/img/destinasi/bali.jpg" class="img-thumbnail rounded">
 					</div>
@@ -56,8 +56,35 @@
 					</div>
 				</div>
 				<br>
-				<div class="row">
-					<div class="col-xs-6 col-md-8 deskripsi-destinasi">
+				<div class="row rounded-lg">
+				<div class="nav-wrapper p-3">
+					<ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true">Deskripsi</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false">Dokumentasi</a>
+						</li>
+					</ul>
+				</div>
+				<div class="card shadow">
+					<div class="card-body clearfix">
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								
+							</div>
+							<div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+								<div class="m-4">
+									<img src="../assets/img/destinasi/aceh.jpg" class="rounded float-left" alt="...">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+					<!-- <div class="col-xs-6 col-md-8 deskripsi-destinasi">
 						<div class="btn_desk">
 							<button class="btn btn-2 btn-primary" disabled type="button">Deskripsi</button>
 						</div>
@@ -70,7 +97,7 @@
 								<li>Penginapan hotel a</li>
 							</ul>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
   	</section>

@@ -137,6 +137,7 @@ $slideshows = queryMultiple($sql);
 					</div>
 				</div> -->
 				<div class="row justify-content-center">
+
 					<div class="col-lg-12">
 						<div class="row row-grid">
 							<?php for ($i = 0; $i < 6; $i++) : ?>
