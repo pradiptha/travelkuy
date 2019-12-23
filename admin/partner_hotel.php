@@ -2,8 +2,17 @@
 <?php
 include '../php/config.php';
 
-   $sql_provinsi = "SELECT * FROM provinces";
-  $data_provinsi = queryMultiple($sql_provinsi);
+   if(isset($_GET['id_ph'])) {
+      $id_ph = $_GET['id_ph'];
+      $status = $_GET['status'];
+      if($status==1)
+      {
+         mysqli_query($conn,"UPDATE partner_hotel SET status = 0 WHERE id_ph = $id_ph");            
+      }
+      else{
+         mysqli_query($conn,"UPDATE partner_hotel SET status = 1 WHERE id_ph = $id_ph");
+      }
+   }
 
 ?>
 <!DOCTYPE html>
@@ -70,39 +79,55 @@ include '../php/config.php';
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Nama Destinasi</th>
-                  <th>Alamat Destinasi</th>
-                  <th>Biaya</th>
-                  <th>Edit</th>
+                  <th>Nama Partner</th>
+                  <th>Berkas</th>
+                  <th>Status</th>
                 </tr>
                 </thead>
                 <tbody> 
                <?php
-                  $sql = "select * from destinasi";
+                  $sql = "select * from partner_hotel";
                   $result = queryMultiple($sql);
+                  // $partner_hotel = mysqli_query($conn,"select * from partner_hotel");
                   foreach($result as $row)
                   {
                      echo "<tr>
-                     <td>".$row['nama_destinasi']."</td>
-                     <td>".$row['alamat_destinasi']."</td>
-                     <td>".$row['biaya_destinasi']."</td>"
-                     ?>
+                     <td>".$row['nama_ph']."</td>"?>
                      <td>
-                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">
-                        Edit Data
+                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default">
+                        Lihat Berkas
                      </button>
                      </td>
-                <?php        
+                     <?php
+                     if($row['status']==1)
+                     {?>
+                    <td>
+                        <a href="partner_hotel.php?<?php echo"id_ph=".$row['id_ph']."&status=".$row['status']; ?>">
+                           <button type="button" class="btn  btn-primary">Active</button>
+                        </a>
+                     </td>
+                     <?php }
+                     else
+                     {
+                     ?>
+                     <td>
+                     <a href="partner_hotel.php?<?php echo"id_ph=".$row['id_ph']."&status=".$row['status']; ?>">
+                           <button type="button" class="btn  btn-danger">Tidak Active</button>
+                        </a>
+                     </td>
+                     </tr>
+                     <?php
+                     }
+                        
                   }
                   
                ?>
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Nama Destinasi</th>
-                  <th>Alamat Destinasi</th>
-                  <th>Biaya</th>
-                  <th> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">Tambah Data</button> </th>
+                  <th>Nama Partner</th>
+                  <th>Berkas</th>
+                  <th>Status</th>
                 </tr>
                 </tfoot>
               </table>
@@ -136,53 +161,20 @@ include '../php/config.php';
    <div class="modal-dialog">
       <div class="modal-content">
       <div class="modal-header">
-         <h4 class="modal-title">Tambah Paket Master</h4>
+         <h4 class="modal-title">Berkas Dilampirkan</h4>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
          </button>
       </div>
-      <form action="" method="POST">
-        <div class="modal-body">
-          <div class="form-group">
-            <label>Nama Paket</label>
-            <input type="text" id="nama_paket" class="form-control" placeholder="Nama Paket">
-          </div>
-          <div class="form-group">
-            <label>Deskripsi</label>
-            <textarea class="form-control" rows="3" placeholder="Deskripsi Paket"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputFile">Foto Paket</label>
-            <div class="input-group">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="exampleInputFile">
-                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-              </div>
-              <div class="input-group-append">
-                <span class="input-group-text" id="">Upload</span>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Pilih Provinsi</label>
-            <select class="form-control" id="provinsi" name="provinsi">
-              <?php foreach ($data_provinsi as $provinsi) : ?>
-                  <option value="<?= $provinsi['id'] ?>"><?= $provinsi['name'] ?></option>
-              <?php endforeach ?>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Tambah Tempat Wisata</label>
-            <select class="form-control" name="wisata" id="wisata" required>
-                <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
-            </select>
-          </div>
-        </div>
-        <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="Submit" class="btn btn-primary">Tambah data</button>
-        </div>
-      </form>
+      <div class="modal-body">
+         <p>Foto KTP</p>
+         <p><?=$row['nama_ph'];?></p>
+         <img class="img-fluid pad" src="dist/img/photo2.png" alt="">
+      </div>
+      <div class="modal-footer justify-content-between">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
       </div>
       <!-- /.modal-content -->
    </div>
@@ -214,37 +206,7 @@ include '../php/config.php';
       "autoWidth": false,
     });
   });
-  $("#provinsi").change(function() {
-
-    // variabel dari nilai combo box provinsi
-    var id_provinsi = $("#provinsi").val();
-
-    // tampilkan image load
-    $("#imgLoad").show("");
-
-    // mengirim dan mengambil data
-    $.ajax({
-        type: "POST",
-        dataType: "html",
-        url: "cari_destinasi.php",
-        data: "prov=" + id_provinsi,
-        success: function(msg) {
-
-            // jika tidak ada data
-            if (msg == '') {
-                alert('Tidak ada tempat wisata');
-            }
-
-            // jika dapat mengambil data,, tampilkan di combo box kota
-            else {
-                $("#wisata").html(msg);
-            }
-
-            // hilangkan image load
-            $("#imgLoad").hide();
-        }
-    });
-    });
 </script>
 </body>
 </html>
+

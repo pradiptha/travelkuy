@@ -19,6 +19,23 @@ if (isset($_POST['submit'])) {
 			$_SESSION['type'] = $tingkatan;
 			header("location: ../index.php");
 		}
+<<<<<<< HEAD
+		elseif ($tingkatan == "2")
+		{
+			$_SESSION['type'] = $tingkatan;
+			header("location: ../admin/index.php");
+		}
+		// else if ($tingkatan === "seller") {
+		// 	// echo "seller";
+		// 	$_SESSION['type'] = $tingkatan;
+		// 	header("location: ../seller/index.php");
+		// } else if ($tingkatan === "admin") {
+		// 	// echo "seller";
+		// 	$_SESSION['type'] = $tingkatan;
+		// 	header("location: ../admin/daftar-kategori.php");
+		// }
+=======
+>>>>>>> 79d040141b164ff4b85973ced3220e9f86207da2
 	} else {
 	}
 }
