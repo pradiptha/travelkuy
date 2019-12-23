@@ -1,3 +1,27 @@
+<?php 
+
+include '../php/config.php';
+
+$sql = "SELECT * FROM checkout";
+$data_checkout = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+$id_paket = $data_checkout['id_paket'];
+$sql_paket = "SELECT * FROM paket WHERE id_paket = '$id_paket'";
+$data_paket = mysqli_fetch_assoc(mysqli_query($conn, $sql_paket));
+$sql_detail_destinasi = "SELECT * FROM paket 
+					INNER JOIN paket_destinasi USING(id_paket)
+					INNER JOIN destinasi USING(id_destinasi)
+					WHERE id_paket = '$id_paket'";
+$detail_destinasi = queryMultiple($sql_detail_destinasi);
+$sql_detail_hotel = "SELECT * FROM paket 
+					INNER JOIN paket_hotel USING(id_paket)
+					INNER JOIN hotel USING(id_hotel)
+					WHERE id_paket = '$id_paket'";
+$detail_hotel = queryMultiple($sql_detail_hotel);
+$detail_paket = array_merge($detail_destinasi, $detail_hotel);
+// var_dump($detail_paket);
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -36,13 +60,14 @@
 			<span></span>
 			<span></span>
    	 	</div>
-			<div class="container">
+			<div class="container bg-white p-4 rounded-lg">
 				<div class="row rounded-lg p-2">
 					<div class="col-sm-4 uraian">
 						<img src="/travelkuy/assets/img/destinasi/bali.jpg" class="img-thumbnail rounded">
 					</div>
 					<div class="col-sm-8 uraian">
-						<h3>WISATA ALAM BALI</h3>
+						<h3><?= $data_paket['nama_paket'] ?></h3>
+						<p><?= $data_paket['deskripsi'] ?></p>
 						<p>Masukan jumlah paket yang ingin dipesan</p>
 						<h6 class="durasi-destinasi">2 hari 3 malam</h6>
 						<form method="post" action="">
@@ -77,18 +102,17 @@
 				</div>
 				<div class="row row-2 rounded-lg mt-3 p-2">
 					<table class="edit-destinasi">
+						<?php foreach ($detail_paket as $paket) :?>
+						<?php if (isset($paket['nama_destinasi'])) {
+							$nama = $paket['nama_destinasi'];
+						} else {
+							$nama = $paket['nama_hotel'];
+						} ?>
 						<tr>
 							<td><button class="btn"><i class="fa fa-trash"></i></button></td>
-							<td>Destinasi a</td>
+							<td><?= $nama ?></td>
 						</tr>
-						<tr>
-							<td><button class="btn"><i class="fa fa-trash"></i></button></td>
-							<td>Destinasi b</td>
-						</tr>
-						<tr>
-							<td><button class="btn"><i class="fa fa-trash"></i></button></td>
-							<td>Destinasi c</td>
-						</tr>
+						<?php endforeach ?>
 					</table>
 				</div>
 				<div class="row row-3">
