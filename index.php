@@ -138,9 +138,9 @@ if (isset($_SESSION['id'])) {
               <div class="col-lg-4">
 				<a href="/travelkuy/customer/paket.php">
 					<div class="card card-lift--hover shadow border-0 text-white m-3" style="height: 300px; ">
-						<img class="card-img" src="./assets/img/destinasi/aceh.jpg" alt="Card image" style="height: 300px; object-fit: cover;">
+						<img class="card-img" src="./assets/img/destinasi/bali2.jpg" alt="Card image" style="height: 300px; object-fit: cover;">
 						<div class="card-img-overlay" style="z-index:10">
-							<h5 class="card-title font-weight-bold text-white">Card title</h5>
+							<h4 class="card-title font-weight-bold text-white">Card title</h4>
 							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 							<p class="card-text">Last updated 3 mins ago</p>
 						</div>
