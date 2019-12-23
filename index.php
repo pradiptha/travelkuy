@@ -134,23 +134,25 @@ if (isset($_SESSION['id'])) {
 				<div class="row justify-content-center">
 				<div class="col-lg-12">
             <div class="row row-grid">
-			<?php for ($i=0; $i < 3; $i++) : ?>
+			<?php for ($i=0; $i < 6; $i++) : ?>
               <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-0 text-white" style="height: 300px; ">
-					<img class="card-img" src="./assets/img/destinasi/aceh.jpg" alt="Card image" style="height: 300px; object-fit: cover;">
-					<div class="card-img-overlay" style="z-index:10">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-						<p class="card-text">Last updated 3 mins ago</p>
+				<a href="/travelkuy/customer/paket.php">
+					<div class="card card-lift--hover shadow border-0 text-white m-3" style="height: 300px; ">
+						<img class="card-img" src="./assets/img/destinasi/aceh.jpg" alt="Card image" style="height: 300px; object-fit: cover;">
+						<div class="card-img-overlay" style="z-index:10">
+							<h5 class="card-title font-weight-bold text-white">Card title</h5>
+							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<p class="card-text">Last updated 3 mins ago</p>
+						</div>
 					</div>
-                </div>
+				</a>
 			  </div>
 			  <?php endfor ?>
             </div>
           </div>
 				</div>
 			</div>
-			<div class="col-sm-12">
+			<!-- <div class="col-sm-12">
 				<br /><br />
 				<h3>Paket Liburan Favorite</h3>
 				<div class="row">
@@ -187,7 +189,7 @@ if (isset($_SESSION['id'])) {
 					</a>
 
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	</div>
