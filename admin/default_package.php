@@ -171,11 +171,14 @@ include '../php/config.php';
               <?php endforeach ?>
             </select>
           </div>
-          <div class="form-group">
-            <label>Tambah Tempat Wisata</label>
-            <select class="form-control" name="wisata" id="wisata" required>
-                <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
-            </select>
+          <div id="t_tempat">
+            <div class="form-group">
+              <label>Tambah Tempat Wisata</label>
+              <select class="form-control" name="wisata" id="wisata[]" required>
+                  <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
+              </select>
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
         <div class="modal-footer justify-content-between">
