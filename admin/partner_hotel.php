@@ -165,7 +165,6 @@ include '../php/config.php';
             </div>
             <div class="modal-body">
                <p>Foto KTP</p>
-               <?php var_dump($row) ?> 
                <p><?=$row['nama_ph'];?></p>
                <img class="img-fluid pad" src="dist/img/photo2.png" alt="">
             </div>

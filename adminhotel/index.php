@@ -5,23 +5,24 @@ include "../php/config.php";
 if (isset($_GET['view'])) {
     $view = $_GET['view'];
 } else {
-    $view = 'profile';
+    $view = 'Dashboard';
 }
 
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
-    $sql = "SELECT * FROM user INNER JOIN admin USING(id_user) WHERE id_user='$id'";
+    $sql = "SELECT * FROM user INNER JOIN partner_hotel USING(id_user) WHERE id_user='$id'";
     $data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
     $username = $data['username'];
-    $nama = $data['nama_admin'];
+    $nama = $data['nama_ph'];
     $email = $data['email'];
 } else {
     header("location: ../index.php");
 }
 
-include '../php/provinsikota.php';
+$sql_provinsi = "SELECT * FROM provinces";
+$data_provinsi = queryMultiple($sql_provinsi);
 
-$data_provinsi = provinsi();
+$id_ph = $_SESSION['id_ph'];
 
 ?>
 
@@ -78,12 +79,21 @@ $data_provinsi = provinsi();
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Dashboard</h1>
+                            <?php if ($view == 'hotel') : ?>
+                                <?php if (isset($_GET['id'])) {
+                                    $id_hotel = $_GET['id'];
+                                    $sql = "SELECT * FROM hotel where id_hotel = $id_hotel";
+                                    $data_hotel = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+                                } ?>
+                                <h1 class="m-0 text-dark text-capitalize"><?= $data_hotel['nama_hotel'] ?></h1>
+                            <?php else : ?>
+                                <h1 class="m-0 text-dark text-capitalize"><?= $view ?></h1>
+                            <?php endif ?>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active"><?= $nama ?></li>
+                                <li class="breadcrumb-item"><a href="#"><?= $view ?></a></li>
+                                <li class="breadcrumb-item active"><?= $data_hotel['nama_hotel'] ?></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -93,58 +103,7 @@ $data_provinsi = provinsi();
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-4 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>3</h3>
-
-                                    <p>Total Hotels</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-key"></i>
-                                </div>
-                                <a href="" type="button" class="small-box-footer" data-toggle="modal" data-target="#tambahhotel">Add hotels
-                                    <i class="fas fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-4 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3>67</h3>
-
-                                    <p>Total Booking Rooms</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-clipboard-check"></i>
-                                </div>
-                                <a href="totalbookingrooms.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-4 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>46</h3>
-
-                                    <p>Total Available Rooms</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-thumbs-up"></i>
-                                </div>
-                                <a href="availableroom.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                    </div>
-                </div>
+                <?php include 'content.php' ?>
             </section>
         </div>
 
@@ -183,9 +142,42 @@ $data_provinsi = provinsi();
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard.js"></script>
+    <!-- <script src="dist/js/pages/dashboard.js"></script> -->
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <script>
+        $("#provinsi").change(function() {
+
+            // variabel dari nilai combo box provinsi
+            var id_provinsi = $("#provinsi").val();
+
+            // tampilkan image load
+            $("#imgLoad").show("");
+
+            // mengirim dan mengambil data
+            $.ajax({
+                type: "POST",
+                dataType: "html",
+                url: "cari_kota.php",
+                data: "prov=" + id_provinsi,
+                success: function(msg) {
+
+                    // jika tidak ada data
+                    if (msg == '') {
+                        alert('Tidak ada data Kota');
+                    }
+
+                    // jika dapat mengambil data,, tampilkan di combo box kota
+                    else {
+                        $("#kota").html(msg);
+                    }
+
+                    // hilangkan image load
+                    $("#imgLoad").hide();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
