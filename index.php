@@ -8,6 +8,9 @@ if (isset($_SESSION['id'])) {
 	$foto_profil = $data['foto_profil'];
 }
 
+$sql = "SELECT * FROM master_slideshow WHERE status = '1'";
+$slideshows = queryMultiple($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -53,45 +56,48 @@ if (isset($_SESSION['id'])) {
 					<div class="row">
 						<div id="carouselExampleIndicators" class="carousel slide shadow" data-ride="carousel">
 							<ol class="carousel-indicators">
+								<?php $first_slide = array_pop($slideshows); ?>
 								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+								<?php $i = 1; foreach ($slideshows as $slideshow) : ?>
+									<li data-target="#carouselExampleIndicators" data-slide-to="<?= $i ?>"></li>
+								<?php endforeach; $i++; ?>
 							</ol>
-							<div class="carousel-inner slide-image h-auto">
-								<div class="carousel-item active">
-									<img src="/travelkuy/assets/img/destinasi/danau-toba.jpg" class="d-block w-100"
-										alt="...">
+							<div class="carousel-inner slide-image active h-auto w-100">
+								<!-- <div class="carousel-item active">
+									<img src="/travelkuy/assets/img/slideshow/<?= $slideshows[0]['foto'] ?>" class="d-block w-100" alt="...">
+								</div> -->
+								<div class="carousel-item slide-image active w-100">
+									<img src="/travelkuy/assets/img/slideshow/<?= $first_slide['foto'] ?>" class="d-block w-100" alt="...">
+								</div>
+								<?php foreach ($slideshows as $slideshow) : ?>
+									<div class="carousel-item slide-image w-100">
+										<img src="/travelkuy/assets/img/slideshow/<?= $slideshow['foto'] ?>" class="d-block w-100" alt="...">
+									</div>
+								<?php endforeach ?>
+								<!-- <div class="carousel-item active">
+									<img src="/travelkuy/assets/img/destinasi/danau-toba.jpg" class="d-block w-100" alt="...">
 								</div>
 								<div class="carousel-item slide-image">
-									<img src="/travelkuy/assets/img/destinasi/bali2.jpg" class="d-block w-100"
-										alt="...">
+									<img src="/travelkuy/assets/img/destinasi/bali2.jpg" class="d-block w-100" alt="...">
 								</div>
 								<div class="carousel-item slide-image">
-									<img src="/travelkuy/assets/img/destinasi/bromo2.png" class="d-block w-100"
-										alt="...">
+									<img src="/travelkuy/assets/img/destinasi/bromo2.png" class="d-block w-100" alt="...">
 								</div>
 								<div class="carousel-item slide-image">
 									<img src="/travelkuy/assets/img/destinasi/aceh.jpg" class="d-block w-100" alt="...">
 								</div>
 								<div class="carousel-item slide-image">
-									<img src="/travelkuy/assets/img/destinasi/wisata-indonesia.jpg"
-										class="d-block w-100" alt="...">
+									<img src="/travelkuy/assets/img/destinasi/wisata-indonesia.jpg" class="d-block w-100" alt="...">
 								</div>
 								<div class="carousel-item slide-image">
-									<img src="/travelkuy/assets/img/destinasi/kepulauan-anambas.jpg"
-										class="d-block w-100" alt="...">
-								</div>
+									<img src="/travelkuy/assets/img/destinasi/kepulauan-anambas.jpg" class="d-block w-100" alt="...">
+								</div> -->
 							</div>
-							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-								data-slide="prev">
+							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 								<span class="sr-only">Previous</span>
 							</a>
-							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-								data-slide="next">
+							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 								<span class="carousel-control-next-icon" aria-hidden="true"></span>
 								<span class="sr-only">Next</span>
 							</a>
@@ -101,8 +107,7 @@ if (isset($_SESSION['id'])) {
 			</div>
 			<!-- SVG separator -->
 			<div class="separator separator-bottom separator-skew">
-				<svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
-					xmlns="http://www.w3.org/2000/svg">
+				<svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
 					<polygon style="fill: #E1F5FF" points="2560 0 2560 100 0 100"></polygon>
 				</svg>
 			</div>
@@ -132,25 +137,28 @@ if (isset($_SESSION['id'])) {
 					</div>
 				</div> -->
 				<div class="row justify-content-center">
-				<div class="col-lg-12">
-            <div class="row row-grid">
-			<?php for ($i=0; $i < 3; $i++) : ?>
-              <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-0 text-white" style="height: 300px; ">
-					<img class="card-img" src="./assets/img/destinasi/aceh.jpg" alt="Card image" style="height: 300px; object-fit: cover;">
-					<div class="card-img-overlay" style="z-index:10">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-						<p class="card-text">Last updated 3 mins ago</p>
+
+					<div class="col-lg-12">
+						<div class="row row-grid">
+							<?php for ($i = 0; $i < 6; $i++) : ?>
+								<div class="col-lg-4">
+									<a href="/travelkuy/customer/paket.php">
+										<div class="card card-lift--hover shadow border-0 text-white m-3" style="height: 300px; ">
+											<img class="card-img" src="./assets/img/destinasi/aceh.jpg" alt="Card image" style="height: 300px; object-fit: cover;">
+											<div class="card-img-overlay" style="z-index:10">
+												<h5 class="card-title font-weight-bold text-white">Card title</h5>
+												<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+												<p class="card-text">Last updated 3 mins ago</p>
+											</div>
+										</div>
+									</a>
+								</div>
+							<?php endfor ?>
+						</div>
 					</div>
-                </div>
-			  </div>
-			  <?php endfor ?>
-            </div>
-          </div>
 				</div>
 			</div>
-			<div class="col-sm-12">
+			<!-- <div class="col-sm-12">
 				<br /><br />
 				<h3>Paket Liburan Favorite</h3>
 				<div class="row">
@@ -187,7 +195,7 @@ if (isset($_SESSION['id'])) {
 					</a>
 
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	</div>

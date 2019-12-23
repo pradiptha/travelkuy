@@ -57,15 +57,6 @@
 				</div>
 				<br>
 				<div class="row">
-					<div class="col-xs-6 col-md-4">
-						<div class="tl">
-							<h3>TIMELINE</h3>
-							<hr class="hr1">
-						</div>
-						<div class="garis">
-
-						</div>
-					</div>
 					<div class="col-xs-6 col-md-8 deskripsi-destinasi">
 						<div class="btn_desk">
 							<button class="btn btn-2 btn-primary" disabled type="button">Deskripsi</button>
