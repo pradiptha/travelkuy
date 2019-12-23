@@ -69,44 +69,34 @@ $id_ph = $_SESSION['id_ph'];
         <?php include 'sidebar.php' ?>
         <!-- sidebar -->
 
-        <!-- Modal -->
-        <?php include 'modals.php' ?>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <?php if ($view == 'hotel') : ?>
-                                <?php if (isset($_GET['id'])) {
-                                    $id_hotel = $_GET['id'];
-                                    $sql = "SELECT * FROM hotel where id_hotel = $id_hotel";
-                                    $data_hotel = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-                                } ?>
-                                <h1 class="m-0 text-dark text-capitalize"><?= $data_hotel['nama_hotel'] ?></h1>
-                            <?php else : ?>
-                                <h1 class="m-0 text-dark text-capitalize"><?= $view ?></h1>
-                            <?php endif ?>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#"><?= $view ?></a></li>
-                                <li class="breadcrumb-item active"><?= $data_hotel['nama_hotel'] ?></li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content-header -->
-
-            <!-- Main content -->
-            <section class="content">
-                <?php include 'content.php' ?>
-            </section>
+            <?php
+            if (isset($_SESSION['error'])) {
+                if ($_SESSION['error'] == 0) {
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">'
+                        . $_SESSION['error_data'] . '
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>';
+                } elseif ($_SESSION['error'] == 1) {
+                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">'
+                        . $_SESSION['error_data'] . '
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>';
+                }
+            }
+            unset($_SESSION['error']);
+            unset($_SESSION['error_data']);
+            ?>
+            <?php include 'content.php' ?>
         </div>
 
+        <!-- Modal -->
+        <?php include 'modals.php' ?>
 
 
     </div>
@@ -170,6 +160,37 @@ $id_ph = $_SESSION['id_ph'];
                     // jika dapat mengambil data,, tampilkan di combo box kota
                     else {
                         $("#kota").html(msg);
+                    }
+
+                    // hilangkan image load
+                    $("#imgLoad").hide();
+                }
+            });
+        });
+        $("#provinsiEdit").change(function() {
+
+            // variabel dari nilai combo box provinsi
+            var id_provinsi = $("#provinsiEdit").val();
+
+            // tampilkan image load
+            $("#imgLoad").show("");
+
+            // mengirim dan mengambil data
+            $.ajax({
+                type: "POST",
+                dataType: "html",
+                url: "cari_kota.php",
+                data: "prov=" + id_provinsi,
+                success: function(msg) {
+
+                    // jika tidak ada data
+                    if (msg == '') {
+                        alert('Tidak ada data Kota');
+                    }
+
+                    // jika dapat mengambil data,, tampilkan di combo box kota
+                    else {
+                        $("#kotaEdit").html(msg);
                     }
 
                     // hilangkan image load

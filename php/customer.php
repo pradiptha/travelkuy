@@ -62,7 +62,7 @@ if ($act == 'edit_profile') {
     $id_user = $_SESSION['id'];
 
     if ($data) {
-        if (password_verify($user_password, $password)) {
+        if (password_verify($old_password, $password)) {
             $new_password = password_hash($user_password, PASSWORD_DEFAULT);
             $sql1 = mysqli_query($conn, "UPDATE user SET
                                 password = '$new_password' WHERE id_user = '$id_user' ");
