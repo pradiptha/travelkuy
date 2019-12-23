@@ -92,8 +92,12 @@
 					</table>
 				</div>
 				<div class="row row-3">
-					<button class="btn btn-danger">Batalkan</button>
-					<button class="btn btn-success">Lanjutkan</button>
+					<a href="paket.php">
+							<button class="btn btn-danger rounded-lg mr-3" type="button">Batalkan</button>
+					</a>
+					<a href="checkout.php">
+							<button class="btn btn-success rounded-lg" type="button">Lanjutkan</button>
+					</a>
 				</div>
 			</div>
 	</section>
