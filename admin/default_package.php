@@ -26,8 +26,8 @@ include '../php/config.php';
 	<link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -45,13 +45,13 @@ include '../php/config.php';
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DataTables</h1>
+            <h1>Paket Master</h1>
           </div>
           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+            <!-- <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">DataTables</li>
-            </ol>
+            </ol> -->
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -63,34 +63,41 @@ include '../php/config.php';
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with minimal features & hover style</h3>
+              <h3 class="card-title">Konfigurasi paket default oleh admin</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Nama Destinasi</th>
-                  <th>Alamat Destinasi</th>
-                  <th>Biaya</th>
+                  <th>Nama Paket</th>
+                  <th>Provinsi Paket</th>
+                  <th>Harga Paket</th>
                   <th>Edit</th>
                 </tr>
                 </thead>
                 <tbody> 
                <?php
-                  $sql = "select * from destinasi";
+                  $sql = "select paket_master.*, provinces.name from paket_master INNER JOIN provinces ON paket_master.id_provinsi = provinces.id";
                   $result = queryMultiple($sql);
                   foreach($result as $row)
                   {
                      echo "<tr>
-                     <td>".$row['nama_destinasi']."</td>
-                     <td>".$row['alamat_destinasi']."</td>
-                     <td>".$row['biaya_destinasi']."</td>"
+                     <td>".$row['nama_mpaket']."</td>
+                     <td>".$row['name']."</td>
+                     <td>".$row['biaya_mpaket']."</td>"
                      ?>
                      <td>
-                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">
+                       <a href="#">
+                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default<?=$row['id_mpaket']?>">
                         Edit Data
                      </button>
+                     </a>
+                     <a href="/<?= $baseurl ?>/php/mpaket.php?act=hapus&id=<?=$row['id_mpaket']?>">
+                      <button type="button" class="btn btn-danger">
+                          hapus
+                      </button>
+                     </a>
                      </td>
                 <?php        
                   }
@@ -99,9 +106,9 @@ include '../php/config.php';
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Nama Destinasi</th>
-                  <th>Alamat Destinasi</th>
-                  <th>Biaya</th>
+                  <th>Nama Paket</th>
+                  <th>Provinsi Paket</th>
+                  <th>Harga Paket</th>
                   <th> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">Tambah Data</button> </th>
                 </tr>
                 </tfoot>
@@ -141,21 +148,21 @@ include '../php/config.php';
             <span aria-hidden="true">&times;</span>
          </button>
       </div>
-      <form action="" method="POST">
+      <form enctype="multipart/form-data" action="/<?= $baseurl ?>/php/mpaket.php?act=tambah" method="POST">
         <div class="modal-body">
           <div class="form-group">
             <label>Nama Paket</label>
-            <input type="text" id="nama_paket" class="form-control" placeholder="Nama Paket">
+            <input type="text" id="nama_paket" name="nama_paket" class="form-control" placeholder="Nama Paket">
           </div>
           <div class="form-group">
             <label>Deskripsi</label>
-            <textarea class="form-control" rows="3" placeholder="Deskripsi Paket"></textarea>
+            <textarea class="form-control" name="deskripsi" rows="3" placeholder="Deskripsi Paket"></textarea>
           </div>
           <div class="form-group">
             <label for="exampleInputFile">Foto Paket</label>
             <div class="input-group">
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="exampleInputFile">
+                <input type="file" class="custom-file-input" name="foto" id="exampleInputFile">
                 <label class="custom-file-label" for="exampleInputFile">Choose file</label>
               </div>
               <div class="input-group-append">
@@ -165,21 +172,24 @@ include '../php/config.php';
           </div>
           <div class="form-group">
             <label>Pilih Provinsi</label>
-            <select class="form-control" id="provinsi" name="provinsi">
+            <select class="form-control" data-id="provinsi" name="provinsi">
+            <option value="#" selected>Pilih Provinsi</option>
               <?php foreach ($data_provinsi as $provinsi) : ?>
                   <option value="<?= $provinsi['id'] ?>"><?= $provinsi['name'] ?></option>
               <?php endforeach ?>
             </select>
           </div>
-          <div id="t_tempat">
-            <div class="form-group">
-              <label>Tambah Tempat Wisata</label>
-              <select class="form-control" name="wisata" id="wisata[]" required>
-                  <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
-              </select>
-            </div>
-            <button type="button" class="btn btn-default" onclick="tambah()">Tambah</button>
+          <div class="form-group">
+            <label>Tambah Tempat Wisata</label>
+            <select class="selectpicker form-control" multiple="multiple" name="wisata[]" data-id="wisata" multiple data-live-search="true" required>
+                <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
+            </select>
           </div>
+          <div class="form-group">
+            <label>Harga</label>
+            <input type="number" id="harga_paket" name="harga_paket" class="form-control" placeholder="Harga Paket">
+          </div>
+          <!-- <button type="button" class="btn btn-default" onclick="tambah()">Tambah</button> -->
         </div>
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -191,9 +201,76 @@ include '../php/config.php';
    </div>
    <!-- /.modal-dialog -->
 </div>
+
+<div class="modal fade" id="modal-default<?=$row['id_mpaket']?>">
+   <div class="modal-dialog">
+      <div class="modal-content">
+      <div class="modal-header">
+         <h4 class="modal-title">Edit Paket Master></h4>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+         </button>
+      </div>
+      <form enctype="multipart/form-data" action="/<?= $baseurl ?>/php/mpaket.php?act=edit&id=<?=$row['id_mpaket']?>" method="POST">
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Nama Paket</label>
+            <input type="text" id="nama_paket" name="nama_paket" class="form-control" value="<?= $row['nama_mpaket']?>" placeholder="Nama Paket">
+          </div>
+          <div class="form-group">
+            <label>Deskripsi</label>
+            <textarea class="form-control" name="deskripsi" rows="3" placeholder="Deskripsi Paket"><?= $row['deskripsim']?></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Foto Paket</label>
+            <img src="travelkuy/assets/img/masterpaket/<?=$row['foto_mpaket']?>" alt="">
+            <div class="input-group">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="foto" id="exampleInputFile">
+                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+              </div>
+              <div class="input-group-append">
+                <span class="input-group-text" id="">Upload</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Pilih Provinsi</label>
+            <select class="form-control" data-id="provinsi" name="provinsi">
+            <option value="<? $row['id_provinsi']?>" selected><?= $row['name']?></option>
+              <?php foreach ($data_provinsi as $provinsi) : ?>
+                  <option value="<?= $provinsi['id'] ?>"><?= $provinsi['name'] ?></option>
+              <?php endforeach ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tambah Tempat Wisata</label>
+            <select class="selectpicker form-control" multiple="multiple" name="wisata[]" data-id="wisata" multiple data-live-search="true" required>
+                <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Harga</label>
+            <input type="number" id="harga_paket" name="harga_paket" class="form-control"  placeholder="Harga Paket" value="<?=$row['biaya_mpaket']?>">
+          </div>
+          <!-- <button type="button" class="btn btn-default" onclick="tambah()">Tambah</button> -->
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="Submit" class="btn btn-primary">Edit data</button>
+        </div>
+      </form>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+
+
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -205,35 +282,42 @@ include '../php/config.php';
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- page script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 <script>
+
   // function tambah ()
   // {
   //   let add = document.getElementById("t_tempat");
+  //   let div = document.createElement('div');
   //   let select = document.createElement('select');
+  //   div.setAttribute('class','form-group');
   //   select.setAttribute('class','form-control');
-  //   select.setAttribute('id','wisata[]');
-  //   add.appendChild(select);
+  //   select.setAttribute('id','wisata');
+  //   div.appendChild(select);
+  //   add.appendChild(div);
 
   // }
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-    });
-  });
-  $("#provinsi").change(function() {
+  // $(function () {
+  //   $("#example1").DataTable();
+  //   $('#example2').DataTable({
+  //     "paging": true,
+  //     "lengthChange": false,
+  //     "searching": false,
+  //     "ordering": true,
+  //     "info": true,
+  //     "autoWidth": false,
+  //   });
+  // });
+  $("[data-id='wisata']").selectpicker();
+  $("[data-id='provinsi']").change(function() {
 
     // variabel dari nilai combo box provinsi
-    var id_provinsi = $("#provinsi").val();
+    // $('select').selectpicker('refresh');
+    $("[data-id='wisata']").empty();
+    var id_provinsi = $("[data-id='provinsi']").val();
 
     // tampilkan image load
     $("#imgLoad").show("");
-
     // mengirim dan mengambil data
     $.ajax({
         type: "POST",
@@ -244,12 +328,14 @@ include '../php/config.php';
 
             // jika tidak ada data
             if (msg == '') {
+                $("[data-id='wisata']").selectpicker('refresh');
                 alert('Tidak ada tempat wisata');
             }
 
             // jika dapat mengambil data,, tampilkan di combo box kota
             else {
-                $("#wisata[]").html(msg);
+              $("[data-id='wisata']").html(msg);
+              $("[data-id='wisata']").selectpicker('refresh');
             }
 
             // hilangkan image load
