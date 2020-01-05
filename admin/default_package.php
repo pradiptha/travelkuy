@@ -162,7 +162,7 @@ if (isset($_SESSION['id'])) {
 
                                 <div class="form-group">
                                   <label>Pilih Provinsi</label>
-                                  <select class="form-control" data-id="provinsi" name="provinsi">
+                                  <select class="form-control" data-id="provinsi1" name="provinsi">
                                     <option value="<? $row['id_provinsi'] ?>" selected><?= $row['name'] ?></option>
                                     <?php foreach ($data_provinsi as $provinsi) : ?>
                                       <option value="<?= $provinsi['id'] ?>"><?= $provinsi['name'] ?></option>
