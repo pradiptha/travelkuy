@@ -43,7 +43,7 @@ if (isset($_GET['act'])) {
         } else {
             // echo ("Error description: " . mysqli_error($conn));
             $_SESSION['error'] = 1;
-            $_SESSION['error_data'] = "Paket Gagal Ditambah";
+            $_SESSION['error_data'] = "Paket Gagal Ditambah" . mysqli_error($conn);
             header("location: /travelkuy/admin/default_package.php");
         }
         

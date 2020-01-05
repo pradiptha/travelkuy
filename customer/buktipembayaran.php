@@ -63,26 +63,6 @@
 									</div>
 								</form>
 
-								<!-- Drop Zone -->
-								<h5>Or drag and drop files below</h5>
-								<div class="upload-drop-zone" id="drop-zone">
-									Just drag and drop files here
-								</div>
-
-								<!-- Progress Bar -->
-								<div class="progress">
-									<div class="progress-bar text-center" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-										<span class="sr-only">60% Complete</span>
-									</div>
-								</div>
-
-								<!-- Upload Finished -->
-								<div class="js-upload-finished">
-									<h5>Processed files</h5>
-									<div class="list-group">
-										<a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
-									</div>
-								</div>
 								<a href="../index.php">
 									<button type="button" class="btn btn-danger btn-lg mt-4">CANCEL</button>
 								</a>			          	
@@ -95,6 +75,7 @@
 				</div>
 			</div>
 	</section>
+	<?php layout("footer") ?>
 	
 </body>
 <script type="text/javascript">

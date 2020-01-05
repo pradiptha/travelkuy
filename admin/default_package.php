@@ -6,7 +6,7 @@ $data_provinsi = queryMultiple($sql_provinsi);
 
 if (isset($_SESSION['id'])) {
   $id = $_SESSION['id'];
-  $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM USER WHERE id_user = '$id'"));
+  $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE id_user = '$id'"));
 } else {
   header("location: /$baseurl");
 }
