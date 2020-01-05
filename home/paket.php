@@ -1,15 +1,14 @@
 <?php
 include "../php/config.php";
 
-
-$slideshows = queryMultiple("SELECT * FROM master_slideshow WHERE status = '1'");
-
 if (isset($_GET)) {
     $t = $_GET['t'];
     $search = $_GET['search'];
+    $search = strtolower($search);
     if ($t == 'dp') {
         $title = "Paket Terpopuler di ";
         $title .= ucfirst($search);
+        $pakets = queryMultiple("SELECT * FROM paket_master WHERE nama_mpaket LIKE '%$search%'");
     }
 }
 
@@ -76,18 +75,19 @@ if (isset($_GET)) {
             <div class="col-md-12">
                 <div class="dropdown-divider"></div>
                 <div class="row row-grid">
-                    <?php for ($i = 0; $i < 10; $i++) : ?>
+                    <?php foreach ($pakets as $paket) : ?>
                         <div class="col-md-3">
-                            <a href="/travelkuy/customer/paket.php">
+                            <a href="/travelkuy/customer/paket.php?id=<?= $paket['id_mpaket'] ?>">
                                 <div class="card shadow border-0 text-white my-3">
-                                    <img src="/<?= $baseurl ?>/assets/img/destinasi/aceh.jpg" alt="Card image" style="width: 100%; object-fit: cover">
+                                    <img src="/<?= $baseurl ?>/assets/img/masterpaket/<?= $paket['foto_mpaket'] ?>" alt="Card image" style="width: 100%; object-fit: cover">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
+                                        <h5 class="card-title"><?= $paket['nama_mpaket'] ?></h5>
+                                        <h6>Rp. <?= $paket['biaya_mpaket'] ?></h6>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                    <?php endfor ?>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>

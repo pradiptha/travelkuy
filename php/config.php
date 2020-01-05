@@ -1,7 +1,7 @@
 <?php
 $config = 1;
 
-if ($config == 0) {
+if ($config == 1) {
     $host = 'localhost';
     $user = 'root';
     $pass = '';

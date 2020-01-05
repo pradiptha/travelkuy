@@ -14,7 +14,7 @@ if (isset($_GET['view'])) {
 
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
-    $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM USER WHERE id_user = '$id'"));
+    $data = queryFetch("SELECT * FROM user WHERE id_user = '$id'");
 } else {
     header("location: /$baseurl");
 }

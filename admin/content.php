@@ -1,9 +1,10 @@
 <?php if ($view == 'Dashboard') : ?>
   <?php
-  
+
   $partner_hotel = queryFetch("SELECT count(id_ph) as jumlah FROM partner_hotel");
   $default_package = queryFetch("SELECT COUNT(id_mpaket) as jumlah FROM paket_master");
   $destinasi = queryFetch("SELECT COUNT(id_destinasi) as jumlah FROM destinasi");
+  $checkout = queryFetch("SELECT COUNT(id_checkout) as jumlah FROM checkout");
 
   ?>
   <div class="content-header">
@@ -33,13 +34,26 @@
           <!-- small box -->
           <div class="small-box bg-info">
             <div class="inner">
-              <h3><?= $partner_hotel['jumlah'] ?></h3>
-              <p>Partner Hotel</p>
+              <h3><?= $checkout['jumlah'] ?></h3>
+              <p>Order</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-8">
+          <!-- small box -->
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3><?= $partner_hotel['jumlah'] ?></h3>
+              <p>Partner Hotel</p>
+            </div>
+            <div class="icon">
+              <i class="ion fa-box"></i>
+            </div>
+            <a href="../admin/index.php?view=validasi" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -67,7 +81,7 @@
             <div class="icon">
               <i class="fas fa-map-marked-alt"></i>
             </div>
-            <a href="../admin/destination.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="../admin/index.php?view=destinasi" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>
@@ -411,6 +425,64 @@
                   <th> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modaltambahpaketmaster">Tambah Data</button> </th>
                 </tr>
               </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
+  <!-- /.content -->
+<?php elseif ($view == 'orders') : ?>
+  <?php
+
+  $orders = queryMultiple("SELECT * FROM checkout");
+  ?>
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-left">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Orders</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Id Customer</th>
+                  <th>Id Paket</th>
+                  <th>Jumlah</th>
+                  <th>Total Harga</th>
+                  <th>Waktu Berangkat</th>
+                  <th>Waktu Transaksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($orders as $order) : ?>
+                  <tr>
+                    <td><?= $order['id_customer'] ?></td>
+                    <td><?= $order['id_paket'] ?></td>
+                    <td><?= $order['qty_paket'] ?></td>
+                    <td><?= $order['total_harga_paket'] ?></td>
+                    <td><?= $order['waktu_brngkt'] ?></td>
+                    <td><?= $order['waktu_transaksi'] ?></td>
+                  </tr>
+                <?php endforeach ?>
+              </tbody>
             </table>
           </div>
           <!-- /.card-body -->
