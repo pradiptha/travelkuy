@@ -42,6 +42,12 @@
 					</a>
 				</li>
 				<li class="nav-item">
+					<a href="destinasi.php" class="nav-link">
+						<i class="far fa-circle nav-icon"></i>
+						<p>Destinasi</p>
+					</a>
+				</li>
+				<li class="nav-item">
 					<a href="default_package.php" class="nav-link">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Master Paket</p>
