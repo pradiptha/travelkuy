@@ -217,10 +217,6 @@ if (isset($_SESSION['id'])) {
       <!-- /.content -->
     </div>
 
-<<<<<<< HEAD
-
-<!-- ./wrapper -->
-=======
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
@@ -290,7 +286,6 @@ if (isset($_SESSION['id'])) {
     <!-- /.modal-dialog -->
   </div>
 
->>>>>>> 3fd637571a76e3e452b46a8dda7fd8af2ce6ffe2
 
   <!-- ./wrapper -->
 
@@ -335,7 +330,7 @@ if (isset($_SESSION['id'])) {
     // });
     $("[data-id='wisata']").selectpicker();
     $("[data-id='provinsi']").change(function() {
-
+      
       // variabel dari nilai combo box provinsi
       // $('select').selectpicker('refresh');
       $("[data-id='wisata']").empty();
