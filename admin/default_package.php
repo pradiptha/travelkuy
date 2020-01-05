@@ -174,7 +174,7 @@ include '../php/config.php';
           <div id="t_tempat">
             <div class="form-group">
               <label>Tambah Tempat Wisata</label>
-              <select class="form-control" name="wisata" id="wisata[]" required>
+              <select class="form-control" name="wisata" id="wisata" required>
                   <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
               </select>
             </div>
@@ -249,7 +249,7 @@ include '../php/config.php';
 
             // jika dapat mengambil data,, tampilkan di combo box kota
             else {
-                $("#wisata[]").html(msg);
+                $("#wisata").html(msg);
             }
 
             // hilangkan image load

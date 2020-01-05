@@ -1,41 +1,5 @@
 <?php
 include "../php/config.php";
-
-if (isset($_POST['submit'])) {
-	// var_dump($_POST);
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-
-	$sql = "SELECT * FROM user where username='$username' AND password = '$password'";
-	$result = mysqli_query($conn, $sql);
-	$data = mysqli_fetch_assoc($result);
-
-	$tingkatan = $data["tingkatan"];
-	if ($data) {
-		$_SESSION['username'] = $_POST['username'];
-		$_SESSION['id'] = $data['id_user'];
-		// echo $tingkatan;
-		if ($tingkatan == "0") {
-			$_SESSION['type'] = $tingkatan;
-			header("location: ../index.php");
-		}
-		elseif ($tingkatan == "2")
-		{
-			$_SESSION['type'] = $tingkatan;
-			header("location: ../admin/index.php");
-		}
-		// else if ($tingkatan === "seller") {
-		// 	// echo "seller";
-		// 	$_SESSION['type'] = $tingkatan;
-		// 	header("location: ../seller/index.php");
-		// } else if ($tingkatan === "admin") {
-		// 	// echo "seller";
-		// 	$_SESSION['type'] = $tingkatan;
-		// 	header("location: ../admin/daftar-kategori.php");
-		// }
-	} else {
-	}
-}
 ?>
 
 <!DOCTYPE html>
@@ -46,43 +10,20 @@ if (isset($_POST['submit'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Start your development with a Design System for Bootstrap 4.">
 	<meta name="author" content="Creative Tim">
-	<title>TravelKuy - Liburan Biar Santuy</title>
+	<title><?= $title ?> - TravelKuy</title>
 	<!-- Favicon -->
-	<link href="../assets/img/brand/fav.png" rel="icon" type="image/png">
+	<link href="/<?= $baseurl ?>/assets/img/brand/fav.png" rel="icon" type="image/png">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 	<!-- Icons -->
-	<link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-	<link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/<?= $baseurl ?>/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+	<link href="/<?= $baseurl ?>/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<!-- Argon CSS -->
-	<link rel="stylesheet" type="text/css" href="">
-	<link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
+	<link type="text/css" href="/<?= $baseurl ?>/assets/css/argon.min.css?v=1.1.0" rel="stylesheet">
 </head>
 
 <body>
-	<!-- <div class="container">
-		<div class="row">
-			<div class="col-sm-5 pt-5 pl-5 pr-5 pb-2 mx-auto bg-white rounded shadow" style="margin-top: 80px;">
-				<h3 class="text-center"><strong>LOGIN</strong></h3><br>
-				<form method="POST" action="">
-					<div class="input-group mb-4">
-						<input name="username" type="text" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Username">
-					</div>
-					<div class="input-group mb-5">
-						<input name="password" type="password" class="form-control rounded-pill btn-outline-primary" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Password">
-					</div>
-					<div class="text-center">
-						<input name="submit" class="btn btn-primary rounded-pill" type="submit">
-					</div>
-				</form>
-				<div class="text-center">
-					<br>
-					<p><a href="register.php">Buat Akun</a> | <a href="">Lupa Password</a></p>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<?php include '../nav/navbar.php' ?>
+	<?php layout("navbar") ?>
 	<section class="section section-shaped section-lg">
 		<div class="shape shape-style-1 bg-gradient-default h-100vh">
 			<span></span>
@@ -160,12 +101,12 @@ if (isset($_POST['submit'])) {
 		</div>
 	</section>
 	<!-- Core -->
-	<script src="js/jquery.min.js"></script>
-	<script src="/travelkuy/assets/vendor/popper/popper.min.js"></script>
-	<script src="/travelkuy/assets/vendor/bootstrap/bootstrap.min.js"></script>
+	<script src="/<?= $baseurl ?>/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/<?= $baseurl ?>/assets/vendor/popper/popper.min.js"></script>
+	<script src="/<?= $baseurl ?>/assets/vendor/bootstrap/bootstrap.min.js"></script>
 	<!-- Theme JS -->
-	<!-- <script src="/travelkuy/assets/js/argon.min.js"></script> -->
-	<script type="text/javascript" src="/travelkuy/assets/js/jquery.validate.min.js"></script>
+	<!-- <script src="/<?= $baseurl ?>/assets/js/argon.min.js"></script> -->
+	<script type="text/javascript" src="/<?= $baseurl ?>/assets/js/jquery.validate.min.js"></script>
 	<script>
 		$('document').ready(function() {
 			/* validation */
@@ -210,7 +151,6 @@ if (isset($_POST['submit'])) {
 					},
 					success: function(data) {
 						if (data == "error1") {
-
 							$("#error").fadeIn(1000, function() {
 								$("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; Sorry username doesn\'t match !</div>');
 								$("#btn-submit").html('Sign In');
@@ -223,6 +163,7 @@ if (isset($_POST['submit'])) {
 							});
 							setTimeout('$("#error").fadeOut(1000)', 5000);
 						} else {
+							$("#error").fadeOut();
 							$("#error").fadeIn(1000, function() {
 								$("#error").html('<div class="alert alert-success"> Login Success !</div>');
 								$("#btn-submit").html('Sign In');

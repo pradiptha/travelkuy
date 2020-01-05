@@ -172,9 +172,10 @@
                                         <label class="custom-file-label mx-2" for="exampleInputFile">Choose file</label>
                                     </div>
                                 </div>
-                                <?php //var_dump($foto) ?>
+                                <?php //var_dump($foto) 
+                                ?>
                                 <?php foreach ($foto as $foto_hotel) : ?>
-                                    <img src="../assets/img/hotel/<?= $foto_hotel['foto_hotel'] ?>" alt="">
+                                    <img src="../assets/img/hotel/<?= $foto_hotel['foto_hotel'] ?>" alt="" style="height: 100%; width: 100%; object-fit: contain">
                                 <?php endforeach ?>
                                 <hr>
                                 <div class="form-group row">
