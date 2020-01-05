@@ -99,6 +99,70 @@ include '../php/config.php';
                       </button>
                      </a>
                      </td>
+                     <div class="modal fade" id="modal-default<?=$row['id_mpaket']?>">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title">Edit Paket Master</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form enctype="multipart/form-data" action="/<?= $baseurl ?>/php/mpaket.php?act=edit&id=<?=$row['id_mpaket']?>" method="POST">
+                            <div class="modal-body">
+                              <div class="form-group">
+                                <label>Nama Paket</label>
+                                <input type="text" id="nama_paket" name="nama_paket" class="form-control" value="<?= $row['nama_mpaket']?>" placeholder="Nama Paket">
+                              </div>
+                              <div class="form-group">
+                                <label>Deskripsi</label>
+                                <textarea class="form-control" name="deskripsi" rows="3" placeholder="Deskripsi Paket"><?= $row['deskripsim']?></textarea>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputFile">Foto Paket</label>
+                                <img src="travelkuy/assets/img/masterpaket/<?=$row['foto_mpaket']?>" alt="">
+                                <div class="input-group">
+                                  <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="foto" id="exampleInputFile">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                  </div>
+                                  <div class="input-group-append">
+                                    <span class="input-group-text" id="">Upload</span>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                <label>Pilih Provinsi</label>
+                                <select class="form-control" data-id="provinsi" name="provinsi">
+                                <option value="<? $row['id_provinsi']?>" selected><?= $row['name']?></option>
+                                  <?php foreach ($data_provinsi as $provinsi) : ?>
+                                      <option value="<?= $provinsi['id'] ?>"><?= $provinsi['name'] ?></option>
+                                  <?php endforeach ?>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label>Tambah Tempat Wisata</label>
+                                <select class="selectpicker form-control" multiple="multiple" name="wisata[]" data-id="wisata" multiple data-live-search="true" required>
+                                    <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label>Harga</label>
+                                <input type="number" id="harga_paket" name="harga_paket" class="form-control"  placeholder="Harga Paket" value="<?=$row['biaya_mpaket']?>">
+                              </div>
+                              <!-- <button type="button" class="btn btn-default" onclick="tambah()">Tambah</button> -->
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="Submit" class="btn btn-primary">Edit data</button>
+                            </div>
+                          </form>
+                          </div>
+                          <!-- /.modal-content -->
+                      </div>
+                      <!-- /.modal-dialog -->
+                    </div>
                 <?php        
                   }
                   
@@ -202,70 +266,7 @@ include '../php/config.php';
    <!-- /.modal-dialog -->
 </div>
 
-<div class="modal fade" id="modal-default<?=$row['id_mpaket']?>">
-   <div class="modal-dialog">
-      <div class="modal-content">
-      <div class="modal-header">
-         <h4 class="modal-title">Edit Paket Master></h4>
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-         </button>
-      </div>
-      <form enctype="multipart/form-data" action="/<?= $baseurl ?>/php/mpaket.php?act=edit&id=<?=$row['id_mpaket']?>" method="POST">
-        <div class="modal-body">
-          <div class="form-group">
-            <label>Nama Paket</label>
-            <input type="text" id="nama_paket" name="nama_paket" class="form-control" value="<?= $row['nama_mpaket']?>" placeholder="Nama Paket">
-          </div>
-          <div class="form-group">
-            <label>Deskripsi</label>
-            <textarea class="form-control" name="deskripsi" rows="3" placeholder="Deskripsi Paket"><?= $row['deskripsim']?></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputFile">Foto Paket</label>
-            <img src="travelkuy/assets/img/masterpaket/<?=$row['foto_mpaket']?>" alt="">
-            <div class="input-group">
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" name="foto" id="exampleInputFile">
-                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-              </div>
-              <div class="input-group-append">
-                <span class="input-group-text" id="">Upload</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label>Pilih Provinsi</label>
-            <select class="form-control" data-id="provinsi" name="provinsi">
-            <option value="<? $row['id_provinsi']?>" selected><?= $row['name']?></option>
-              <?php foreach ($data_provinsi as $provinsi) : ?>
-                  <option value="<?= $provinsi['id'] ?>"><?= $provinsi['name'] ?></option>
-              <?php endforeach ?>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Tambah Tempat Wisata</label>
-            <select class="selectpicker form-control" multiple="multiple" name="wisata[]" data-id="wisata" multiple data-live-search="true" required>
-                <!-- hasil data dari cari_kota.php akan ditampilkan disini -->
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Harga</label>
-            <input type="number" id="harga_paket" name="harga_paket" class="form-control"  placeholder="Harga Paket" value="<?=$row['biaya_mpaket']?>">
-          </div>
-          <!-- <button type="button" class="btn btn-default" onclick="tambah()">Tambah</button> -->
-        </div>
-        <div class="modal-footer justify-content-between">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="Submit" class="btn btn-primary">Edit data</button>
-        </div>
-      </form>
-      </div>
-      <!-- /.modal-content -->
-   </div>
-   <!-- /.modal-dialog -->
-</div>
+
 <!-- ./wrapper -->
 
 <!-- jQuery -->
