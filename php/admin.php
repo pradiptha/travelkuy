@@ -47,5 +47,14 @@ if (isset($_GET['act'])) {
         $query = "DELETE FROM master_slideshow WHERE id_slideshow = '$id'";
         mysqli_query($conn, $query);
         header("location: /$baseurl/admin/index.php?view=slideshow");
+    } elseif ($act == 'ganti_status_ph') {
+        $id_ph = $_GET['id_ph'];
+        $status = $_GET['status'];
+        if ($status == 1) {
+            mysqli_query($conn, "UPDATE partner_hotel SET status = 0 WHERE id_ph = $id_ph");
+        } else {
+            mysqli_query($conn, "UPDATE partner_hotel SET status = 1 WHERE id_ph = $id_ph");
+        }
+        header("location: /$baseurl/admin/index.php?view=validasi");
     }
 }

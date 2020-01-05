@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include '../php/config.php';
 
@@ -47,7 +47,9 @@ $detail_paket = array_merge($detail_destinasi, $detail_hotel);
 </head>
 
 <body>
-	<?php include '../nav/navbar.php' ?>
+	<?php layout("navbar") ?>
+	<?php //include '../nav/navbar.php' 
+	?>
 	<section class="section section-lg section-shaped pb-250">
 		<div class="shape shape-style-1 bg-gradient-info shape-default">
 			<span></span>
@@ -59,50 +61,50 @@ $detail_paket = array_merge($detail_destinasi, $detail_hotel);
 			<span></span>
 			<span></span>
 			<span></span>
-   	 	</div>
-			<div class="container bg-white p-4 rounded-lg">
-				<div class="row rounded-lg p-2">
-					<div class="col-sm-4 uraian">
-						<img src="/travelkuy/assets/img/destinasi/bali.jpg" class="img-thumbnail rounded">
+		</div>
+		<div class="container bg-white p-4 rounded-lg">
+			<div class="row rounded-lg p-2">
+				<div class="col-sm-4 uraian">
+					<img src="/travelkuy/assets/img/destinasi/bali.jpg" class="img-thumbnail rounded">
+				</div>
+				<div class="col-sm-8 uraian">
+					<h3><?= $data_paket['nama_paket'] ?></h3>
+					<p><?= $data_paket['deskripsi'] ?></p>
+					<p>Masukan jumlah paket yang ingin dipesan</p>
+					<h6 class="durasi-destinasi">2 hari 3 malam</h6>
+					<form method="post" action="">
+						<div class="hitung">
+							<button type="button" value="-" class="btn minus btn-primary btn-sm bg-success float-left" data-field="quantity">-</button>
+							<span class="border border-secondary float-left box2">
+								<input class="quantity-field" type="number" step="1" max="<?= $simpan['quantity'] ?>" value="1" name="quantity">
+							</span>
+							<button type="button" value="+" class="btn plus btn-secondary btn-sm bg-success float-left" data-field="quantity">+</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="row rounded-lg mt-3 p-2">
+				<div class="col-sm-12 date">
+					<div class="tgl">
+						Pilih tanggal dan waktu destinasi
 					</div>
-					<div class="col-sm-8 uraian">
-						<h3><?= $data_paket['nama_paket'] ?></h3>
-						<p><?= $data_paket['deskripsi'] ?></p>
-						<p>Masukan jumlah paket yang ingin dipesan</p>
-						<h6 class="durasi-destinasi">2 hari 3 malam</h6>
-						<form method="post" action="">
-							<div class="hitung">
-								<button type="button" value="-" class="btn minus btn-primary btn-sm bg-success float-left" data-field="quantity">-</button>
-								<span class="border border-secondary float-left box2">
-									<input class="quantity-field" type="number" step="1" max="<?= $simpan['quantity'] ?>" value="1" name="quantity">
-								</span>
-								<button type="button" value="+" class="btn plus btn-secondary btn-sm bg-success float-left" data-field="quantity">+</button>
+					<div class="form-group">
+						<div class="input-group input-group-alternative">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
 							</div>
-						</form>
+							<input class="form-control datepicker" placeholder="Select date" type="text" value="06/20/2019">
+						</div>
 					</div>
 				</div>
-				<div class="row rounded-lg mt-3 p-2">
-					<div class="col-sm-12 date">
-						<div class="tgl">
-							Pilih tanggal dan waktu destinasi
-						</div>
-						<div class="form-group">
-							<div class="input-group input-group-alternative">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-								</div>
-								<input class="form-control datepicker" placeholder="Select date" type="text" value="06/20/2019">
-							</div>
-						</div>
-					</div>
-					<div class="waktu">
-						Waktu Keberangkatan :
-						<input type="time" name="usr_time">
-					</div>
+				<div class="waktu">
+					Waktu Keberangkatan :
+					<input type="time" name="usr_time">
 				</div>
-				<div class="row row-2 rounded-lg mt-3 p-2">
-					<table class="edit-destinasi">
-						<?php foreach ($detail_paket as $paket) :?>
+			</div>
+			<div class="row row-2 rounded-lg mt-3 p-2">
+				<table class="edit-destinasi">
+					<?php foreach ($detail_paket as $paket) : ?>
 						<?php if (isset($paket['nama_destinasi'])) {
 							$nama = $paket['nama_destinasi'];
 						} else {
@@ -112,20 +114,21 @@ $detail_paket = array_merge($detail_destinasi, $detail_hotel);
 							<td><button class="btn"><i class="fa fa-trash"></i></button></td>
 							<td><?= $nama ?></td>
 						</tr>
-						<?php endforeach ?>
-					</table>
-				</div>
-				<div class="row row-3">
-					<a href="paket.php">
-							<button class="btn btn-danger rounded-lg mr-3" type="button">Batalkan</button>
-					</a>
-					<a href="checkout.php">
-							<button class="btn btn-success rounded-lg" type="button">Lanjutkan</button>
-					</a>
-				</div>
+					<?php endforeach ?>
+				</table>
 			</div>
+			<div class="row row-3">
+				<a href="paket.php">
+					<button class="btn btn-danger rounded-lg mr-3" type="button">Batalkan</button>
+				</a>
+				<a href="checkout.php">
+					<button class="btn btn-success rounded-lg" type="button">Lanjutkan</button>
+				</a>
+			</div>
+		</div>
 	</section>
-	<?php include '../nav/footer.php' ?>
+	<?php layout("footer") ?>
+	<?php //include '../nav/footer.php' ?>
 </body>
 
 </html>

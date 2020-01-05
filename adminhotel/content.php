@@ -49,9 +49,15 @@
                         <div class="icon">
                             <i class="fas fa-key"></i>
                         </div>
-                        <a href="" type="button" class="small-box-footer" data-toggle="modal" data-target="#tambahhotel">Add hotels
-                            <i class="fas fa-plus-circle"></i>
-                        </a>
+                        <?php if ($status == 1) : ?>
+                            <a href="" type="button" class="small-box-footer" data-toggle="modal" data-target="#tambahhotel">Add hotels
+                                <i class="fas fa-plus-circle"></i>
+                            </a>
+                        <?php elseif ($status == 0) : ?>
+                            <a href="" type="button" class="small-box-footer" data-toggle="modal" data-target="#gagaltambah">Add hotels
+                                <i class="fas fa-plus-circle"></i>
+                            </a>
+                        <?php endif ?>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -59,7 +65,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>67</h3>
+                            <h3>0</h3>
 
                             <p>Total Booking Rooms</p>
                         </div>
@@ -74,8 +80,11 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
+                            <?php if ($result['total_kamar'] == NULL) : ?>
+                            <h3>0</h3>
+                            <?php else : ?>
                             <h3><?= $result['total_kamar'] ?></h3>
-
+                            <?php endif ?>
                             <p>Total Available Rooms</p>
                         </div>
                         <div class="icon">
@@ -91,10 +100,13 @@
 <?php elseif ($view == 'hotel') : ?>
     <?php
     $id_hotel = $_GET['id'];
-    $sql = "SELECT * FROM hotel WHERE id_hotel = '$id_hotel'";
-    $hotel = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-    $sql1 = "SELECT * FROM foto_hotel WHERE id_hotel = '$id_hotel'";
-    $foto = queryMultiple($sql1);
+    $query = "SELECT * FROM hotel WHERE id_hotel = '$id_hotel'";
+    $hotel = queryFetch($query);
+    $query1 = "SELECT * FROM foto_hotel WHERE id_hotel = '$id_hotel'";
+    $foto = queryMultiple($query1);
+    $query2 = "SELECT p.name as provinsi, k.name as kota from hotel INNER JOIN provinces p ON hotel.provinsi = p.id INNER JOIN regencies k ON hotel.kota = k.id";
+    $lokasi = queryFetch($query2);
+    // var_dump($foto);
     ?>
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -124,9 +136,27 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-12" style="max-height: 200px">
+                        <?php if (sizeof($foto) > 0) : ?>
+                            <img src="/<?= $baseurl ?>/assets/img/hotel/<?= $foto[0]['foto_hotel'] ?>" class="card-img rounded h-100" alt="..." style="height: 100%; width: 100%; object-fit: contain">
+                        <?php else : ?>
+                            <img src="/<?= $baseurl ?>/assets/img/hotel/nophotohotel.jpg" class="card-img rounded" alt="..." style="height: 100%; width: 100%; object-fit: contain">
+                        <?php endif ?>
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <div class="card-body">
+                            <!-- <h5 class="card-title"></h5> -->
+                            <p class="card-text"><strong>Deskripsi:<br></strong><?= $hotel['deskripsi_hotel'] ?></p>
+                            <p class="card-text"><strong>Lokasi:<br></strong> <?= ucwords(strtolower($lokasi['kota'])) ?> , <?= ucwords(strtolower($lokasi['provinsi'])) ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <div class="col-lg-4 col-6">
+                <div class="col-lg-4 col-12">
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
@@ -141,7 +171,7 @@
                     </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-4 col-6">
+                <div class="col-lg-4 col-12">
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
@@ -156,7 +186,7 @@
                     </div>
                 </div>
                 <!-- ./col -->
-                <div class="col-lg-4 col-6">
+                <div class="col-lg-4 col-12">
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
@@ -175,10 +205,10 @@
         </div>
     </section>
 <?php elseif ($view == 'availableroom') : ?>
-    <?php 
+    <?php
     $sql = "SELECT * FROM hotel";
-    $hotels = queryMultiple($sql);    
-        
+    $hotels = queryMultiple($sql);
+
     ?>
     <section class="content-header">
         <div class="container-fluid">
@@ -210,13 +240,13 @@
                                     <th>Jumlah Kamar Tersedia</th>
                                 </tr>
                             </thead>
-                            <?php foreach ($hotels as $hotel ) :?>
-                            <tbody>
-                                <tr>
-                                    <td><?= $hotel['nama_hotel'] ?></td>
-                                    <td><?= $hotel['jumlah_kamar'] ?></td>
-                                </tr>
-                            </tbody>
+                            <?php foreach ($hotels as $hotel) : ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?= $hotel['nama_hotel'] ?></td>
+                                        <td><?= $hotel['jumlah_kamar'] ?></td>
+                                    </tr>
+                                </tbody>
                             <?php endforeach ?>
                         </table>
                     </div>

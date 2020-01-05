@@ -1,3 +1,5 @@
+<?php include '../php/config.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +26,8 @@
 </head>
 
 <body style="background-color: #E1F5FF">
-	<?php include '../nav/navbar.php' ?>
+	<?php layout("navbar") ?>
+	<?php //include '../nav/navbar.php' ?>
 	<section class="section section-lg section-shaped pb-250">
 		<div class="shape shape-style-1 bg-gradient-info shape-default">
 			<span></span>

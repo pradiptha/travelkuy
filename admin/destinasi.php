@@ -1,10 +1,8 @@
 
 <?php
 include '../php/config.php';
-
-   $sql_provinsi = "SELECT * FROM provinces";
+  $sql_provinsi = "SELECT * FROM provinces";
   $data_provinsi = queryMultiple($sql_provinsi);
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -227,7 +225,7 @@ include '../php/config.php';
           </div>
           <div class="form-group">
             <label for="exampleInputFile">Foto Paket</label>
-            <img src="travelkuy/assets/img/masterpaket/<?=$row['foto_mpaket']?>" alt="">
+            <img src="/<?= $baseurl ?>/assets/img/masterpaket/<?=$row['foto_mpaket']?>" alt="">
             <div class="input-group">
               <div class="custom-file">
                 <input type="file" class="custom-file-input" name="foto" id="exampleInputFile">

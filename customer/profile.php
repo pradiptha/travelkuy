@@ -32,21 +32,23 @@ if (isset($_SESSION['id'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Design System for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>TravelKuy - Liburan Biar Santuy</title>
+  <title><?= $title ?> - TravelKuy</title>
   <!-- Favicon -->
-  <link href="../assets/img/brand/fav.png" rel="icon" type="image/png">
+  <link href="/<?= $baseurl ?>/assets/img/brand/fav.png" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
-  <link href="../assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/<?= $baseurl ?>/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="/<?= $baseurl ?>/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="../assets/css/argon.css?v=1.1.0" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css-home.css">
+  <link type="text/css" href="/<?= $baseurl ?>/assets/css/argon.min.css?v=1.1.0" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="css-home.css"> -->
 </head>
 
 <body>
-  <?php include '../nav/navbar.php' ?>
+  <?php layout("navbar") ?>
+  <?php //include '../nav/navbar.php' 
+  ?>
   <section class="section section-lg section-shaped pb-250">
     <div class="shape shape-style-1 bg-gradient-info shape-default">
       <span></span>
@@ -105,7 +107,9 @@ if (isset($_SESSION['id'])) {
     </div>
   </div>
 
-  <?php include '../nav/footer.php' ?>
+  <?php //include '../nav/footer.php' 
+  ?>
+  <?php layout("footer") ?>
 
 </body>
 

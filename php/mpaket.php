@@ -97,12 +97,12 @@ if (isset($_GET['act'])) {
             $result = mysqli_query($conn, $sql1);
             $_SESSION['error'] = 0;
             $_SESSION['error_data'] = "Hotel Berhasil Diubah";
-            header("location: /travelkuy/admin/default_package.php");
+            // header("location: /travelkuy/admin/default_package.php");
         } else {
             // echo ("Error description: " . mysqli_error($conn));
             $_SESSION['error'] = 1;
             $_SESSION['error_data'] = "Hotel Gagal Diubah" . mysqli_error($conn);
-            header("location: /travelkuy/admin/default_package.php");
+            // header("location: /travelkuy/admin/default_package.php");
         }
     } 
 }
