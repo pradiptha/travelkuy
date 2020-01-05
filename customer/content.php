@@ -84,11 +84,36 @@
     </main>
 
 <?php elseif ($view == 'history') : ?>
+    <?php
+    $orders = queryMultiple("SELECT * FROM checkout WHERE id_customer = '$id'");
+    ?>
     <main class="col-md-12 profile-page">
         <div class="card m-3 shadow">
             <div class="text-center m-4">
                 <h3 class="font-weight-bold">Riwayat Pesanan</h3>
                 <div class="dropdown-divider"></div>
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id Paket</th>
+                            <th>Jumlah</th>
+                            <th>Total Harga</th>
+                            <th>Waktu Berangkat</th>
+                            <th>Waktu Transaksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($orders as $order) : ?>
+                            <tr>
+                                <td><a href="paket.php?id=<?= $order['id_paket'] ?>"><?= $order['id_paket'] ?></a></td>
+                                <td><?= $order['qty_paket'] ?></td>
+                                <td><?= $order['total_harga_paket'] ?></td>
+                                <td><?= $order['waktu_brngkt'] ?></td>
+                                <td><?= $order['waktu_transaksi'] ?></td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
