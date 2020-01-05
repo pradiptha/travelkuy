@@ -4,6 +4,8 @@ include "php/config.php";
 
 $slideshows = queryMultiple("SELECT * FROM master_slideshow WHERE status = '1'");
 
+$daerah_terpopuler = ['Bali', 'DI Yogyakarta', 'Bandung', 'Jakarta', 'Lombok', 'Surabaya', 'Medan', 'Malang'];
+$foto_daerah = ['bali.jpg','yogyakarta.jpg', 'bandung.jpg', 'jakarta.jpg', 'lombok.jpg', 'surabaya.jpg', 'medan.jpg', 'malang.jpg'];
 
 ?>
 
@@ -92,21 +94,17 @@ $slideshows = queryMultiple("SELECT * FROM master_slideshow WHERE status = '1'")
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
-					<h3 class="">Destinasi Terpopuler</h3>
-				</div>
-				<div class="col-sm-6">
-					<a href="/<?= $baseurl ?>/home/paket.php" class="float-sm-right my-3">SELENGKAPNYA</a>
+					<h3 class="">Daerah Terpopuler</h3>
 				</div>
 			</div>
 			<div class="row row-grid">
-				<?php for ($i = 0; $i < 10; $i++) : ?>
+				<?php for ($i = 0; $i < sizeof($daerah_terpopuler); $i++) : ?>
 					<div class="col-md-3">
-						<a href="/travelkuy/customer/paket.php">
+						<a href="/travelkuy/home/paket.php?t=dp&search=<?= $daerah_terpopuler[$i] ?>">
 							<div class="card card-lift--hover shadow border-0 text-white my-3" style="height: 200px; ">
-								<img class="card-img" src="./assets/img/destinasi/aceh.jpg" alt="Card image" style="height: 100%; width: 100%; object-fit: cover">
+								<img class="card-img" src="./assets/img/daerah/<?= $foto_daerah[$i] ?>" alt="Card image" style="height: 100%; width: 100%; object-fit: cover">
 								<div class="card-img-overlay" style="z-index:10">
-									<h5 class="card-title font-weight-bold text-white">Card title</h5>
-									<p class="card-text">Last updated 3 mins ago</p>
+									<h5 class="card-title font-weight-bold text-white"><?= $daerah_terpopuler[$i] ?></h5>
 								</div>
 							</div>
 						</a>

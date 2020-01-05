@@ -49,9 +49,15 @@
                         <div class="icon">
                             <i class="fas fa-key"></i>
                         </div>
-                        <a href="" type="button" class="small-box-footer" data-toggle="modal" data-target="#tambahhotel">Add hotels
-                            <i class="fas fa-plus-circle"></i>
-                        </a>
+                        <?php if ($status == 1) : ?>
+                            <a href="" type="button" class="small-box-footer" data-toggle="modal" data-target="#tambahhotel">Add hotels
+                                <i class="fas fa-plus-circle"></i>
+                            </a>
+                        <?php elseif ($status == 0) : ?>
+                            <a href="" type="button" class="small-box-footer" data-toggle="modal" data-target="#gagaltambah">Add hotels
+                                <i class="fas fa-plus-circle"></i>
+                            </a>
+                        <?php endif ?>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -59,7 +65,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>67</h3>
+                            <h3>0</h3>
 
                             <p>Total Booking Rooms</p>
                         </div>
@@ -74,8 +80,11 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
+                            <?php if ($result['total_kamar'] == NULL) : ?>
+                            <h3>0</h3>
+                            <?php else : ?>
                             <h3><?= $result['total_kamar'] ?></h3>
-
+                            <?php endif ?>
                             <p>Total Available Rooms</p>
                         </div>
                         <div class="icon">

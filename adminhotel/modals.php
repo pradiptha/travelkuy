@@ -13,7 +13,6 @@
                     <div class="row">
                         <div class="card-body">
                             <div class="tab-content">
-
                                 <div class="form-group row">
                                     <label for="inputName" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
@@ -27,7 +26,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputName2" class="col-sm-2 col-form-label">Foto</label>
+                                    <label for="inputName2" class="col-sm-2 col-form-label">Foto Identias</label>
                                     <div class="col-sm-10 custom-file">
                                         <input name="foto_ktp_ph" text="foto" type="file" class="custom-file-input" id="exampleInputFile">
                                         <label class="custom-file-label mx-2" for="exampleInputFile">Choose file</label>
@@ -210,6 +209,25 @@
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="gagaltambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog bg-gradient-warning" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Akun belum aktif</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <h4>Mohon maaf anda belum bisa menambah hotel, akun anda belum aktif</h4>
+                <h5>Aktifkan dengan mengupload foto identias anda di menu edit profile</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
         </div>
     </div>
 </div>

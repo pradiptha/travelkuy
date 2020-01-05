@@ -2,6 +2,10 @@
 
 include "../php/config.php";
 
+if ($_SESSION['tingkatan'] != 2) {
+    header("location: /$baseurl");
+}
+
 if (isset($_GET['view'])) {
     $view = $_GET['view'];
 } else {
@@ -12,7 +16,7 @@ if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
     $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM USER WHERE id_user = '$id'"));
 } else {
-    header("location: ../index.php");
+    header("location: /$baseurl");
 }
 
 ?>
@@ -115,11 +119,14 @@ if (isset($_SESSION['id'])) {
     <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
     <script src="plugins/daterangepicker/daterangepicker.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script> -->
     <!-- Summernote -->
     <script src="plugins/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
     <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- DataTables -->
+    <script src="plugins/datatables/jquery.dataTables.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -182,6 +189,78 @@ if (isset($_SESSION['id'])) {
                     // jika dapat mengambil data,, tampilkan di combo box kota
                     else {
                         $("#kotaEdit").html(msg);
+                    }
+
+                    // hilangkan image load
+                    $("#imgLoad").hide();
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+            });
+        });
+    </script>
+    <script>
+        // function tambah ()
+        // {
+        //   let add = document.getElementById("t_tempat");
+        //   let div = document.createElement('div');
+        //   let select = document.createElement('select');
+        //   div.setAttribute('class','form-group');
+        //   select.setAttribute('class','form-control');
+        //   select.setAttribute('id','wisata');
+        //   div.appendChild(select);
+        //   add.appendChild(div);
+
+        // }
+        // $(function () {
+        //   $("#example1").DataTable();
+        //   $('#example2').DataTable({
+        //     "paging": true,
+        //     "lengthChange": false,
+        //     "searching": false,
+        //     "ordering": true,
+        //     "info": true,
+        //     "autoWidth": false,
+        //   });
+        // });
+        $("[#wisata]").selectpicker();
+        $("[#provinsi]").change(function() {
+
+            // variabel dari nilai combo box provinsi
+            // $('select').selectpicker('refresh');
+            $("[#wisata]").empty();
+            var id_provinsi = $("[data-id='provinsi']").val();
+
+            // tampilkan image load
+            $("#imgLoad").show("");
+            // mengirim dan mengambil data
+            $.ajax({
+                type: "POST",
+                dataType: "html",
+                url: "cari_destinasi.php",
+                data: "prov=" + id_provinsi,
+                success: function(msg) {
+
+                    // jika tidak ada data
+                    if (msg == '') {
+                        $("[data-id='wisata']").selectpicker('refresh');
+                        alert('Tidak ada tempat wisata');
+                    }
+
+                    // jika dapat mengambil data,, tampilkan di combo box kota
+                    else {
+                        $("#wisata").html(msg);
                     }
 
                     // hilangkan image load

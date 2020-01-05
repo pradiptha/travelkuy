@@ -1,8 +1,19 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'travelkuy';
+$config = 1;
+
+if ($config == 0) {
+    $host = 'localhost';
+    $user = 'root';
+    $pass = '';
+    $db = 'travelkuy';
+    
+} else {
+    $host = 'remotemysql.com:3306';
+    $user = 'vuzOinu8zi';
+    $pass = 'J3W1j9FhN2';
+    $db = 'vuzOinu8zi';
+}
+
 $baseurl = 'travelkuy';
 
 $conn = mysqli_connect($host, $user, $pass, $db);

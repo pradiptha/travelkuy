@@ -2,6 +2,10 @@
 
 include "../php/config.php";
 
+if ($_SESSION['tingkatan'] != 1) {
+    header("location: /$baseurl");
+}
+
 if (isset($_GET['view'])) {
     $view = $_GET['view'];
 } else {
@@ -15,6 +19,7 @@ if (isset($_SESSION['id'])) {
     $username = $data['username'];
     $nama = $data['nama_ph'];
     $email = $data['email'];
+    $status = $data['status'];
 } else {
     header("location: ../index.php");
 }

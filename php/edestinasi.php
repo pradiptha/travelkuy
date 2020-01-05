@@ -23,7 +23,7 @@ if (isset($_GET['act'])) {
         $error = array();
         $uploadedFiles = array();
         $extension = array("jpeg","jpg","png","gif");
-        $UploadFolder = "../assets/img/destinasi/";
+        $UploadFolder = "/$baseurl/assets/img/destinasi/";
 
 
         $nama_destinasi = mysqli_real_escape_string($conn, $_POST['nama_destinasi']);
@@ -34,7 +34,6 @@ if (isset($_GET['act'])) {
         $provinsi = mysqli_real_escape_string($conn, $_POST['provinsi']);
         $sql = "INSERT INTO destinasi(id_provinsi,nama_destinasi,deskripsi_destinasi,alamat_destinasi,biaya_destinasi,durasi) VALUES ('$provinsi','$nama_destinasi','$deskripsi','$alamat_destinasi','$harga_destinasi','$durasi_destinasi') ";
         
-
         if (mysqli_query($conn, $sql)) {
             $id_destinasi = mysqli_insert_id($conn);
             foreach ($_FILES["foto"]["tmp_name"] as $key=>$tmp_name){ 
@@ -67,12 +66,12 @@ if (isset($_GET['act'])) {
                 $_SESSION['error'] = 0;
                 $_SESSION['error_data'] = "Destinasi Berhasil Ditambah";  
             }
-            // header("location: /travelkuy/admin/destinasi.php");
+            header("location: /travelkuy/admin/index.php?view=destinasi");
         } else {
             // echo ("Error description: " . mysqli_error($conn));
             $_SESSION['error'] = 1;
             $_SESSION['error_data'] = "Paket Gagal Ditambah";
-            header("location: /travelkuy/admin/destinasi.php");
+            header("location: /travelkuy/admin/index.php?view=destinasi");
         }
         
     } elseif ($act == 'hapus') {
@@ -84,16 +83,16 @@ if (isset($_GET['act'])) {
                 $sql2 = "DELETE FROM foto_destinasi where id_destinasi = '$id' ";
                 $hasil = mysqli_query($conn,$sql2);
                 $_SESSION['error'] = 0;
-                $_SESSION['error_data'] = "Hotel Berhasil Dihapus";
-                header("location: /travelkuy/admin/destinasi.php");
+                $_SESSION['error_data'] = "Destinasi Berhasil Dihapus";
+                header("location: /travelkuy/admin/index.php?view=destinasi");
             }
             
             
         } else {
             // echo ("Error description: " . mysqli_error($conn));
             $_SESSION['error'] = 1;
-            $_SESSION['error_data'] = "Hotel Gagal Dihapus";
-            header("location: /travelkuy/admin/destinasi.php");
+            $_SESSION['error_data'] = "Destinasi Gagal Dihapus";
+            header("location: /travelkuy/admin/index.php?view=destinasi");
         }
 
     } elseif ($act == 'edit') {

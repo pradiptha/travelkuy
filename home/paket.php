@@ -4,6 +4,15 @@ include "../php/config.php";
 
 $slideshows = queryMultiple("SELECT * FROM master_slideshow WHERE status = '1'");
 
+if (isset($_GET)) {
+    $t = $_GET['t'];
+    $search = $_GET['search'];
+    if ($t == 'dp') {
+        $title = "Paket Terpopuler di ";
+        $title .= ucfirst($search);
+    }
+}
+
 
 ?>
 
@@ -47,7 +56,7 @@ $slideshows = queryMultiple("SELECT * FROM master_slideshow WHERE status = '1'")
     <div class="container my-4">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="title">Paket Terpopuler</h3>
+                <h3 class="title"><?= $title ?></h3>
                 <div class="dropdown-divider"></div>
             </div>
         </div>

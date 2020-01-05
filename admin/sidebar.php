@@ -7,11 +7,10 @@
 			<div class="image">
 				<img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 			</div>
-			<div class="info">
-				<a href="../admin/editprofile.php"><?= $data['username'] ?></a>
+			<div class="info text-white">
+				<?= $data['username'] ?>
 			</div>
 			<div class="editprofile">
-
 			</div>
 		</div>
 		<!-- Sidebar Menu -->
@@ -29,26 +28,20 @@
 				</li>
 				<li class="nav-item">
 					<a href="/<?= $baseurl ?>/admin/index.php?view=validasi" class="nav-link <?= ($view == "validasi" ? 'active' : ''); ?>">
-						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<i class="far fa-circle nav-icon"></i>
 						<p>
 							Validasi
 						</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="partner_hotel.php" class="nav-link">
-						<i class="far fa-circle nav-icon"></i>
-						<p>Partner Hotel</p>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="destinasi.php" class="nav-link">
+					<a href="/<?= $baseurl ?>/admin/index.php?view=destinasi" class="nav-link">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Destinasi</p>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="default_package.php" class="nav-link">
+					<a href="/<?= $baseurl ?>/admin/default_package.php" class="nav-link">
 						<i class="far fa-circle nav-icon"></i>
 						<p>Master Paket</p>
 					</a>

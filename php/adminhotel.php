@@ -119,7 +119,7 @@ if (isset($_GET['act'])) {
             $namaFileBaru = uniqid();
             $gambar = $namaFileBaru . '.' . $ekstensiGambar;
             if (in_array($ekstensiGambar, $ekstensiGambarValid)) {
-                move_uploaded_file($tmp, '../assets/img/ktp/' . $gambar);
+                move_uploaded_file($tmp, '../assets/img/partner_hotel/' . $gambar);
             }
         }
         //form
